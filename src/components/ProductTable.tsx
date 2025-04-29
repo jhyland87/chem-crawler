@@ -13,6 +13,13 @@ import { Product } from '../interfaces'
 import CarolinaSupplier from '../suppliers/carolina_supplier';
 
 
+// const extensionId = 'fkohmljcbmaeoimogkgaijccidjcdgeh';
+
+// chrome.runtime.sendMessage(extensionId, formJson, (response: any) => {
+//   console.log('Products from supplier:', response)
+// });
+
+
 
 async function submitQuery(query: string): Promise<any> {
   const supplier = new CarolinaSupplier(query)

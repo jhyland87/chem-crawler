@@ -7,9 +7,13 @@ export default defineConfig({
   plugins: [
     react(),
     viteStaticCopy({
-      targets:[
+      targets: [
         {
           src: 'public/manifest.json',
+          dest: '.'
+        },
+        {
+          src: 'src/service-worker.js',
           dest: '.'
         }
       ]

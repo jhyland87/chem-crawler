@@ -1,6 +1,12 @@
 import _ from 'lodash';
 import { Sku, Variant, Product } from "../interfaces"
 
+//import saveResponseToFile from '../fetch-cache'
+
+// async function blobToResponse(blob: Blob, options: Object = {}) {
+//   const response = new Response(blob, options);
+//   return response;
+// }
 
 export default class CarolinaSupplier<T extends Product> implements Iterable<T> {
   private _query: string
@@ -28,7 +34,7 @@ export default class CarolinaSupplier<T extends Product> implements Iterable<T> 
     "x-requested-with": "XMLHttpRequest"
   }
 
-  constructor(query: string, limit: number = 5) {
+  constructor(query: string, limit: number = 2) {
     this._query = query;
     this._limit = limit;
   }
@@ -99,6 +105,11 @@ export default class CarolinaSupplier<T extends Product> implements Iterable<T> 
     const queryURL = this._makeQueryUrl(this._query)
     console.debug({ queryURL })
     const response = await this.httpGet(queryURL)
+    debugger
+    console.log('response:', response)
+    console.log('response.clone().text():', await response.clone().text())
+
+    //await saveResponseToFile(response, `somefile-${Date.now()}.dat`)
 
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
@@ -126,7 +137,7 @@ export default class CarolinaSupplier<T extends Product> implements Iterable<T> 
     for (const elem of productElements) {
       elementList.push({
         title: _trimSpaceLike((elem.querySelector('h3.c-product-title') as HTMLElement)?.innerText),
-        href: _trimSpaceLike((elem.querySelector('a.c-product-link') as HTMLAnchorElement)?.href?.replace('chrome-extension://fkohmljcbmaeoimogkgaijccidjcdgeh', '')),
+        href: _trimSpaceLike((elem.querySelector('a.c-product-link') as HTMLAnchorElement)?.href),
         prices: _trimSpaceLike((elem.querySelector('p.c-product-price') as HTMLElement)?.innerText),
         count: _trimSpaceLike((elem.querySelector('p.c-product-total') as HTMLElement)?.innerText)
       })
