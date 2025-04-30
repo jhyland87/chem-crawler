@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react';
-import MyComponent from './MyComponent';
+import MyComponent from '../MyComponent';
 
 
 test('renders with initial count', () => {
