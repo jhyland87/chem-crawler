@@ -18,26 +18,26 @@ const handleResultClick = (event: MouseEvent<HTMLAnchorElement>) => {
   chrome.tabs.create({ url: target.href, active: false });
 };
 
-function columns(): ColumnDef<Product, any>[] {
+function columns(): ColumnDef<Product, unknown>[] {
   return [
     {
       id: "expander",
       header: () => null,
       cell: ({ row }: ProductRow) => {
         return row.getCanExpand() ?
-            <IconButton
-              size="small"
-              onClick={row.getToggleExpandedHandler()}
-              style={{
-                borderRadius: "10%",
-                padding: "2px",
-                cursor: "pointer",
-              }}
-            >
-              {row.getIsExpanded() ?
-                <ArrowDropDownIcon fontSize="small" />
+          <IconButton
+            size="small"
+            onClick={row.getToggleExpandedHandler()}
+            style={{
+              borderRadius: "10%",
+              padding: "2px",
+              cursor: "pointer",
+            }}
+          >
+            {row.getIsExpanded() ?
+              <ArrowDropDownIcon fontSize="small" />
               : <ArrowRightIcon fontSize="small" />}
-            </IconButton>
+          </IconButton>
           : "🔵";
       },
       enableHiding: false,

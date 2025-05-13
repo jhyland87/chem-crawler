@@ -16,7 +16,7 @@ export default function SpeedDialMenu({
 }: SpeedDialMenuProps) {
   const settingsContext = useSettings();
 
-  const [showHelp, setShowHelp] = useState(false);
+  const [, setShowHelp] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(

@@ -6,11 +6,14 @@
     "tbeseda.toggle-js-inlayhints",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "connorshea.vscode-test-explorer-status-bar",
     "hbenl.vscode-test-explorer",
     "lukegeneva.vscode-open-coverage-report",
     "orta.vscode-jest",
-    "ms-vscode.test-adapter-converter"
+    "ms-vscode.test-adapter-converter",
+    "kavod-io.vscode-jest-test-adapter",
+    "emilylilylime.vscode-test-explorer-diagnostics",
+    "connorshea.vscode-test-explorer-status-bar",
+    "hbenl.vscode-test-explorer"
   ],
   "unwantedRecommendations": []
 }

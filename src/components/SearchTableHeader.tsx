@@ -3,18 +3,27 @@ import {
   ArrowDropDown as ArrowDropDownIcon,
 } from "@mui/icons-material";
 
-import { Column, flexRender, Header } from "@tanstack/react-table";
+import { Column, ColumnDef, flexRender, Header, Table, HeaderGroup, RowData, ColumnMeta } from "@tanstack/react-table";
 import DebouncedInput from "./Debounce";
 import { CSSProperties } from "react";
-import { Product } from "../types";
+import { Product, SettingsContextProps } from "../types";
 import { useSettings } from "../context";
+
+// Define our custom column metadata type
+interface CustomColumnMeta<TData extends RowData, TValue> extends ColumnMeta<TData, TValue> {
+  filterVariant?: "range" | "select" | "text";
+  uniqueValues?: string[];
+}
+
+// Define the type for our filterable columns object
+interface FilterableColumns {
+  [key: string]: string[];
+}
 
 function Filter({ column }: { column: Column<Product> }) {
   const columnFilterValue = column.getFilterValue();
 
-  const { filterVariant = "text" } = column.columnDef.meta as {
-    filterVariant?: "range" | "select" | "text";
-  };
+  const { filterVariant = "text" } = (column.columnDef.meta as CustomColumnMeta<Product, unknown>) ?? {};
 
   const baseInputStyle: CSSProperties = {
     colorScheme: "light",
@@ -35,7 +44,7 @@ function Filter({ column }: { column: Column<Product> }) {
                 old?.[1],
               ])
             }
-            placeholder={`Min`}
+            placeholder={"Min"}
             className="w-24 border shadow rounded half-width-input"
             style={{
               ...baseInputStyle,
@@ -51,7 +60,7 @@ function Filter({ column }: { column: Column<Product> }) {
                 value,
               ])
             }
-            placeholder={`Max`}
+            placeholder={"Max"}
             className="w-24 border shadow rounded half-width-input"
             style={{
               ...baseInputStyle,
@@ -60,55 +69,59 @@ function Filter({ column }: { column: Column<Product> }) {
         </div>
         <div className="h-1" />
       </div>
-    : filterVariant === "select" ?
-      <select
-        className="full-width-input"
-        color="secondary.light"
-        onChange={(e) => column.setFilterValue(e.target.value)}
-        value={columnFilterValue?.toString()}
-        style={baseInputStyle}
-      >
-        {/* See faceted column filters example for dynamic select options */}
-        <option value="">All</option>
-        {(
-          column.columnDef.meta as { uniqueValues?: string[] }
-        )?.uniqueValues?.map((value: string) => (
-          <option key={value} value={value}>
-            {value}
-          </option>
-        ))}
-      </select>
-    : <DebouncedInput
-        className="w-36 border shadow rounded full-width-input"
-        color="secondary.light"
-        onChange={(value) => column.setFilterValue(value)}
-        placeholder={`Search...`}
-        type="text"
-        style={baseInputStyle}
-        value={(columnFilterValue ?? "") as string}
-      />
-      // See faceted column filters example for datalist search suggestions
+      : filterVariant === "select" ?
+        <select
+          className="full-width-input"
+          color="secondary.light"
+          onChange={(e) => column.setFilterValue(e.target.value)}
+          value={columnFilterValue?.toString()}
+          style={baseInputStyle}
+        >
+          {/* See faceted column filters example for dynamic select options */}
+          <option value="">All</option>
+          {(
+            column.columnDef.meta as { uniqueValues?: string[] }
+          )?.uniqueValues?.map((value: string) => (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          ))}
+        </select>
+        : <DebouncedInput
+          className="w-36 border shadow rounded full-width-input"
+          color="secondary.light"
+          onChange={(value) => column.setFilterValue(value)}
+          placeholder={"Search..."}
+          type="text"
+          style={baseInputStyle}
+          value={(columnFilterValue ?? "") as string}
+        />
+    // See faceted column filters example for datalist search suggestions
   );
 }
 
-export default function SearchTableHeader({ table }: { table: any }) {
-  const settingsContext = useSettings();
+export default function SearchTableHeader({ table }: { table: Table<Product> }) {
+  const settingsContext: SettingsContextProps = useSettings();
   // Get the columns that have filterable values (range, select)
-  const filterableColumns = table.options.columns.reduce(
-    (accu: any, col: any) => {
-      if (["range", "select"].includes(col?.meta?.filterVariant as string))
-        accu[col.id] = [];
+  const filterableColumns = table.options.columns.reduce<FilterableColumns>(
+    (accu, col: ColumnDef<Product, unknown>) => {
+      const meta = col.meta as CustomColumnMeta<Product, unknown>;
+      if (meta?.filterVariant && ["range", "select"].includes(meta.filterVariant)) {
+        accu[col.id ?? ''] = [];
+      }
       return accu;
     },
     {}
   );
 
-  // Get the unique values for the filterable columns. This will be used to populate
-  // the filter dropdowns.
+  // Get the unique values for the filterable columns
   for (const row of table.options.data) {
     for (const col of Object.keys(filterableColumns)) {
-      if (row[col] && filterableColumns[col].indexOf(row[col]) === -1)
-        filterableColumns[col].push(row[col]);
+      // Safely access the property by first converting to unknown
+      const value = (row as unknown as Record<string, unknown>)[col];
+      if (value && typeof value === 'string' && filterableColumns[col].indexOf(value) === -1) {
+        filterableColumns[col].push(value);
+      }
     }
   }
 
@@ -116,19 +129,18 @@ export default function SearchTableHeader({ table }: { table: any }) {
     <thead>
       {table
         .getHeaderGroups()
-        .map((headerGroup: { id: string; headers: any[] }) => (
+        .map((headerGroup: HeaderGroup<Product>) => (
           <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header: Header<Product, any>) => {
+            {headerGroup.headers.map((header: Header<Product, unknown>) => {
               // If the column has filterable values, populate the unique values for the column
               if (
                 filterableColumns[header.id] !== undefined &&
                 filterableColumns[header.id].length > 0
               ) {
-                // @todo: Should be able to insert uniqueValues property into the column type structure somewhere...
                 header.column.columnDef.meta = {
                   ...header.column.columnDef.meta,
                   uniqueValues: filterableColumns[header.id],
-                };
+                } as CustomColumnMeta<Product, unknown>;
               }
 
               return (
@@ -153,7 +165,7 @@ export default function SearchTableHeader({ table }: { table: any }) {
                         className={`resizer ${header.column.getIsResizing() ? "isResizing" : ""}`}
                       />
                       <div
-                        className={`${header.column.getCanSort() ? "cursor-pointer select-none" : ""}`}
+                        className={header.column.getCanSort() ? "cursor-pointer select-none" : ""}
                         onClick={header.column.getToggleSortingHandler()}
                       >
                         {header.isPlaceholder ? null : (
@@ -191,7 +203,7 @@ export default function SearchTableHeader({ table }: { table: any }) {
                         <div>
                           <Filter column={header.column} />
                         </div>
-                      : null}
+                        : null}
                     </>
                   )}
                 </th>
