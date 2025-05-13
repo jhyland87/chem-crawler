@@ -1,10 +1,18 @@
-import * as React from 'react';
+import { forwardRef, Fragment } from "react";
 
-import { TableVirtuoso, TableComponents } from 'react-virtuoso';
-import { Collapse, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { TableVirtuoso, TableComponents } from "react-virtuoso";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
 
-import Chance from 'chance';
-import { useState } from 'react';
+import Chance from "chance";
+import { useState } from "react";
 
 interface Data {
   id: number;
@@ -38,64 +46,67 @@ function createData(id: number): Data {
 const columns: ColumnData[] = [
   {
     width: 100,
-    label: 'First Name',
-    dataKey: 'firstName',
+    label: "First Name",
+    dataKey: "firstName",
   },
   {
     width: 100,
-    label: 'Last Name',
-    dataKey: 'lastName',
+    label: "Last Name",
+    dataKey: "lastName",
   },
   {
     width: 50,
-    label: 'Age',
-    dataKey: 'age',
+    label: "Age",
+    dataKey: "age",
     numeric: true,
   },
   {
     width: 110,
-    label: 'State',
-    dataKey: 'state',
+    label: "State",
+    dataKey: "state",
   },
   {
     width: 130,
-    label: 'Phone Number',
-    dataKey: 'phone',
+    label: "Phone Number",
+    dataKey: "phone",
   },
 ];
 
-const rows: Data[] = Array.from({ length: 200 }, (_, index) => createData(index));
+const rows: Data[] = Array.from({ length: 200 }, (_, index) =>
+  createData(index)
+);
 
 const VirtuosoTableComponents: TableComponents<Data> = {
-
-  Scroller: React.forwardRef<HTMLDivElement>((props, ref) => (
+  Scroller: forwardRef<HTMLDivElement>((props, ref) => (
     <TableContainer component={Paper} {...props} ref={ref} />
   )),
   Table: (props) => (
-    <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
+    <Table
+      {...props}
+      sx={{ borderCollapse: "separate", tableLayout: "fixed" }}
+    />
   ),
-  TableHead: React.forwardRef<HTMLTableSectionElement>((props, ref) => (
+  TableHead: forwardRef<HTMLTableSectionElement>((props, ref) => (
     <TableHead {...props} ref={ref} />
   )),
   TableRow,
-  TableBody: React.forwardRef<HTMLTableSectionElement>((props, ref) => (
+  TableBody: forwardRef<HTMLTableSectionElement>((props, ref) => (
     <TableBody {...props} ref={ref} />
   )),
 };
 
-
 function rowContent(_index: number, row: Data) {
   return (
-    <React.Fragment>
+    <Fragment>
       {columns.map((column) => (
         <TableCell
           key={column.dataKey}
-          align={column.numeric || false ? 'right' : 'left'}
+          align={column.numeric || false ? "right" : "left"}
         >
           {row[column.dataKey]}
         </TableCell>
       ))}
-    </React.Fragment>
+    </Fragment>
   );
 }
 
@@ -109,7 +120,6 @@ export default function VirtTable() {
     }));
   };
 
-
   function fixedHeaderContent() {
     return (
       <TableRow>
@@ -117,20 +127,19 @@ export default function VirtTable() {
           <TableCell
             key={column.dataKey}
             variant="head"
-            align={column.numeric || false ? 'right' : 'left'}
+            align={column.numeric || false ? "right" : "left"}
             style={{ width: column.width }}
-            sx={{ backgroundColor: 'background.paper' }}
+            sx={{ backgroundColor: "background.paper" }}
           >
             {column.label}
           </TableCell>
-
         ))}
       </TableRow>
     );
   }
 
   return (
-    <Paper style={{ height: 400, width: '100%' }}>
+    <Paper style={{ height: 400, width: "100%" }}>
       <TableVirtuoso
         data={rows}
         components={VirtuosoTableComponents}

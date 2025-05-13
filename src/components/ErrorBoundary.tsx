@@ -1,7 +1,10 @@
-import { Component, captureOwnerStack, ReactNode } from 'react';
+import { Component, captureOwnerStack, ReactNode } from "react";
 
-class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: ReactNode, fallback: ReactNode }) {
+class ErrorBoundary extends Component<
+  { children: ReactNode; fallback: ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode; fallback: ReactNode }) {
     super(props);
     this.state = { hasError: false };
   }
@@ -21,7 +24,7 @@ class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode
       //   in App
       info.componentStack,
       // Warning: `captureOwnerStack` is not available in production.
-      captureOwnerStack(),
+      captureOwnerStack()
     );
   }
 

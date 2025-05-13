@@ -3,8 +3,8 @@ import {
   ExchangeRateResponse,
   CurrencyCodeMap,
   CurrencySymbol,
-  ParsedPrice
-} from '../types'
+  ParsedPrice,
+} from "../types";
 
 /**
  * Get the currency symbol from a price string.
@@ -20,8 +20,8 @@ import {
  */
 export function getCurrencySymbol(price: string): string | undefined {
   const match = price.match(/\p{Sc}/u);
-  if (!match) return undefined
-  return match[0]
+  if (!match) return undefined;
+  return match[0];
 }
 
 /**
@@ -37,26 +37,30 @@ export function getCurrencySymbol(price: string): string | undefined {
  * parsePrice('1000') // undefined
  */
 export function parsePrice(price: string): ParsedPrice | void {
-  const currencySymbol = getCurrencySymbol(price) as CurrencySymbol
+  const currencySymbol = getCurrencySymbol(price) as CurrencySymbol;
   if (!currencySymbol) return;
 
-  const currencyCode = getCurrencyCodeFromSymbol(currencySymbol)
-  let bareAmount = price.replace(currencySymbol, '').trim()
+  const currencyCode = getCurrencyCodeFromSymbol(currencySymbol);
+  let bareAmount = price.replace(currencySymbol, "").trim();
 
   // https://regex101.com/r/Q5w26N/2
   // If the prices (like quantities) could be the weird foreign style where the commas and
   // decimals are swapped, (eg: 1.234,56 instead of 1,234.56), then we need to swap the
   // commas and decimals for easier parsing and handling.
   if (bareAmount.match(/^(\d+\.\d+,\d{1,2}|\d{1,3},\d{1,2}|\d{1,3},\d{1,2})$/))
-    bareAmount = bareAmount.replaceAll('.', 'xx').replaceAll(',', '.').replaceAll('xx', ',')
+    bareAmount = bareAmount
+      .replaceAll(".", "xx")
+      .replaceAll(",", ".")
+      .replaceAll("xx", ",");
 
   // Remove all commas from the amount to make it castable to a number
-  bareAmount = bareAmount.replace(/,/g, '')
+  bareAmount = bareAmount.replace(/,/g, "");
 
   return {
-    currencyCode, currencySymbol,
+    currencyCode,
+    currencySymbol,
     price: parseFloat(bareAmount),
-  }
+  };
 }
 
 /**
@@ -69,14 +73,18 @@ export function parsePrice(price: string): ParsedPrice | void {
  * getCurrencyRate('USD', 'EUR') // 0.85
  * getCurrencyRate('EUR', 'USD') // 1.1764705882352942
  */
-export async function getCurrencyRate(from: CurrencyCode, to: CurrencyCode): Promise<number> {
+export async function getCurrencyRate(
+  from: CurrencyCode,
+  to: CurrencyCode
+): Promise<number> {
   try {
-    const response = await fetch(`https://hexarate.paikama.co/api/rates/latest/${from}?target=${to}`)
-    const result = await response.json() as ExchangeRateResponse
-    return result.data.mid
-  }
-  catch (error) {
-    throw new Error(`Failed to get currency rate for ${from} to ${to}`)
+    const response = await fetch(
+      `https://hexarate.paikama.co/api/rates/latest/${from}?target=${to}`
+    );
+    const result = (await response.json()) as ExchangeRateResponse;
+    return result.data.mid;
+  } catch (error) {
+    throw new Error(`Failed to get currency rate for ${from} to ${to}`);
   }
 }
 
@@ -92,8 +100,10 @@ export async function getCurrencyRate(from: CurrencyCode, to: CurrencyCode): Pro
  * getCurrencyCodeFromSymbol('¥') // 'JPY'
  * getCurrencyCodeFromSymbol('₹') // 'INR'
  */
-export function getCurrencyCodeFromSymbol(symbol: CurrencySymbol): CurrencyCode {
-  return CurrencyCodeMap[symbol]
+export function getCurrencyCodeFromSymbol(
+  symbol: CurrencySymbol
+): CurrencyCode {
+  return CurrencyCodeMap[symbol];
 }
 
 /**
@@ -108,14 +118,16 @@ export function getCurrencyCodeFromSymbol(symbol: CurrencySymbol): CurrencyCode 
  * toUSD(100, 'JPY') // '11000.00'
  * toUSD(100, 'INR') // '8500.00'
  */
-export async function toUSD(amount: number, from: CurrencyCode): Promise<string> {
-  const rate = await getCurrencyRate(from, 'USD')
-  return (amount * rate).toFixed(2)
+export async function toUSD(
+  amount: number,
+  from: CurrencyCode
+): Promise<string> {
+  const rate = await getCurrencyRate(from, "USD");
+  return (amount * rate).toFixed(2);
 }
 
 //toUSD(100, 'EUR').then(console.log)
 //getCurrencyRate('USD', 'EUR').then(console.log)
-
 
 //console.log(getCurrencySymbol('$1000'))
 

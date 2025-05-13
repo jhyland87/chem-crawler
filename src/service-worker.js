@@ -25,9 +25,9 @@ self.addEventListener("activate", (event) => {
             console.debug("Deleting out of date cache:", cacheName);
             return caches.delete(cacheName);
           }
-        }),
-      ),
-    ),
+        })
+      )
+    )
   );
 });
 
@@ -52,8 +52,8 @@ self.addEventListener("fetch", (event) => {
           // response will be undefined, and we need to fetch() the resource.
           console.debug(
             " No response for %s found in cache. About to fetch " +
-            "from network…",
-            event.request.url,
+              "from network…",
+            event.request.url
           );
 
           // We call .clone() on the request since we might use it
@@ -65,9 +65,12 @@ self.addEventListener("fetch", (event) => {
             console.debug(
               "  Response for %s from network is: %O",
               event.request.url,
-              response,
+              response
             );
-            if (event.request.url.match("^(http|https)://") && ['HEAD', 'POST'].includes(event.request.method) === false) {
+            if (
+              event.request.url.match("^(http|https)://") &&
+              ["HEAD", "POST"].includes(event.request.method) === false
+            ) {
               cache.put(event.request, response.clone());
             }
 
@@ -87,6 +90,6 @@ self.addEventListener("fetch", (event) => {
 
           throw error;
         });
-    }),
+    })
   );
 });

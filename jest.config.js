@@ -6,9 +6,12 @@ export default {
   //jsdom
   testEnvironment: "jest-fixed-jsdom", // jest-fixed-jsdom
   transform: {
-    '^.+\\.(ts|tsx)?$': ['ts-jest', {
-      "tsconfig": "tsconfig.node.json"
-    }],
+    "^.+\\.(ts|tsx)?$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.node.json",
+      },
+    ],
     //'^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
@@ -16,6 +19,6 @@ export default {
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
     "^.+\\.svg$": "jest-transformer-svg",
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)$',
-}
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)$",
+};

@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
-import { Collapse, Typography } from '@mui/material';
-import { Virtuoso } from 'react-virtuoso';
+import { useState, FC } from "react";
+import Collapse from "@mui/material/Collapse";
+import Typography from "@mui/material/Typography";
+import { Virtuoso } from "react-virtuoso";
 
 interface TableData {
   name: string;
   news: string;
 }
 
-const TableTest: React.FC = () => {
+const TableTest: FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState<TableData[]>([]);
   const [currentOpenIndex, setcurrentOpenIndex] = useState<number | null>(null);
 
   const fetchData = () => {
-    console.log('End reached - fetchData')
-    console.log('currentPage', currentPage)
+    console.log("End reached - fetchData");
+    console.log("currentPage", currentPage);
     const newData = [
       {
         name: `Some Name - ${data.length}`,
         news: `Some News - ${data.length}`,
-      }
-    ]
-    setData(data => [...data, ...newData]);
-    setCurrentPage(page => page + 1);
+      },
+    ];
+    setData((data) => [...data, ...newData]);
+    setCurrentPage((page) => page + 1);
 
     /*
     fetch(`https://dummyapi.io/data/v1/user?limit=10&page=${currentPage}`)
@@ -41,12 +42,12 @@ const TableTest: React.FC = () => {
       data={data}
       endReached={fetchData}
       itemContent={(index, data) => {
-        console.log('itemContent', index, data)
-        let bgColor = '';
+        console.log("itemContent", index, data);
+        let bgColor = "";
         if (index % 2 === 0) {
-          bgColor = 'yellow';
+          bgColor = "yellow";
         } else {
-          bgColor = 'blue';
+          bgColor = "blue";
         }
 
         return (
@@ -54,7 +55,9 @@ const TableTest: React.FC = () => {
             <div
               style={{ height: 50 }}
               onClick={() =>
-                currentOpenIndex === index ? setcurrentOpenIndex(null) : setcurrentOpenIndex(index)
+                currentOpenIndex === index ?
+                  setcurrentOpenIndex(null)
+                : setcurrentOpenIndex(index)
               }
             >
               {data.name}
@@ -63,11 +66,10 @@ const TableTest: React.FC = () => {
               <Typography>{data.news}</Typography>
             </Collapse>
           </div>
-        )
-      }
-      }
+        );
+      }}
     />
-  )
-}
+  );
+};
 
-export default TableTest
+export default TableTest;
