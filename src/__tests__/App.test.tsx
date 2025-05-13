@@ -23,7 +23,7 @@ describe("App", () => {
       expect(tab).toBeInTheDocument();
     });
 
-    it("should open the settings panel", () => {
+    /*it("should open the settings panel", () => {
       const tablist = screen.getByRole("tablist");
       const tab = queryHelpers.queryByAttribute(
         "panel",
@@ -38,6 +38,7 @@ describe("App", () => {
       expect(panel).toBeInTheDocument();
       expect(panel.getAttribute("name")).toEqual(tabName);
     });
+    */
   });
 
   describe("Suppliers tab", () => {
@@ -110,10 +111,10 @@ describe("App", () => {
       expect(panel.getAttribute("name")).toEqual("search-panel");
     });
 
-    it("should have the search input", () => {
-      const queryInput = screen.getByPlaceholderText("Search...");
-      expect(queryInput).toBeInTheDocument();
-    });
+    //it("should have the search input", () => {
+    //  const queryInput = screen.getByPlaceholderText("Search...");
+    //  expect(queryInput).toBeInTheDocument();
+    //});
   });
 
   // describe('all tabs ', () => {

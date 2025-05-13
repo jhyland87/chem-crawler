@@ -35,8 +35,7 @@
     "react-dom": "^19.0.0",
     "react-form-hook": "^0.0.1",
     "react-icons": "^5.5.0",
-    "react-virtuoso": "^4.12.7",
-    "vite-plugin-static-copy": "^2.3.1"
+    "react-virtuoso": "^4.12.7"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -82,6 +81,6 @@
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1",
     "vite-bundle-analyzer": "^0.20.1",
-    "vite-plugin-static-copy": "^2.3.1"
+    "vite-plugin-static-copy": "^3.0.0"
   }
 }
