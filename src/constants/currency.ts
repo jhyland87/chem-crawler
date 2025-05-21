@@ -61,7 +61,7 @@ export const CURRENCY_CODE_MAP: { [key: string]: string } = {
   Bs: "VEF",
   "₫": "VND",
   Z$: "ZWD",
-};
+} as const;
 
 /**
  * Mapping of ISO currency codes to their corresponding currency symbols
@@ -243,4 +243,4 @@ export const CURRENCY_SYMBOL_MAP: { [key: string]: string } = {
   YER: "﷼",
   ZAR: "R",
   ZWD: "Z$",
-};
+} as const;
