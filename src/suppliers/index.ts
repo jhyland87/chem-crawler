@@ -9,30 +9,29 @@
  *
  * @example
  * ```typescript
- * import { SupplierCarolina, SupplierBioFuranChem } from './suppliers';
+ * import { registerSuppliers, supplierRegistry } from './suppliers';
  *
- * // Search Carolina supplier for Sodium Hydroxide
- * const carolina = new SupplierCarolina('Sodium Hydroxide');
+ * // Register all suppliers
+ * registerSuppliers();
  *
- * // Search BioFuranChem supplier for Acetic Acid
- * const bioFuran = new SupplierBioFuranChem('Acetic Acid');
+ * // Get a specific supplier
+ * const CarolinaClass = supplierRegistry.get('SupplierCarolina');
+ * if (CarolinaClass) {
+ *   const carolina = new CarolinaClass('Sodium Hydroxide', 10, new AbortController());
+ * }
  * ```
  */
 
-import SupplierBioFuranChem from "./supplierBiofuranChem";
-import SupplierBunmurraLabs from "./supplierBunmurraLabs";
-import SupplierCarolina from "./supplierCarolina";
-import SupplierFtfScientific from "./supplierFtfScientific";
-import SupplierHbarSci from "./supplierHbarSci";
-import SupplierLaballey from "./supplierLaballey";
-import SupplierLaboratoriumDiscounter from "./supplierLaboratoriumDiscounter";
+export { default as registerSuppliers } from "./registerSuppliers";
+export { default as SupplierBase } from "./supplierBase";
+export { default as SupplierFactory } from "./supplierFactory";
+export { default as supplierRegistry } from "./supplierRegistry";
 
-export {
-  SupplierBioFuranChem,
-  SupplierBunmurraLabs,
-  SupplierCarolina,
-  SupplierFtfScientific,
-  SupplierHbarSci,
-  SupplierLaballey,
-  SupplierLaboratoriumDiscounter,
-};
+// Export supplier implementations for direct access if needed
+export { default as SupplierBioFuranChem } from "./supplierBiofuranChem";
+export { default as SupplierBunmurraLabs } from "./supplierBunmurraLabs";
+export { default as SupplierCarolina } from "./supplierCarolina";
+export { default as SupplierFtfScientific } from "./supplierFtfScientific";
+export { default as SupplierHbarSci } from "./supplierHbarSci";
+export { default as SupplierLaballey } from "./supplierLaballey";
+export { default as SupplierLaboratoriumDiscounter } from "./supplierLaboratoriumDiscounter";
