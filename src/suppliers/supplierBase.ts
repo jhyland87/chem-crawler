@@ -4,6 +4,7 @@ import { type Maybe, type MaybeArray, type Product } from "@/types";
 import { type RequiredProductFields } from "@/types/product";
 import { type RequestOptions, type RequestParams } from "@/types/request";
 import { Logger } from "@/utils/Logger";
+import { PerformanceContext } from "@/utils/PerformanceContext";
 import { ProductBuilder } from "@/utils/ProductBuilder";
 import { extract, WRatio } from "fuzzball";
 import { type JsonValue } from "type-fest";
@@ -201,7 +202,7 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
   protected _logger: Logger;
 
   // Cache configuration
-  private static readonly cacheKey = "supplier_cache";
+  private static readonly cacheKey = "supplierCache";
 
   // Maximum number of cached results
   private static readonly cacheSize = 100;
@@ -213,6 +214,12 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
     currencyCode: "USD",
     currencySymbol: "$",
   };
+
+  /**
+   * Statistics for the supplier.
+   * This is a record of statistics for the supplier.
+   */
+  protected _stats: Record<string, number> = {};
 
   /**
    * Creates a new instance of the supplier base class.
@@ -243,6 +250,7 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
     this._logger = new Logger(this.constructor.name);
     this._query = query;
     this._limit = limit;
+
     if (controller) {
       this._controller = controller;
     } else {
@@ -1102,21 +1110,41 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
    */
   async *[Symbol.asyncIterator](): AsyncGenerator<T, void, unknown> {
     try {
+      // The supplier context is already pushed by the factory
+      PerformanceContext.mark("query-started", {
+        supplier: this.supplierName,
+        query: this._query,
+        limit: this._limit,
+      });
+
       // Check cache first
       const cachedResults = await this._getCachedResults();
-      console.log("[iterator]cachedResults", cachedResults);
       if (cachedResults) {
+        PerformanceContext.mark("cache-hit", {
+          supplier: this.supplierName,
+          resultCount: cachedResults.length,
+        });
         this._logger.debug("Returning cached results");
         for (const result of cachedResults) {
+          PerformanceContext.mark("cache-hit-yield", {
+            supplier: this.supplierName,
+            title: result.title,
+          });
           yield result;
         }
         return;
       }
 
       await this._setup();
+      PerformanceContext.mark("query-products-started");
+
       const results = await this._queryProducts(this._query, this._limit);
+      PerformanceContext.mark("query-products-completed", {
+        resultCount: results?.length,
+      });
 
       if (typeof results === "undefined" || results.length === 0) {
+        PerformanceContext.mark("no-results-found");
         this._logger.debug(`No query results found`);
         return;
       }
@@ -1126,6 +1154,10 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
       const allResults: T[] = [];
       for (let i = 0; i < this._products.length; i += this._httpRequestBatchSize) {
         const batch = this._products.slice(i, i + this._httpRequestBatchSize);
+        PerformanceContext.mark("batch-processing-started", {
+          batchSize: batch.length,
+          batchIndex: i / this._httpRequestBatchSize,
+        });
 
         // Create promises for the current batch
         const batchPromises = batch.map((r: unknown) => {
@@ -1140,38 +1172,60 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
         const batchResults = await Promise.allSettled(batchPromises);
         for (const result of batchResults) {
           if (result.status === "rejected") {
+            PerformanceContext.mark("product-processing-error", { error: result.reason });
             this._logger.error("Error found when yielding a product:", { result });
             continue;
           }
 
           try {
             if (typeof result.value === "undefined") {
+              PerformanceContext.mark("product-processing-skipped", { reason: "undefined-value" });
               this._logger.warn("Product value was undefined", { result });
               continue;
             }
 
+            PerformanceContext.mark("product-processing-started");
             const finishedProduct = await this._finishProduct(result.value as ProductBuilder<T>);
 
             if (finishedProduct) {
+              PerformanceContext.mark("product-processing-completed", {
+                title: finishedProduct.title,
+              });
               allResults.push(finishedProduct);
               yield finishedProduct;
+            } else {
+              PerformanceContext.mark("product-processing-skipped", { reason: "invalid-product" });
             }
           } catch (err) {
+            PerformanceContext.mark("product-processing-error", { error: err });
             this._logger.error("Error found when yielding a product:", { err });
             continue;
           }
         }
+
+        PerformanceContext.mark("batch-processing-completed", {
+          batchSize: batch.length,
+          batchIndex: i / this._httpRequestBatchSize,
+        });
       }
 
       // Cache the results after processing all batches
       if (allResults.length > 0) {
+        PerformanceContext.mark("cache-results-started", { resultCount: allResults.length });
         await this._cacheResults(allResults);
+        PerformanceContext.mark("cache-results-completed");
       }
+
+      PerformanceContext.mark("query-completed", {
+        totalResults: allResults.length,
+      });
     } catch (err) {
       if (this._controller.signal.aborted === true) {
+        PerformanceContext.mark("query-aborted", { error: err });
         this._logger.warn("Search was aborted");
         return;
       }
+      PerformanceContext.mark("query-error", { error: err });
       this._logger.error("ERROR in generator fn:", { err });
     }
   }
@@ -1544,6 +1598,7 @@ export default abstract class SupplierBase<S, T extends Product> implements Asyn
    */
   protected async _fetch(...args: Parameters<typeof fetchDecorator>): Promise<Response> {
     const [input] = args;
+
     console.log(`Fetching: ${input}`);
     const response = await fetchDecorator(...args);
     console.log(`Response Status: ${response.status}`);

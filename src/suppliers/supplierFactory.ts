@@ -1,5 +1,6 @@
 import { type Product } from "@/types";
 import { Logger } from "@/utils/Logger";
+import { PerformanceContext } from "@/utils/PerformanceContext";
 import * as suppliers from ".";
 import SupplierBase from "./supplierBase";
 /**
@@ -56,6 +57,11 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
     suppliers: Array<string> = [],
   ) {
     this._logger = new Logger("SupplierFactory");
+    PerformanceContext.push("query-factory-init", {
+      query,
+      limit,
+      suppliers,
+    });
     this._logger.debug("initialized");
     this._query = query;
     this._logger.debug("Query:", this._query);
@@ -103,20 +109,43 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
    * ```
    */
   async *[Symbol.asyncIterator](): AsyncGenerator<T, void, unknown> {
+    // Push a new context for this query
     try {
       this._logger.debug("Starting search");
+      PerformanceContext.push("query-factory-iterator");
+      PerformanceContext.mark("search-started");
+
       const supplierIterator = this._getConsolidatedGenerator();
 
       for await (const value of supplierIterator) {
+        PerformanceContext.mark("product-found", {
+          title: value.title,
+          supplier: value.supplier,
+        });
         yield value as T;
       }
+
+      PerformanceContext.mark("search-completed");
     } catch (err) {
-      // Here to catch when the overall search fails
       if (this._controller.signal.aborted === true) {
+        PerformanceContext.mark("search-aborted", { error: err });
         this._logger.warn("Search was aborted");
         return;
       }
+      PerformanceContext.mark("search-error", { error: err });
       this._logger.error("ERROR in generator fn:", err);
+    } finally {
+      PerformanceContext.mark("query-factory-iterator-completed");
+      // Pop factory context and get its metrics
+      const factoryLogger = PerformanceContext.pop();
+      // Add a measure for the total duration of the factory query using the logger instance
+      factoryLogger?.measure(
+        "query-factory-total-duration",
+        "context-started",
+        "context-completed",
+      );
+      const factoryMetrics = factoryLogger?.getMetrics();
+      this._logger.debug("Factory performance metrics:", factoryMetrics);
     }
   }
 
@@ -138,15 +167,53 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
    * ```
    */
   private _getConsolidatedGenerator(): AsyncGenerator<Product, void, unknown> {
-    async function* combineAsyncIterators(
+    PerformanceContext.mark("consolidated-generator-init");
+
+    const combineAsyncIterators = async function* (
+      this: SupplierFactory<T>,
       asyncIterators: SupplierBase<unknown, Product>[],
     ): AsyncGenerator<Product, void, unknown> {
+      PerformanceContext.mark("consolidated-generator-start");
+
       for (const iterator of asyncIterators) {
-        for await (const value of iterator) {
-          yield value;
+        // Push a new context for each supplier
+
+        try {
+          PerformanceContext.mark("supplier-started", {
+            supplier: iterator.supplierName,
+          });
+
+          let supplierProductCount = 0;
+          for await (const value of iterator) {
+            PerformanceContext.mark("supplier-product-found", {
+              title: value.title,
+              supplier: value.supplier,
+            });
+            supplierProductCount++;
+            yield value;
+          }
+
+          PerformanceContext.mark("supplier-completed", {
+            supplierProductCount,
+          });
+        } finally {
+          PerformanceContext.mark("search-completed");
+          // Pop supplier context and get its metrics
+          const supplierLogger = PerformanceContext.pop();
+          // Add a measure for the total duration of the supplier using the logger instance
+          supplierLogger?.measure(
+            "supplier-total-duration",
+            "context-started",
+            "context-completed",
+          );
+          const supplierMetrics = supplierLogger?.getMetrics();
+          this._logger.debug("Supplier performance metrics:", {
+            supplier: iterator.supplierName,
+            metrics: supplierMetrics,
+          });
         }
       }
-    }
+    }.bind(this);
 
     // Only iterate over the suppliers that are selected (or all if none are selected)
     return combineAsyncIterators(
