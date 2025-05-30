@@ -11,7 +11,7 @@ jest.mock("@/helpers/currency", () => ({
 
 Object.assign(global, { chrome: mockChromeStorage });
 
-process.env.LOG_LEVEL = "DEBUG";
+//process.env.LOG_LEVEL = "DEBUG";
 
 describe("SupplierLaboratoriumDiscounter", () => {
   const laboratoriumiscounter_fixtures = fixtureData("laboratoriumdiscounter");
@@ -25,7 +25,7 @@ describe("SupplierLaboratoriumDiscounter", () => {
 
   beforeEach(() => {
     // Clear localStorage before each test
-    //localStorage.clear();
+    localStorage.clear();
 
     // Mock the global fetch function to handle both search and product detail requests
     global.fetch = jest.fn().mockImplementation((url) => {
