@@ -453,13 +453,41 @@ export function isSearchResponseProduct(product: unknown): product is SearchResp
  * ```
  */
 export function isProductObject(data: unknown): data is ProductObject {
-  if (typeof data !== "object" || data === null) return false;
-  if ("product" in data === false || typeof data.product !== "object" || data.product === null)
+  if (typeof data !== "object" || data === null) {
+    console.log("data is not an object or null");
     return false;
-  return (
-    "variants" in data.product &&
-    (typeof data.product.variants === "object" || data.product.variants === false)
-  );
+  }
+  if ("product" in data === false) {
+    console.log("data does not have a product property");
+    return false;
+  }
+
+  if (typeof data.product !== "object") {
+    console.log("data.product is not an object");
+    return false;
+  }
+
+  if (data.product === null) {
+    console.log("data.product is null");
+    return false;
+  }
+
+  if ("variants" in data.product === false) {
+    console.log("data.product does not have a variants property");
+    return false;
+  }
+
+  if (typeof data.product.variants === "object") {
+    if (data.product.variants === null) {
+      console.log("data.product.variants object is null");
+      return false;
+    }
+  } else if (typeof data.product.variants !== "boolean") {
+    console.log("expected variants to be object or boolean, got", typeof data.product.variants);
+    return false;
+  }
+
+  return true;
 }
 
 /**

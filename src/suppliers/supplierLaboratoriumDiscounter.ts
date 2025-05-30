@@ -118,6 +118,7 @@ export default class SupplierLaboratoriumDiscounter
    * ```
    */
   protected _makeQueryParams(limit: number = this._limit): SearchParams {
+    console.log("makeQueryParams", limit);
     return {
       limit: limit.toString(),
       format: "json",
@@ -148,6 +149,7 @@ export default class SupplierLaboratoriumDiscounter
     query: string,
     limit: number = this._limit,
   ): Promise<ProductBuilder<Product>[] | void> {
+    console.log("queryProducts", query, limit);
     const params = this._makeQueryParams();
     if (!isValidSearchParams(params)) {
       this._logger.warn("Invalid search parameters:", params);
