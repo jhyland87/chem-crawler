@@ -1,3 +1,6 @@
+import { getRequestHash } from "../request";
+import { getResponseStorageConfig } from "./config";
+
 /**
  * Response type that extends the standard Response with additional properties
  * for data and request hash tracking.
@@ -77,11 +80,42 @@ export async function generateRequestHash(
 }
 
 /**
+ * Stores a response in chrome.storage.local
+ * @param requestHash - The hash of the request
+ * @param response - The response to store
+ */
+async function storeResponse(
+  requestHash: string,
+  response: FetchDecoratorResponse,
+  requestUrl: string,
+): Promise<void> {
+  const config = getResponseStorageConfig();
+  if (!config?.storeResponses) return;
+
+  const storageKey = config.storageKeyPrefix
+    ? `${config.storageKeyPrefix}_${requestHash}`
+    : `response_${requestHash}`;
+
+  const responseData = {
+    url: requestUrl,
+    hash: requestHash,
+    status: response.status,
+    statusText: response.statusText,
+    headers: Object.fromEntries(response.headers.entries()),
+    data: response.data,
+    timestamp: Date.now(),
+  };
+
+  await chrome.storage.local.set({ [storageKey]: responseData });
+}
+
+/**
  * A decorator function that wraps the native fetch API with additional features:
  * - Automatic response parsing based on content type
  * - Request hash generation for tracking
  * - Error handling
  * - Response cloning to prevent body stream consumption
+ * - Optional response storage in chrome.storage.local (controlled by global config)
  *
  * @param input - The request URL or Request object
  * @param init - Optional request configuration
@@ -108,20 +142,6 @@ export async function generateRequestHash(
  *   body: JSON.stringify({ name: "test" })
  * });
  * const response = await fetchDecorator(request);
- *
- * // Handling different response types
- * const response = await fetchDecorator("https://api.example.com/data");
- * if (response.headers.get("content-type")?.includes("application/json")) {
- *   // Data is already parsed as JSON
- *   console.log(response.data);
- * } else if (response.headers.get("content-type")?.includes("text/")) {
- *   // Data is already parsed as text
- *   console.log(response.data);
- * } else {
- *   // Data is a Blob
- *   const blob = response.data as Blob;
- *   // Handle blob data
- * }
  * ```
  */
 export async function fetchDecorator(
@@ -129,7 +149,21 @@ export async function fetchDecorator(
   init?: RequestInit,
 ): Promise<FetchDecoratorResponse> {
   const requestHash = await generateRequestHash(input, init);
+  let requestUrl: string = "";
+  if (typeof input === "string") {
+    requestUrl = input;
+  } else if (input instanceof Request) {
+    requestUrl = input.url;
+  } else if (input instanceof URL) {
+    requestUrl = input.href;
+  }
+  // If input is a Request, use getRequestHash to get the hash and url (guaranteed accurate)
+  if (input instanceof Request) {
+    const hashObj = getRequestHash(input);
+    requestUrl = hashObj.url.href;
+  }
   console.log(`Request Hash: ${requestHash}`);
+  console.log(`Request URL for storage: ${requestUrl}`);
 
   const response = await fetch(input, init);
   const _response = response.clone();
@@ -161,6 +195,9 @@ export async function fetchDecorator(
     data: { value: data },
     _requestHash: { value: requestHash },
   });
+
+  // Store response if enabled in global config, always using requestUrl
+  await storeResponse(requestHash, enhancedResponse as FetchDecoratorResponse, requestUrl);
 
   return enhancedResponse as FetchDecoratorResponse;
 }

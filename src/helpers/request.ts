@@ -56,8 +56,12 @@ import * as contentType from "content-type";
 export function getRequestHash(request: Request): RequestHashObject {
   const url = new URL(request.url);
   const resultHash = md5sum(
-    // POST
-    request.method + (url.pathname ?? "") + (url.search ?? "") + (request.body ?? ""),
+    // Include hostname for uniqueness
+    request.method +
+      url.hostname +
+      (url.pathname ?? "") +
+      (url.search ?? "") +
+      (request.body ?? ""),
   );
 
   return {

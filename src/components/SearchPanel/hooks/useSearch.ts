@@ -1,8 +1,14 @@
 import { useAppContext } from "@/context";
+import { setResponseStorageConfig } from "@/helpers/request/config";
 import SupplierFactory from "@/suppliers/supplierFactory";
 import { type Product } from "@/types";
 import { type UseSearchProps } from "@/types/props";
 import { getColumnFilterConfig } from "../TableColumns";
+
+setResponseStorageConfig({
+  storeResponses: true,
+  storageKeyPrefix: "api_responses",
+});
 
 export function useSearch({ setSearchResults, setStatusLabel, setIsLoading }: UseSearchProps) {
   const appContext = useAppContext();

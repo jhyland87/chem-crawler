@@ -5,9 +5,13 @@ export const createMockNotificationService = () => {
   const mockService = {
     sendNotification: jest.fn(),
     getNotificationStatus: jest.fn(),
+    deliverNotification: jest.fn(),
+    sendEmail: jest.fn(),
+    sendSMS: jest.fn(),
+    sendPushNotification: jest.fn(),
   };
 
-  return mockService as jest.Mocked<NotificationService>;
+  return mockService as unknown as jest.Mocked<NotificationService>;
 };
 
 // Default mock implementation

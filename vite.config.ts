@@ -18,18 +18,21 @@ export default ({ mode }: { mode: string }) => {
       src: "src/service-worker.js",
       dest: ".",
     },
+    /*
     {
       src: "src/__mocks__/mockServiceWorker.js",
       dest: "public",
     },
+    */
   ];
-
+  /*
   if (isDev) {
     staticCopyTargets.push({
       src: "src/__mocks__/mockServiceWorker.js",
       dest: "public",
     });
   }
+    */
 
   return defineConfig({
     define: {
