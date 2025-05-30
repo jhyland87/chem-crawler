@@ -5,7 +5,7 @@
  */
 export const fixtureData = (supplier_name: string) => {
   return {
-    httpGetJson: async (path: string) => {
+    httpGetJson: async ({ path, params }: { path: string; params?: Record<string, string> }) => {
       const fixtureName = path.replace(/^\//, "").replaceAll("/", "__") + ".json";
       const fixtueFile = `../../__fixtures__/${supplier_name}/${fixtureName}`;
       const result = await import(fixtueFile);

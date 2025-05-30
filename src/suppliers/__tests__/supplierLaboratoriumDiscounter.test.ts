@@ -35,9 +35,7 @@ describe("SupplierLaboratoriumDiscounter", () => {
     getCachedResultsSpy = jest.spyOn(SupplierLaboratoriumDiscounter.prototype, "_getCachedResults");
     httpGetJsonMock = jest
       .spyOn(SupplierLaboratoriumDiscounter.prototype, "_httpGetJson" as any)
-      .mockImplementation(async (data: { path: string; params?: Record<string, string> }) => {
-        return await laboratoriumiscounter_fixtures.httpGetJson(data.path);
-      });
+      .mockImplementation(laboratoriumiscounter_fixtures.httpGetJson);
 
     mockAbortController = new AbortController();
   });
