@@ -1,0 +1,15 @@
+{
+  "url": "https://onyxmet.com/index.php?term=sodium&route=product%2Fsearch%2Fjson",
+  "hash": "3fc0da38",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "alt-svc": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\"",
+    "content-encoding": "br",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Sat, 31 May 2025 00:55:06 GMT",
+    "server": "LiteSpeed",
+    "vary": "Accept-Encoding,User-Agent"
+  },
+  "timestamp": "2025-05-31T00:55:07.016Z"
+}

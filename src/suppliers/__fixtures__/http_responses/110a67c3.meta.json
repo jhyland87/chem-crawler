@@ -1,0 +1,19 @@
+{
+  "url": "https://searchserverapi.com/getresults?api_key=8B7o0X1o7c&q=sodium&maxResults=200&startIndex=0&items=true&pageStartIndex=0&pagesMaxResults=1&vendorsMaxResults=200&output=json&_=1748652895960",
+  "hash": "110a67c3",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "cache-control": "private",
+    "content-encoding": "gzip",
+    "content-type": "text/javascript;charset=UTF-8",
+    "date": "Sat, 31 May 2025 00:54:56 GMT",
+    "expires": "Mon, 26 Jul 1997 05:00:00 GMT",
+    "last-modified": "Sat, 31 May 2025 00:54:56 GMT",
+    "se-host": "searchengine23-001.searchanise:8000",
+    "server": "nginx",
+    "x-proccessor": "(null)"
+  },
+  "timestamp": "2025-05-31T00:54:56.086Z"
+}

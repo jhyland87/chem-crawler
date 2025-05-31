@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="en" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disodium EDTA 0.5 Ounces 1 Bottle</title>
+<base href="https://www.loudwolf.com/storefront/" />
+<meta name="description" content="The item for sale is 0.5 Ounces (14 Grams) of Disodium EDTA (C10H16N2O8). Disodium EDTA, also known as EDTA, is an aminopolycarboxylic acid in the form of a water-soluble powder. Our bottles are made of durable Polypropylene Plastic, which is a natural, t" />
+<meta name="keywords" content= "EDTA" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="https://www.loudwolf.com/storefront/image/catalog/LoudWolf Brand trans.png" rel="icon" />
+<link href="https://www.loudwolf.com/storefront/index.php?route=product/product&amp;product_id=800" rel="canonical" />
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+</head>
+<body class="product-product-800">
+<nav id="top">
+  <div class="container">
+    <div class="pull-left">
+<form action="https://www.loudwolf.com/storefront/index.php?route=common/currency/currency" method="post" enctype="multipart/form-data" id="currency">
+  <div class="btn-group">
+    <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            <strong>$</strong>
+            <span class="hidden-xs hidden-sm hidden-md">Currency</span> <i class="fa fa-caret-down"></i></button>
+    <ul class="dropdown-menu">
+                  <li><button class="currency-select btn btn-link btn-block" type="button" name="EUR">€ Euro</button></li>
+                        <li><button class="currency-select btn btn-link btn-block" type="button" name="GBP">£ Pound Sterling</button></li>
+                        <li><button class="currency-select btn btn-link btn-block" type="button" name="USD">$ US Dollar</button></li>
+                </ul>
+  </div>
+  <input type="hidden" name="code" value="" />
+  <input type="hidden" name="redirect" value="https://www.loudwolf.com/storefront/index.php?route=product/product&amp;product_id=800&amp;search=sodium&amp;limit=100" />
+</form>
+</div>
+        <div id="top-links" class="nav pull-right">
+      <ul class="list-inline">
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/contact"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">9255791388</span></li>
+        <li class="dropdown"><a href="https://www.loudwolf.com/storefront/index.php?route=account/account" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">My Account</span> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/register">Register</a></li>
+            <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/login">Login</a></li>
+                      </ul>
+        </li>
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/wishlist" id="wishlist-total" title="Wish List (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">Wish List (0)</span></a></li>
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=checkout/cart" title="Shopping Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Shopping Cart</span></a></li>
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=checkout/checkout" title="Checkout"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md">Checkout</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="logo">
+                    <a href="https://www.loudwolf.com/storefront/index.php?route=common/home"><img src="https://www.loudwolf.com/storefront/image/catalog/lw_logo5.jpg" title="Loudwolf.com" alt="Loudwolf.com" class="img-responsive" /></a>
+                  </div>
+      </div>
+      <div class="col-sm-5"><div id="search" class="input-group">
+  <input type="text" name="search" value="sodium" placeholder="Search" class="form-control input-lg" />
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+  </span>
+</div>      </div>
+      <div class="col-sm-3"><div id="cart" class="btn-group btn-block">
+  <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total">0 item(s) - $0.00</span></button>
+  <ul class="dropdown-menu pull-right">
+        <li>
+      <p class="text-center">Your shopping cart is empty!</p>
+    </li>
+      </ul>
+</div>
+</div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <ul class="breadcrumb">
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=product/search&amp;search=sodium&amp;limit=100">Search</a></li>
+        <li><a href="https://www.loudwolf.com/storefront/index.php?route=product/product&amp;search=sodium&amp;limit=100&amp;product_id=800">Disodium EDTA - 0.5 Ounces in 1 Bottle</a></li>
+      </ul>
+  <div class="row">                <div id="content" class="col-sm-12">      <div class="row">
+                                <div class="col-sm-8">
+                    <ul class="thumbnails">
+                        <li><a class="thumbnail" href="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00000-1000x1000.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle"><img src="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00000-1000x1000.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle" alt="Disodium EDTA - 0.5 Ounces in 1 Bottle" /></a></li>
+                                                <li class="image-additional"><a class="thumbnail" href="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00002-1000x1000.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle"> <img src="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00002-500x500.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle" alt="Disodium EDTA - 0.5 Ounces in 1 Bottle" /></a></li>
+                        <li class="image-additional"><a class="thumbnail" href="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00001-1000x1000.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle"> <img src="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-0_5_LW1_00001-500x500.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle" alt="Disodium EDTA - 0.5 Ounces in 1 Bottle" /></a></li>
+                        <li class="image-additional"><a class="thumbnail" href="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-TEX_1-1000x1000.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle"> <img src="https://www.loudwolf.com/storefront/image/cache/catalog/1000x1000/LW-EDTA-D-TEX_1-500x500.jpg" title="Disodium EDTA - 0.5 Ounces in 1 Bottle" alt="Disodium EDTA - 0.5 Ounces in 1 Bottle" /></a></li>
+                                  </ul>
+                    <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
+                                  </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab-description"><div align="center"><table class="MsoTableLightList" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext 3.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:3.0pt solid windowtext;mso-border-insidev:3.0pt solid windowtext"><tbody><tr style="mso-yfti-irow:-1;mso-yfti-firstrow:yes;mso-yfti-lastfirstrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;background:#274767;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;line-height:115%;mso-outline-level:3;mso-yfti-cnfc:5"><b><span style="font-size: 48pt; line-height: 115%; color: rgb(255, 255, 255);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">DISODIUM EDTA</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:14.0pt;line-height:115%;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"=""><o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:0;mso-yfti-lastrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;border-top:none;mso-border-top-alt:solid #274767 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;line-height:115%;mso-outline-level:3;mso-yfti-cnfc:68"><b style="mso-bidi-font-weight:normal"><span style="font-size:48.0pt;mso-bidi-font-size:14.0pt;line-height:115%;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><span style="color: rgb(0, 0, 0);">(C<sub>1</sub><sub>0</sub>H<sub>1</sub><sub>6</sub>N<sub>2</sub>O<sub>8</sub>)</span><span style="color:white;mso-themecolor:background1">.</span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:14.0pt;line-height:115%;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><o:p></o:p></span></b></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid #FBB315 1.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:1.0pt solid #FBB315;mso-border-insidev:1.0pt solid #FBB315"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes"><td style="border:solid #FBB315 1.0pt;background:#FBB315;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><b><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">TOTAL WEIGHT OF PRODUCT: <o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:1"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><b><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">0.5 Ounce<o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:2"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;background:#FBB315;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black;mso-color-alt:windowtext"="">NUMBER OF BOTTLE(S): </span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:3"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"="">1 Plastic Bottle</span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:4"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;background:#FBB315;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black;mso-color-alt:windowtext"="">TEXTURE: </span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:5"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">Fine Powder</span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:6"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;background:#FBB315;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black;mso-color-alt:windowtext"="">GRADE: </span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:7"><td valign="top" style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;line-height:14.4pt;mso-outline-level:3"><b><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif"="">99% Pure Reagent Grade <o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:8"><td style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;background:#FBB315;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black;mso-color-alt:windowtext"="">CAS#: </span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:9;mso-yfti-lastrow:yes"><td valign="top" style="border:solid #FBB315 1.0pt;border-top:none;mso-border-top-alt:solid #FBB315 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">6381-92-6</span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif"=""><o:p></o:p></span></b></span></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes"><td style="border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" style="mso-outline-level:4;background:white"><b><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"="">The item for sale is 0.5 Ounces (14 Grams) of Disodium EDTA (C<sub>1</sub><sub>0</sub>H<sub>1</sub><sub>6</sub>N<sub>2</sub>O<sub>8</sub>). Disodium EDTA, also known as EDTA, is an aminopolycarboxylic acid in the form of a water-soluble powder.</span><o:p></o:p></span></b></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext 3.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:3.0pt solid windowtext;mso-border-insidev:3.0pt solid windowtext"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes"><td style="border:solid #274767 1.0pt;background:#274767;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(255, 255, 255);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">STURDYPLASTIC BOTTLE:</span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes"><td style="border:solid #274767 1.0pt;border-top:none;mso-border-top-alt:solid #274767 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormalCxSpMiddle" style="mso-outline-level:4;background:white"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><span style="color: rgb(0, 0, 0);">Our bottles are made of durable Polypropylene Plastic, which is a natural, translucent, lightweight, durable, and chemically resistant copolymer. The screw-top is completely leakproof. The bottles’ round shape makes them a perfect addition to any shelf or travel kit. Every bottle we ship is sealed in plastic with the screw-top shrink-wrapped.</span><o:p></o:p></span></b></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext 3.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:3.0pt solid windowtext;mso-border-insidev:3.0pt solid windowtext"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;background:#274767;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><b><span style="font-size: 14pt; color: rgb(255, 255, 255);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">HUNDREDS OF USES <o:p></o:p></span></b></p><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><b><span style="font-size: 14pt; color: rgb(255, 255, 255);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">INCLUDING:</span></b><u><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";mso-bidi-font-weight:bold"=""><o:p></o:p></span></u></p></td></tr><tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;border-top:none;mso-border-top-alt:solid #274767 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormalCxSpMiddle" align="center" style="text-align:center;mso-outline-level:4;background:white"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><span style="color: rgb(0, 0, 0);">Limescale Remover / Chelating Agent / Textiles / Paper / Preservative / Agriculture / Hydroponics / Biochemistry / Cosmetics.</span><o:p></o:p></span></b></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext 3.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:3.0pt solid windowtext;mso-border-insidev:3.0pt solid windowtext"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;background:#274767;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center;mso-outline-level:3"><span style="color: rgb(255, 255, 255);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">MORE INFORMATION:</span></b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes"><td width="100%" style="width:100.0%;border:solid #274767 1.0pt;border-top:none;mso-border-top-alt:solid #274767 1.0pt;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormalCxSpMiddle" style="mso-outline-level:4;background:white"><span style="color: rgb(0, 0, 0);"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"="">The Material Safety Data Sheet for this product can be read and downloaded from </span></b><a href="http://www.loudwolf.com/msds/disodium_edta.pdf" target="_blank"><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">our website</span></b></a><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"="">.<o:p></o:p></span></b></span></p></td></tr></tbody></table></div><p class="MsoNormalCxSpFirst" style="mso-outline-level:4;background:white"><b><b><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:black"=""><o:p> </o:p></span></b></b></p><div align="center"><table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext 3.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:3.0pt solid windowtext;mso-border-insidev:3.0pt solid windowtext"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes"><td width="100%" colspan="2" style="width:100.0%;border:solid #00B0F0 1.0pt;background:#1798D4;padding:0in 5.4pt 0in 5.4pt"><p class="MsoNormal" align="center" style="text-align:center"><span style="color: rgb(255, 255, 255);"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:white;mso-themecolor:background1"="">FREE EXPEDITED SHIPPING:</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";color:red"=""><o:p></o:p></span></b></span></p></td></tr><tr style="mso-yfti-irow:1;height:21.95pt"><td width="100%" colspan="2" style="width:100.0%;border:solid #00B0F0 1.0pt;border-top:none;mso-border-top-alt:solid #00B0F0 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:21.95pt"><p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">We ship three times a day, seven days a week. This item will be in the mail the same day you place your order.<o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:2;height:6.55pt"><td width="50%" style="width:50.0%;border:solid #00B0F0 1.0pt;border-top:none;mso-border-top-alt:solid #00B0F0 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:6.55pt"><p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">By itself, this item will ship in a padded bubble-mailer (2-5 day transit time).<o:p></o:p></span></b></p></td><td width="50%" style="width:50.0%;border-top:none;border-left:none;border-bottom:solid #00B0F0 1.0pt;border-right:solid #00B0F0 1.0pt;mso-border-top-alt:solid #00B0F0 1.0pt;mso-border-left-alt:solid #00B0F0 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:6.55pt"><p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">Combined orders exceeding 16 ounces will be upgraded to a flat-rate box (1-3 day transit time) at no additional charge.<o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:3;height:40.4pt"><td width="100%" colspan="2" style="width:100.0%;border:solid #00B0F0 1.0pt;border-top:none;mso-border-top-alt:solid #00B0F0 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:40.4pt"><p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size: 14pt; color: rgb(0, 0, 0);" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""="">Please make sure your stated shipping address is correct, complete, and unambiguous.<o:p></o:p></span></b></p></td></tr><tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes;height:40.35pt"><td width="100%" colspan="2" style="width:100.0%;border:solid #00B0F0 1.0pt;border-top:none;mso-border-top-alt:solid #00B0F0 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:40.35pt"><p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;font-family:" arial",sans-serif;mso-fareast-font-family:"times="" new="" roman""=""><span style="color: rgb(0, 0, 0);">Applicable products are packaged and shipped in accordance with carrier regulations for ORM-D classification.</span><o:p></o:p></span></b></p></td></tr></tbody></table></div></div>
+                                  </div>
+        </div>
+                                <div class="col-sm-4">
+          <div class="btn-group">
+            <button type="button" data-toggle="tooltip" class="btn btn-default" title="Add to Wish List" onclick="wishlist.add('800');"><i class="fa fa-heart"></i></button>
+            <button type="button" data-toggle="tooltip" class="btn btn-default" title="Compare this Product" onclick="compare.add('800');"><i class="fa fa-exchange"></i></button>
+          </div>
+          <h1>Disodium EDTA - 0.5 Ounces in 1 Bottle</h1>
+          <ul class="list-unstyled">
+                        <li>Brand: <a href="https://www.loudwolf.com/storefront/index.php?route=product/manufacturer/info&amp;manufacturer_id=11">Loudwolf Industrial & Scientific</a></li>
+                        <li>Product Code: LW-C10H16N2O8-0.5/1</li>
+                        <li>Availability: In Stock</li>
+          </ul>
+                    <ul class="list-unstyled">
+                        <li>
+              <h2>$6.99</h2>
+            </li>
+                                                          </ul>
+                    <div id="product">
+                                    <div class="form-group">
+              <label class="control-label" for="input-quantity">Qty</label>
+              <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
+              <input type="hidden" name="product_id" value="800" />
+              <br />
+              <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+            </div>
+                      </div>
+                  </div>
+      </div>
+                  </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+$('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
+	$.ajax({
+		url: 'index.php?route=product/product/getRecurringDescription',
+		type: 'post',
+		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
+		dataType: 'json',
+		beforeSend: function() {
+			$('#recurring-description').html('');
+		},
+		success: function(json) {
+			$('.alert, .text-danger').remove();
+
+			if (json['success']) {
+				$('#recurring-description').html(json['success']);
+			}
+		}
+	});
+});
+//--></script>
+<script type="text/javascript"><!--
+$('#button-cart').on('click', function() {
+	$.ajax({
+		url: 'index.php?route=checkout/cart/add',
+		type: 'post',
+		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		dataType: 'json',
+		beforeSend: function() {
+			$('#button-cart').button('loading');
+		},
+		complete: function() {
+			$('#button-cart').button('reset');
+		},
+		success: function(json) {
+			$('.alert, .text-danger').remove();
+			$('.form-group').removeClass('has-error');
+
+			if (json['error']) {
+				if (json['error']['option']) {
+					for (i in json['error']['option']) {
+						var element = $('#input-option' + i.replace('_', '-'));
+
+						if (element.parent().hasClass('input-group')) {
+							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						} else {
+							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						}
+					}
+				}
+
+				if (json['error']['recurring']) {
+					$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+				}
+
+				// Highlight any found errors
+				$('.text-danger').parent().addClass('has-error');
+			}
+
+			if (json['success']) {
+				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+				$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+				$('#cart > ul').load('index.php?route=common/cart/info ul li');
+			}
+		}
+	});
+});
+//--></script>
+<script type="text/javascript"><!--
+$('.date').datetimepicker({
+	pickTime: false
+});
+
+$('.datetime').datetimepicker({
+	pickDate: true,
+	pickTime: true
+});
+
+$('.time').datetimepicker({
+	pickDate: false
+});
+
+$('button[id^=\'button-upload\']').on('click', function() {
+	var node = this;
+
+	$('#form-upload').remove();
+
+	$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
+	$('#form-upload input[name=\'file\']').trigger('click');
+
+	if (typeof timer != 'undefined') {
+    	clearInterval(timer);
+	}
+
+	timer = setInterval(function() {
+		if ($('#form-upload input[name=\'file\']').val() != '') {
+			clearInterval(timer);
+
+			$.ajax({
+				url: 'index.php?route=tool/upload',
+				type: 'post',
+				dataType: 'json',
+				data: new FormData($('#form-upload')[0]),
+				cache: false,
+				contentType: false,
+				processData: false,
+				beforeSend: function() {
+					$(node).button('loading');
+				},
+				complete: function() {
+					$(node).button('reset');
+				},
+				success: function(json) {
+					$('.text-danger').remove();
+
+					if (json['error']) {
+						$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+					}
+
+					if (json['success']) {
+						alert(json['success']);
+
+						$(node).parent().find('input').attr('value', json['code']);
+					}
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+			});
+		}
+	}, 500);
+});
+//--></script>
+<script type="text/javascript"><!--
+$('#review').delegate('.pagination a', 'click', function(e) {
+  e.preventDefault();
+
+    $('#review').fadeOut('slow');
+
+    $('#review').load(this.href);
+
+    $('#review').fadeIn('slow');
+});
+
+$('#review').load('index.php?route=product/product/review&product_id=800');
+
+$('#button-review').on('click', function() {
+	$.ajax({
+		url: 'index.php?route=product/product/write&product_id=800',
+		type: 'post',
+		dataType: 'json',
+		data: $("#form-review").serialize(),
+		beforeSend: function() {
+			$('#button-review').button('loading');
+		},
+		complete: function() {
+			$('#button-review').button('reset');
+		},
+		success: function(json) {
+			$('.alert-success, .alert-danger').remove();
+
+			if (json['error']) {
+				$('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+			}
+
+			if (json['success']) {
+				$('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+
+				$('input[name=\'name\']').val('');
+				$('textarea[name=\'text\']').val('');
+				$('input[name=\'rating\']:checked').prop('checked', false);
+			}
+		}
+	});
+});
+
+$(document).ready(function() {
+	$('.thumbnails').magnificPopup({
+		type:'image',
+		delegate: 'a',
+		gallery: {
+			enabled:true
+		}
+	});
+});
+//--></script>
+<footer>
+  <div class="container">
+    <div class="row">
+            <div class="col-sm-3">
+        <h5>Information</h5>
+        <ul class="list-unstyled">
+                    <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/information&amp;information_id=4">About Us</a></li>
+                    <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/information&amp;information_id=6">Delivery Information</a></li>
+                    <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+                    <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+                  </ul>
+      </div>
+            <div class="col-sm-3">
+        <h5>Customer Service</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/contact">Contact Us</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/return/add">Returns</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=information/sitemap">Site Map</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>Extras</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=product/manufacturer">Brands</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/voucher">Gift Vouchers</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=affiliate/account">Affiliates</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=product/special">Specials</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>My Account</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/account">My Account</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/order">Order History</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/wishlist">Wish List</a></li>
+          <li><a href="https://www.loudwolf.com/storefront/index.php?route=account/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p>Powered By <a href="http://www.opencart.com">OpenCart</a><br /> Loudwolf.com &copy; 2025</p>
+  </div>
+</footer>
+
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+
+<!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
+
+</body></html>

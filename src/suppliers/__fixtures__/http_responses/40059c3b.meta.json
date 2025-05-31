@@ -1,0 +1,30 @@
+{
+  "url": "https://www.laboratoriumdiscounter.nl/en/search/sodium?limit=5&format=json",
+  "hash": "40059c3b",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "948280bc8f84f7b3-LAX",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "date": "Sat, 31 May 2025 00:54:57 GMT",
+    "p3p": "CP=\"ALL PUR DSP CUR ADMi DEVi CONi OUR COR IND\"",
+    "priority": "u=1,i",
+    "server": "cloudflare",
+    "server-timing": "cfExtPri",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-developer": "Page: 724.0ms, Render: 3.0ms, Mem: 10,240kB, Cache: 0Q (0.0ms), DB: 6Q (4.3ms), Prop: 0Q (0.0ms)",
+    "x-envoy-upstream-service-time": "745",
+    "x-frame-options": "SAMEORIGIN",
+    "x-request-id": "cd302df5a470cd724389a7517f874985",
+    "x-runtime": "0.731321",
+    "x-shop-id": "286851",
+    "x-ua-compatible": "IE=Edge,chrome=1",
+    "x-xss-protection": "1; mode=block"
+  },
+  "timestamp": "2025-05-31T00:54:57.927Z"
+}

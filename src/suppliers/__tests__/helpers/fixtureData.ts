@@ -1,3 +1,5 @@
+import { generateRequestHash } from "@/helpers/request";
+
 /**
  * Helper function to load fixture data for supplier tests
  * @param supplier_name - The name of the supplier directory containing fixtures
@@ -5,7 +7,22 @@
  */
 export const fixtureData = (supplier_name: string) => {
   return {
+    _fetch: async (url: string, options: RequestInit) => {
+      const hash = await generateRequestHash(url, options);
+      const metaFixture = `../../__fixtures__/http_responses/${hash}.meta.json`;
+      const metadata = await import(metaFixture);
+      const dataFixture = `../../__fixtures__/http_responses/${hash}.json`;
+      const data = await import(dataFixture);
+      return data.default;
+    },
     httpGetJson: async ({ path, params }: { path: string; params?: Record<string, string> }) => {
+      const hash = await generateRequestHash(path, params);
+
+      const dataFixture = `../../__fixtures__/http_responses/${hash}.json`;
+      const data = await import(dataFixture);
+      return data.default;
+    },
+    httpGetJsonOLD: async ({ path, params }: { path: string; params?: Record<string, string> }) => {
       const fixtureName = path.replace(/^\//, "").replaceAll("/", "__") + ".json";
       const fixtueFile = `../../__fixtures__/${supplier_name}/${fixtureName}`;
       const result = await import(fixtueFile);

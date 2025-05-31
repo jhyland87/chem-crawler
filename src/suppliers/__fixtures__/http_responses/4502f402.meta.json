@@ -1,0 +1,30 @@
+{
+  "url": "https://www.laboratoriumdiscounter.nl/12-dioctadecanoyl-sn-glycero-3-phospho-1-rac-glyce.html?format=json",
+  "hash": "4502f402",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "948280c7d98ff7b3-LAX",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "date": "Sat, 31 May 2025 00:54:58 GMT",
+    "p3p": "CP=\"ALL PUR DSP CUR ADMi DEVi CONi OUR COR IND\"",
+    "priority": "u=1,i",
+    "server": "cloudflare",
+    "server-timing": "cfExtPri",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-developer": "Page: 53.8ms, Render: 3.5ms, Mem: 2,048kB, Cache: 0Q (0.0ms), DB: 16Q (2.5ms), Prop: 0Q (0.0ms)",
+    "x-envoy-upstream-service-time": "74",
+    "x-frame-options": "SAMEORIGIN",
+    "x-request-id": "0f313d8fe3685c74833f962e9a383cef",
+    "x-runtime": "0.059830",
+    "x-shop-id": "286851",
+    "x-ua-compatible": "IE=Edge,chrome=1",
+    "x-xss-protection": "1; mode=block"
+  },
+  "timestamp": "2025-05-31T00:54:58.772Z"
+}

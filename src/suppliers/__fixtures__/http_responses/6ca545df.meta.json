@@ -1,0 +1,19 @@
+{
+  "url": "https://www.loudwolf.com/storefront/index.php?route=product/product&product_id=1733&search=sodium&limit=100",
+  "hash": "6ca545df",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "content-encoding": "gzip",
+    "content-length": "6727",
+    "content-security-policy": "upgrade-insecure-requests;",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sat, 31 May 2025 00:55:04 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "Apache",
+    "vary": "Accept-Encoding,User-Agent"
+  },
+  "timestamp": "2025-05-31T00:55:04.436Z"
+}

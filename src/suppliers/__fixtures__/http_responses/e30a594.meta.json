@@ -1,0 +1,30 @@
+{
+  "url": "https://www.laboratoriumdiscounter.nl/s-omeprazole-sodium-salt-980hplct-25g.html?format=json",
+  "hash": "e30a594",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "948280c5ebf1f7b3-LAX",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "date": "Sat, 31 May 2025 00:54:58 GMT",
+    "p3p": "CP=\"ALL PUR DSP CUR ADMi DEVi CONi OUR COR IND\"",
+    "priority": "u=1,i",
+    "server": "cloudflare",
+    "server-timing": "cfExtPri",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-developer": "Page: 66.2ms, Render: 3.2ms, Mem: 8,192kB, Cache: 0Q (0.0ms), DB: 16Q (2.8ms), Prop: 0Q (0.0ms)",
+    "x-envoy-upstream-service-time": "85",
+    "x-frame-options": "SAMEORIGIN",
+    "x-request-id": "afb6a8a9cbd065cac79147d59843b667",
+    "x-runtime": "0.072204",
+    "x-shop-id": "286851",
+    "x-ua-compatible": "IE=Edge,chrome=1",
+    "x-xss-protection": "1; mode=block"
+  },
+  "timestamp": "2025-05-31T00:54:58.474Z"
+}

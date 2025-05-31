@@ -1,0 +1,16 @@
+{
+  "url": "https://onyxmet.com/index.php?route=product/product&product_id=1332",
+  "hash": "964e791",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "content-encoding": "br",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sat, 31 May 2025 00:55:07 GMT",
+    "pragma": "no-cache",
+    "server": "LiteSpeed",
+    "vary": "Accept-Encoding,User-Agent"
+  },
+  "timestamp": "2025-05-31T00:55:07.280Z"
+}

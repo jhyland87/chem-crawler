@@ -1,0 +1,30 @@
+{
+  "url": "https://www.laboratoriumdiscounter.nl/12-dimyristoyl-sn-glycero-3-phospho-rac-1-glycerol.html?format=json",
+  "hash": "74f81929",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "948280c7d997f7b3-LAX",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "date": "Sat, 31 May 2025 00:54:59 GMT",
+    "p3p": "CP=\"ALL PUR DSP CUR ADMi DEVi CONi OUR COR IND\"",
+    "priority": "u=1,i",
+    "server": "cloudflare",
+    "server-timing": "cfExtPri",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-developer": "Page: 207.6ms, Render: 6.5ms, Mem: 8,192kB, Cache: 0Q (0.0ms), DB: 16Q (60.6ms), Prop: 0Q (0.0ms)",
+    "x-envoy-upstream-service-time": "288",
+    "x-frame-options": "SAMEORIGIN",
+    "x-request-id": "b4942eedb01aca2828f2b92c9915110e",
+    "x-runtime": "0.274710",
+    "x-shop-id": "286851",
+    "x-ua-compatible": "IE=Edge,chrome=1",
+    "x-xss-protection": "1; mode=block"
+  },
+  "timestamp": "2025-05-31T00:54:59.239Z"
+}

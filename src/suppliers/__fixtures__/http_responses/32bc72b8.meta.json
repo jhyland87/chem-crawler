@@ -1,0 +1,19 @@
+{
+  "url": "https://searchserverapi.com/getresults?api_key=2H3i9C5v0m&q=sodium&maxResults=200&startIndex=0&items=true&pageStartIndex=0&pagesMaxResults=1&vendorsMaxResults=200&output=json&_=1748652895733&tab=products&restrictBy%5Bfilter_ptag_bf51a4bd1f5efe4002b3d50737306113%5D=Chemicals",
+  "hash": "32bc72b8",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "cache-control": "private",
+    "content-encoding": "gzip",
+    "content-type": "text/javascript;charset=UTF-8",
+    "date": "Sat, 31 May 2025 00:54:55 GMT",
+    "expires": "Mon, 26 Jul 1997 05:00:00 GMT",
+    "last-modified": "Sat, 31 May 2025 00:54:55 GMT",
+    "se-host": "searchengine22-008.searchanise:8000",
+    "server": "nginx",
+    "x-proccessor": "(null)"
+  },
+  "timestamp": "2025-05-31T00:54:55.941Z"
+}

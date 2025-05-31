@@ -1,0 +1,534 @@
+{
+  "data": {
+    "catalog": {
+      "category": {
+        "numOfProducts": 231,
+        "productsWithMetaData": {
+          "list": [
+            {
+              "brand": null,
+              "description": "<ul>\t<li>Commonly used reducing agent</li>\t<li>Reacts slowly with water</li>\t<li>Acts as a catalyst and stabilzer</li>\t<li><a href=\"https://b44a5c8c-b2e4-4edc-b6b7-d8c947ae522c.usrfiles.com/ugd/b44a5c_dca5d69ae1144aa2a7aba22d62fe4574.pdf\" target=\"_blank\">Safety-Data-Sheet</a></li></ul><p>&nbsp;</p><p>&nbsp;</p>",
+              "formattedPrice": "$180.00",
+              "id": "5a50edb1-a8de-4be3-e431-e69fc2df3f0d",
+              "isInStock": true,
+              "name": "Sodium Borohydride",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "100 Grams",
+                      "id": 33,
+                      "inStock": null,
+                      "key": "100 Grams",
+                      "value": "100 Grams"
+                    },
+                    {
+                      "description": "250 Grams",
+                      "id": 34,
+                      "inStock": null,
+                      "key": "250 Grams",
+                      "value": "250 Grams"
+                    },
+                    {
+                      "description": "500 Grams",
+                      "id": 35,
+                      "inStock": null,
+                      "key": "500 Grams",
+                      "value": "500 Grams"
+                    },
+                    {
+                      "description": "1000 Grams",
+                      "id": 36,
+                      "inStock": null,
+                      "key": "1000 Grams",
+                      "value": "1000 Grams"
+                    },
+                    {
+                      "description": "4x1000 Grams",
+                      "id": 37,
+                      "inStock": null,
+                      "key": "4x1000 Grams",
+                      "value": "4x1000 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 180,
+              "productItems": [
+                {
+                  "formattedPrice": "$240.00",
+                  "id": "2a1ed634-a22f-4ecc-b311-87dd92aa51a6",
+                  "optionsSelections": [
+                    34
+                  ],
+                  "price": 240
+                },
+                {
+                  "formattedPrice": "$180.00",
+                  "id": "6941b424-32b7-479b-9f89-1364d10b5aca",
+                  "optionsSelections": [
+                    33
+                  ],
+                  "price": 180
+                },
+                {
+                  "formattedPrice": "$1,600.00",
+                  "id": "7c1423b9-094b-4574-98fb-df411dd3a475",
+                  "optionsSelections": [
+                    37
+                  ],
+                  "price": 1600
+                },
+                {
+                  "formattedPrice": "$350.00",
+                  "id": "1250da29-4b04-4a68-97ac-08996bf0fe9b",
+                  "optionsSelections": [
+                    35
+                  ],
+                  "price": 350
+                },
+                {
+                  "formattedPrice": "$485.00",
+                  "id": "a6c2bc9a-a4cc-485b-83e0-e618c3a254a1",
+                  "optionsSelections": [
+                    36
+                  ],
+                  "price": 485
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-borohydride"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>CAS# - 124-41-4</li></ul>",
+              "formattedPrice": "$80.00",
+              "id": "fb5fc459-66dc-df7d-3251-ce2fdc461674",
+              "isInStock": true,
+              "name": "Sodium Methoxide 5M Methanol solution",
+              "options": [
+                {
+                  "id": "6bcdecc5-8205-4045-9f62-7fb520c7ddcb",
+                  "key": "Volume",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "500 ML",
+                      "id": 142,
+                      "inStock": null,
+                      "key": "500 ML",
+                      "value": "500 ML"
+                    },
+                    {
+                      "description": "2 x 500 ML",
+                      "id": 143,
+                      "inStock": null,
+                      "key": "2 x 500 ML",
+                      "value": "2 x 500 ML"
+                    }
+                  ],
+                  "title": "Volume"
+                }
+              ],
+              "price": 80,
+              "productItems": [
+                {
+                  "formattedPrice": "$120.00",
+                  "id": "dfa6a2c0-2da5-4da7-84da-fb01f6790ee0",
+                  "optionsSelections": [
+                    143
+                  ],
+                  "price": 120
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-methoxide-5m-methanol-solution"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>Also known as lye and caustic soda</li>\t<li>Inorganic strong base</li>\t<li>Packaged under inert gas</li>\t<li><a href=\"https://b44a5c8c-b2e4-4edc-b6b7-d8c947ae522c.usrfiles.com/ugd/b44a5c_e21b94a610814b9e8d7b36facd6ef1c7.pdf\" target=\"_blank\">Safety-Data-Sheet</a></li></ul>",
+              "formattedPrice": "$60.00",
+              "id": "4c8a7860-c6d5-c56e-9202-4be64e36fc08",
+              "isInStock": true,
+              "name": "Sodium Hydroxide Pellets ACS Reagent",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "1000 Grams",
+                      "id": 22,
+                      "inStock": null,
+                      "key": "1000 Grams",
+                      "value": "1000 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 60,
+              "productItems": [
+                {
+                  "formattedPrice": "$60.00",
+                  "id": "5e45ac57-c0ef-42b7-9260-e01419c18bf5",
+                  "optionsSelections": [
+                    22
+                  ],
+                  "price": 60
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-hydroxide-pellets-acs-reagent"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>Also known as Red-Al and&nbsp;Vitride</li>\t<li>Reducing agent</li>\t<li>Safer alternative to LAH</li>\t<li>Similar reducing properties to LAH but not 100% Identical properties&nbsp; ** Please research before purchase</li>\t<li>500 Gram quantity is approximately&nbsp;482 ML</li>\t<li>Currently 1 KG will be 2 x 500 Gram bottles</li>\t<li><a href=\"https://b44a5c8c-b2e4-4edc-b6b7-d8c947ae522c.usrfiles.com/ugd/b44a5c_35be5b9e73d74eaa8ddad6706d0495ef.pdf\" target=\"_blank\">Safety-Data-Sheet</a></li></ul>",
+              "formattedPrice": "$250.00",
+              "id": "3e211ce6-b020-6161-92e7-3da375672b12",
+              "isInStock": true,
+              "name": "Sodium bis(2-methoxyethoxy)aluminum hydride 70% w/w in toluene",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "500 Grams",
+                      "id": 30,
+                      "inStock": null,
+                      "key": "500 Grams",
+                      "value": "500 Grams"
+                    },
+                    {
+                      "description": "1000 Grams",
+                      "id": 31,
+                      "inStock": null,
+                      "key": "1000 Grams",
+                      "value": "1000 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 250,
+              "productItems": [
+                {
+                  "formattedPrice": "$250.00",
+                  "id": "12d69ed1-d1ac-43d9-9082-2678ec1b6fa9",
+                  "optionsSelections": [
+                    30
+                  ],
+                  "price": 250
+                },
+                {
+                  "formattedPrice": "$350.00",
+                  "id": "7012a18e-c715-44cb-813c-5198afc154ec",
+                  "optionsSelections": [
+                    31
+                  ],
+                  "price": 350
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-bis-2-methoxyethoxy-aluminum-hydride-70-w-w-in-toluene"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>CAS# 7782-92-5</li></ul>",
+              "formattedPrice": "$90.00",
+              "id": "7afd29df-ee70-5c40-5c38-326c274acfcd",
+              "isInStock": true,
+              "name": "Sodium Amide",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "25 Grams",
+                      "id": 72,
+                      "inStock": null,
+                      "key": "25 Grams",
+                      "value": "25 Grams"
+                    },
+                    {
+                      "description": "100 Grams",
+                      "id": 73,
+                      "inStock": null,
+                      "key": "100 Grams",
+                      "value": "100 Grams"
+                    },
+                    {
+                      "description": "250 Grams",
+                      "id": 74,
+                      "inStock": null,
+                      "key": "250 Grams",
+                      "value": "250 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 90,
+              "productItems": [
+                {
+                  "formattedPrice": "$180.00",
+                  "id": "437f321b-b8d2-483a-88bf-5d89e8e475d8",
+                  "optionsSelections": [
+                    73
+                  ],
+                  "price": 180
+                },
+                {
+                  "formattedPrice": "$300.00",
+                  "id": "d1221fb6-b288-4105-b084-4722eeb29fc1",
+                  "optionsSelections": [
+                    74
+                  ],
+                  "price": 300
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-amide"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>CAS# - 26628-22-8</li>\t<li>Purity - 99+%</li>\t<li>&nbsp;</li></ul>",
+              "formattedPrice": "$65.00",
+              "id": "c342d231-4ba8-22f6-2cc6-d85516b66bf2",
+              "isInStock": true,
+              "name": "Sodium Azide",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "25 Grams",
+                      "id": 53,
+                      "inStock": null,
+                      "key": "25 Grams",
+                      "value": "25 Grams"
+                    },
+                    {
+                      "description": "100 Grams",
+                      "id": 54,
+                      "inStock": null,
+                      "key": "100 Grams",
+                      "value": "100 Grams"
+                    },
+                    {
+                      "description": "500 Grams",
+                      "id": 55,
+                      "inStock": null,
+                      "key": "500 Grams",
+                      "value": "500 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 65,
+              "productItems": [
+                {
+                  "formattedPrice": "$95.00",
+                  "id": "23caae25-5c01-41f8-be3c-a601af6a89d2",
+                  "optionsSelections": [
+                    54
+                  ],
+                  "price": 95
+                },
+                {
+                  "formattedPrice": "$260.00",
+                  "id": "f7b0cfe5-16b7-4b3d-9d6d-96ce02fe685c",
+                  "optionsSelections": [
+                    55
+                  ],
+                  "price": 260
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-azide"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>CAS#&nbsp;25895-60-7</li>\t<li>Purity 98+%</li></ul>",
+              "formattedPrice": "$90.00",
+              "id": "bea1d31c-0cde-f79a-214a-59079dff4bbe",
+              "isInStock": true,
+              "name": "Sodium Cyanoborohydride",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "25 Grams",
+                      "id": 48,
+                      "inStock": null,
+                      "key": "25 Grams",
+                      "value": "25 Grams"
+                    },
+                    {
+                      "description": "100 Grams",
+                      "id": 49,
+                      "inStock": null,
+                      "key": "100 Grams",
+                      "value": "100 Grams"
+                    },
+                    {
+                      "description": "500 Grams",
+                      "id": 50,
+                      "inStock": null,
+                      "key": "500 Grams",
+                      "value": "500 Grams"
+                    },
+                    {
+                      "description": "1000 Grams",
+                      "id": 51,
+                      "inStock": null,
+                      "key": "1000 Grams",
+                      "value": "1000 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 90,
+              "productItems": [
+                {
+                  "formattedPrice": "$190.00",
+                  "id": "53018859-1dd2-44d9-bdfd-6ddae73eba55",
+                  "optionsSelections": [
+                    49
+                  ],
+                  "price": 190
+                },
+                {
+                  "formattedPrice": "$590.00",
+                  "id": "acb5a5f1-f4bf-40b3-b116-be7ce8911954",
+                  "optionsSelections": [
+                    50
+                  ],
+                  "price": 590
+                },
+                {
+                  "formattedPrice": "$1,080.00",
+                  "id": "efc5e1af-8a38-4c61-aa47-d3120d50a529",
+                  "optionsSelections": [
+                    51
+                  ],
+                  "price": 1080
+                }
+              ],
+              "productType": "physical",
+              "sku": "",
+              "urlPart": "sodium-cyanoborohydride"
+            },
+            {
+              "brand": null,
+              "description": "<ul>\t<li>98 % purity</li>\t<li>Suitable for reduction amination</li>\t<li>Safer alternative to sodium cyanoborohydride&nbsp;</li>\t<li><a href=\"https://b44a5c8c-b2e4-4edc-b6b7-d8c947ae522c.usrfiles.com/ugd/b44a5c_1732893203544bcb9ed6ea56f104f9aa.pdf\" target=\"_blank\">Safety-Data-Sheet</a></li></ul>",
+              "formattedPrice": "$60.00",
+              "id": "4ac45bdf-e0ea-d437-34d7-66cd98579027",
+              "isInStock": true,
+              "name": "Sodium triacetoxyborohydride",
+              "options": [
+                {
+                  "id": "342cd5c8-fa4e-4b19-916a-e070bca40054",
+                  "key": "Weight",
+                  "optionType": "DROP_DOWN",
+                  "selections": [
+                    {
+                      "description": "100 Grams",
+                      "id": 14,
+                      "inStock": null,
+                      "key": "100 Grams",
+                      "value": "100 Grams"
+                    },
+                    {
+                      "description": "250 Grams",
+                      "id": 15,
+                      "inStock": null,
+                      "key": "250 Grams",
+                      "value": "250 Grams"
+                    },
+                    {
+                      "description": "500 Grams",
+                      "id": 16,
+                      "inStock": null,
+                      "key": "500 Grams",
+                      "value": "500 Grams"
+                    },
+                    {
+                      "description": "2x500 Grams",
+                      "id": 17,
+                      "inStock": null,
+                      "key": "2x500 Grams",
+                      "value": "2x500 Grams"
+                    }
+                  ],
+                  "title": "Weight"
+                }
+              ],
+              "price": 60,
+              "productItems": [
+                {
+                  "formattedPrice": "$60.00",
+                  "id": "333da1cc-08da-45b9-afa7-067003a0500e",
+                  "optionsSelections": [
+                    14
+                  ],
+                  "price": 60
+                },
+                {
+                  "formattedPrice": "$120.00",
+                  "id": "1c1bf4b9-3034-4922-bb27-b40130553e50",
+                  "optionsSelections": [
+                    15
+                  ],
+                  "price": 120
+                },
+                {
+                  "formattedPrice": "$195.00",
+                  "id": "76d6532a-0bcf-4036-b795-59c8ccbc5fb2",
+                  "optionsSelections": [
+                    16
+                  ],
+                  "price": 195
+                },
+                {
+                  "formattedPrice": "$440.00",
+                  "id": "922b518d-0f94-4f81-a5c6-375ac137f451",
+                  "optionsSelections": [
+                    17
+                  ],
+                  "price": 440
+                }
+              ],
+              "productType": "physical",
+              "sku": "0002",
+              "urlPart": "structure-sodiumtriacetoxyborohydride"
+            }
+          ],
+          "totalCount": 8
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://www.carolina.com/specialty-chemicals-s/sodium-carbonate-anhydrous-granular-reagent-grade-500-g/888770.pr?format=json&ajax=true",
+  "hash": "705cf011",
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "accept-ch": "Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory",
+    "access-control-allow-origin": "*",
+    "cache-control": "must-revalidate, proxy-revalidate, max-age=0, no-cache, no-store, private",
+    "connection": "Keep-Alive",
+    "content-encoding": "gzip",
+    "content-type": "application/json;charset=UTF-8",
+    "date": "Sat, 31 May 2025 00:54:51 GMT",
+    "expires": "Sat, 31 May 2025 00:54:50 GMT",
+    "keep-alive": "timeout=5, max=250",
+    "last-modified": "Sat, 31 May 2025 00:54:50 GMT",
+    "pragma": "no-cache",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "rtss": "1-2-19",
+    "server": "nginx",
+    "transfer-encoding": "chunked",
+    "vary": "Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-datadome": "protected",
+    "x-xss-protection": "1; mode=block"
+  },
+  "timestamp": "2025-05-31T00:54:52.039Z"
+}

@@ -127,6 +127,7 @@ declare global {
   interface Window {
     downloadStoredResponses?: typeof downloadStoredResponses;
     clearStoredResponses: typeof clearStoredResponses;
+    _autoDownloadResponses?: boolean;
   }
 }
 window.downloadStoredResponses = downloadStoredResponses;

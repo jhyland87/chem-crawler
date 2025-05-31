@@ -1,0 +1,823 @@
+[
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Sodium Borohydride Powder&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/sodium-borohydride-powder/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 76,
+            "name": "100G",
+            "slug": "100g"
+          },
+          {
+            "id": 69,
+            "name": "1KG",
+            "slug": "1kg"
+          },
+          {
+            "id": 70,
+            "name": "2.5KG",
+            "slug": "2-5kg"
+          },
+          {
+            "id": 71,
+            "name": "500G",
+            "slug": "500g"
+          },
+          {
+            "id": 79,
+            "name": "5KG",
+            "slug": "5kg"
+          },
+          {
+            "id": 103,
+            "name": "Drum",
+            "slug": "drum"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 196,
+        "link": "https://carolinachemical.com/product-category/sodium-borohydride/",
+        "name": "Sodium borohydride",
+        "slug": "sodium-borohydride"
+      }
+    ],
+    "description": "<p>Synonym: Sodium tetrahydridoborate</p>\n<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Assay (GC)</td>\n<td style=\"width: 50%\">≥98.0%</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Appearance</td>\n<td style=\"width: 50%\">Powder</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Danger! In contact with water releases flammable gases which may<br />\nignite spontaneously. Toxic if swallowed. Causes severe skin burns and eye damage. May damage fertility or the unborn child. Harmful to aquatic life.</p>\n<p>DOT UN: 1426, 4.3, PG 1, Sodium borohydride</p>\n<p><strong><br />\nAdditional Information</strong></p>\n<p>For laboratory synthesis, industrial or uses manufacturing only.</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 6981,
+    "images": [
+      {
+        "alt": "",
+        "id": 8136,
+        "name": "Sodium-borohydride",
+        "sizes": "(max-width: 1097px) 100vw, 1097px",
+        "src": "https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride.jpg",
+        "srcset": "https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride.jpg 1097w, https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride-200x150.jpg 200w, https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride-768x576.jpg 768w, https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride-300x225.jpg 300w",
+        "thumbnail": "https://carolinachemical.com/wp-content/uploads/2024/06/Sodium-borohydride-300x300.jpg"
+      }
+    ],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Sodium Borohydride Powder",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/sodium-borohydride-powder/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>72.00</span> &ndash; <span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>835.00</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "7200",
+      "price_range": {
+        "max_amount": "83500",
+        "min_amount": "7200"
+      },
+      "regular_price": "7200",
+      "sale_price": "7200"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;border-collapse: collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number</td>\n<td style=\"width: 50%\">16940-66-2</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Weight</td>\n<td style=\"width: 50%\">37.83</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Formula</td>\n<td style=\"width: 50%\">NaBH<sub>4</sub></td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0077",
+    "slug": "sodium-borohydride-powder",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "100g"
+          }
+        ],
+        "id": 6983
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "500g"
+          }
+        ],
+        "id": 6982
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1kg"
+          }
+        ],
+        "id": 6986
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "2-5kg"
+          }
+        ],
+        "id": 6990
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "5kg"
+          }
+        ],
+        "id": 6987
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "drum"
+          }
+        ],
+        "id": 6988
+      }
+    ]
+  },
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Penicillin G Sodium&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/penicillin-g-sodium/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 76,
+            "name": "100G",
+            "slug": "100g"
+          },
+          {
+            "id": 69,
+            "name": "1KG",
+            "slug": "1kg"
+          },
+          {
+            "id": 88,
+            "name": "25G",
+            "slug": "25g"
+          },
+          {
+            "id": 82,
+            "name": "5G",
+            "slug": "5g"
+          },
+          {
+            "id": 152,
+            "name": "10G",
+            "slug": "10g"
+          },
+          {
+            "id": 187,
+            "name": "1G",
+            "slug": "1g"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 190,
+        "link": "https://carolinachemical.com/product-category/penicillin-g-sodium/",
+        "name": "Penicillin G sodium",
+        "slug": "penicillin-g-sodium"
+      }
+    ],
+    "description": "<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Assay (Dry Basis)</td>\n<td style=\"width: 50%\">96.0 ~ 102.0%</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Appearance</td>\n<td style=\"width: 50%\">White Crystalline Powder</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Loss on Drying</td>\n<td style=\"width: 50%\">≤0.5%</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Warning! May cause an allergic skin reaction.</p>\n<p>DOT: Not regulated.</p>\n<p><strong><br />\nAdditional Information</strong></p>\n<p>For laboratory, manufacturing and R&amp;D uses only. For professional use only.</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 5561,
+    "images": [
+      {
+        "alt": "",
+        "id": 5760,
+        "name": "20241011_Penicillin",
+        "sizes": "(max-width: 800px) 100vw, 800px",
+        "src": "https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin.jpg",
+        "srcset": "https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin.jpg 800w, https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin-200x200.jpg 200w, https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin-768x768.jpg 768w, https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin-300x300.jpg 300w, https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin-100x100.jpg 100w",
+        "thumbnail": "https://carolinachemical.com/wp-content/uploads/2024/10/20241011_Penicillin-300x300.jpg"
+      }
+    ],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Penicillin G Sodium",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/penicillin-g-sodium/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>9.00</span> &ndash; <span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>75.00</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "900",
+      "price_range": {
+        "max_amount": "7500",
+        "min_amount": "900"
+      },
+      "regular_price": "900",
+      "sale_price": "900"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;border-collapse: collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number</td>\n<td style=\"width: 50%\">69-57-8</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Linear Formula</td>\n<td style=\"width: 50%\">C<sub>16</sub>H<sub>17</sub>N<sub>2</sub>NaO<sub>4</sub>S</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Weight</td>\n<td style=\"width: 50%\">356.37</td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0073",
+    "slug": "penicillin-g-sodium",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1g"
+          }
+        ],
+        "id": 5562
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "5g"
+          }
+        ],
+        "id": 5563
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "10g"
+          }
+        ],
+        "id": 5564
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "25g"
+          }
+        ],
+        "id": 5565
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "100g"
+          }
+        ],
+        "id": 5566
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1kg"
+          }
+        ],
+        "id": 5568
+      }
+    ]
+  },
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Sodium Carbonate, Anhydrous&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/sodium-carbonate-anhydrous/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 140,
+            "name": "50LBS",
+            "slug": "50lbs"
+          },
+          {
+            "id": 125,
+            "name": "BULK",
+            "slug": "bulk"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 179,
+        "link": "https://carolinachemical.com/product-category/soda-ash/",
+        "name": "Soda Ash",
+        "slug": "soda-ash"
+      }
+    ],
+    "description": "<p>Synonym: Soda ash, Calcined soda, Carbonic acid disodium salt</p>\n<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Appearance</td>\n<td style=\"width: 50%\">White Powder or Granules</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Assay</td>\n<td style=\"width: 50%\">≥99.5%</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Warning! Causes serious eye irritation. Wash skin thoroughly after handling.</p>\n<p>DOT: Not regulated.</p>\n<p><strong>Additional Information</strong></p>\n<p>Complies with the standards of American Water Works Association and Water Chemicals Codex for SODIUM CARBONATE, ANHYDROUS (Soda Ash)</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 3764,
+    "images": [
+      {
+        "alt": "",
+        "id": 6351,
+        "name": "Sodium-Carbonate",
+        "sizes": "(max-width: 1097px) 100vw, 1097px",
+        "src": "https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate.jpg",
+        "srcset": "https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate.jpg 1097w, https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate-200x150.jpg 200w, https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate-768x576.jpg 768w, https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate-300x225.jpg 300w",
+        "thumbnail": "https://carolinachemical.com/wp-content/uploads/2024/05/Sodium-Carbonate-300x300.jpg"
+      }
+    ],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Sodium Carbonate, Anhydrous",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/sodium-carbonate-anhydrous/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>38.50</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "3850",
+      "price_range": null,
+      "regular_price": "3850",
+      "sale_price": "3850"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;border-collapse: collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number</td>\n<td style=\"width: 50%\">497-19-8</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Formula</td>\n<td style=\"width: 50%\">Na2CO3</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Weight</td>\n<td style=\"width: 50%\">105.99</td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0065",
+    "slug": "sodium-carbonate-anhydrous",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "bulk"
+          }
+        ],
+        "id": 3768
+      }
+    ]
+  },
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Sodium Hypochlorite &#8211; Bleach 12.5%&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/sodium-hypochlorite-bleach-12-5/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 103,
+            "name": "Drum",
+            "slug": "drum"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 142,
+        "link": "https://carolinachemical.com/product-category/sodium-hypochlorite/",
+        "name": "Sodium Hypochlorite",
+        "slug": "sodium-hypochlorite"
+      }
+    ],
+    "description": "<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Appearance</td>\n<td style=\"width: 50%\">Yellow Liquid</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Assay</td>\n<td style=\"width: 50%\">12.5%</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Danger! May be corrosive to metals. Causes severe skin burns and eye damage. Very toxic to aquatic life. Toxic to aquatic life with long lasting effects.</p>\n<p>UN1791, Class: 8, Packing group: III, Hypochlorite solutions</p>\n<p><strong>Additional Information</strong></p>\n<p>For industrial or manufacturing use only.</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 2220,
+    "images": [],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Sodium Hypochlorite &#8211; Bleach 12.5%",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/sodium-hypochlorite-bleach-12-5/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>2.65</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "265",
+      "price_range": null,
+      "regular_price": "265",
+      "sale_price": "265"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;border-collapse: collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number:</td>\n<td style=\"width: 50%\">7681-52-9</td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0005",
+    "slug": "sodium-hypochlorite-bleach-12-5",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "drum"
+          }
+        ],
+        "id": 2225
+      }
+    ]
+  },
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Sodium Hydroxide Beads ≥99.0% Food Grade (Lye, Caustic Soda)&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/sodium-hydroxide-caustic-soda/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 69,
+            "name": "1KG",
+            "slug": "1kg"
+          },
+          {
+            "id": 138,
+            "name": "1KGX5",
+            "slug": "1kgx5"
+          },
+          {
+            "id": 140,
+            "name": "50LBS",
+            "slug": "50lbs"
+          },
+          {
+            "id": 125,
+            "name": "BULK",
+            "slug": "bulk"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 137,
+        "link": "https://carolinachemical.com/product-category/sodium-hydroxide/",
+        "name": "Sodium Hydroxide",
+        "slug": "sodium-hydroxide"
+      }
+    ],
+    "description": "<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Appearance</td>\n<td style=\"width: 50%\">White Beads</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Assay</td>\n<td style=\"width: 50%\">≥99.0%</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Danger! May be corrosive to metals. Harmful if swallowed. Causes severe skin burns and eye damage. Do not breathe dust/ fume/ gas/ mist/ vapors/ spray. Wash skin thoroughly after handling. Do not eat, drink or smoke when using this product. Use only outdoors or in a well-ventilated area. Wear protective gloves/ protective clothing/ eye protection/ face protection. Wear respiratory protection.</p>\n<p>DOT: UN1823, Sodium hydroxide, solid, 8, PG II</p>\n<p><strong>Additional Information</strong></p>\n<p>Meets Food Chemicals Codex (FCC) Specifications. Suitable for food, drug and human uses.</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 2185,
+    "images": [
+      {
+        "alt": "",
+        "id": 2875,
+        "name": "20240222_162438",
+        "sizes": "(max-width: 488px) 100vw, 488px",
+        "src": "https://carolinachemical.com/wp-content/uploads/2024/01/20240222_162438.jpg",
+        "srcset": "https://carolinachemical.com/wp-content/uploads/2024/01/20240222_162438.jpg 488w, https://carolinachemical.com/wp-content/uploads/2024/01/20240222_162438-200x195.jpg 200w, https://carolinachemical.com/wp-content/uploads/2024/01/20240222_162438-300x293.jpg 300w",
+        "thumbnail": "https://carolinachemical.com/wp-content/uploads/2024/01/20240222_162438-300x300.jpg"
+      }
+    ],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Sodium Hydroxide Beads ≥99.0% Food Grade (Lye, Caustic Soda)",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/sodium-hydroxide-caustic-soda/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>14.50</span> &ndash; <span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>78.00</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "1450",
+      "price_range": {
+        "max_amount": "7800",
+        "min_amount": "1450"
+      },
+      "regular_price": "1450",
+      "sale_price": "1450"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;border-collapse: collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number</td>\n<td style=\"width: 50%\">1310-73-2</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Formula</td>\n<td style=\"width: 50%\">NaOH</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Weight</td>\n<td style=\"width: 50%\">40.00</td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0003",
+    "slug": "sodium-hydroxide-caustic-soda",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1kg"
+          }
+        ],
+        "id": 2193
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1kgx5"
+          }
+        ],
+        "id": 2194
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "50lbs"
+          }
+        ],
+        "id": 2195
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "bulk"
+          }
+        ],
+        "id": 2196
+      }
+    ]
+  },
+  {
+    "add_to_cart": {
+      "description": "Select options for &ldquo;Sodium Metal, ≥99.8%&rdquo;",
+      "maximum": 9999,
+      "minimum": 1,
+      "multiple_of": 1,
+      "text": "Select options",
+      "url": "https://carolinachemical.com/product/sodium-metal/"
+    },
+    "attributes": [
+      {
+        "has_variations": true,
+        "id": 1,
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          {
+            "id": 69,
+            "name": "1KG",
+            "slug": "1kg"
+          },
+          {
+            "id": 96,
+            "name": "250G",
+            "slug": "250g"
+          },
+          {
+            "id": 79,
+            "name": "5KG",
+            "slug": "5kg"
+          },
+          {
+            "id": 102,
+            "name": "10kg",
+            "slug": "10kg"
+          },
+          {
+            "id": 103,
+            "name": "Drum",
+            "slug": "drum"
+          }
+        ]
+      }
+    ],
+    "average_rating": "0",
+    "brands": [],
+    "categories": [
+      {
+        "id": 36,
+        "link": "https://carolinachemical.com/product-category/sodium-metal/",
+        "name": "Sodium Metal",
+        "slug": "sodium-metal"
+      }
+    ],
+    "description": "<p><strong>Specifications</strong></p>\n<table style=\"border: none;collapse;width: 100%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">Assay</td>\n<td style=\"width: 50%\">≥99.8%</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Chloride (as Cl)</td>\n<td style=\"width: 50%\">≤20mg/kg</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Ca</td>\n<td style=\"width: 50%\">≤400mg/kg</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Safety Information</strong></p>\n<p>Danger! In contact with water releases flammable gases which may ignite spontaneously. May be fatal if swallowed or enters airways. Causes severe skin burns and eye damage. Toxic to aquatic life with long lasting effects. Do not allow contact with water. Handle under inert gas. Protect from moisture.</p>\n<p>DOT: UN 1428, PG1, 4.3</p>\n<p><strong>Additional Information</strong></p>\n<p>Not for food, drug, human, animal or household use. For laboratory, industrial or manufacturing only.</p>",
+    "extensions": {},
+    "grouped_products": [],
+    "has_options": true,
+    "id": 815,
+    "images": [
+      {
+        "alt": "",
+        "id": 1225,
+        "name": "20231208_155651-small",
+        "sizes": "(max-width: 1000px) 100vw, 1000px",
+        "src": "https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small.jpg",
+        "srcset": "https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small.jpg 1000w, https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small-196x200.jpg 196w, https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small-768x786.jpg 768w, https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small-300x307.jpg 300w",
+        "thumbnail": "https://carolinachemical.com/wp-content/uploads/2022/11/20231208_155651-small-300x300.jpg"
+      }
+    ],
+    "is_in_stock": true,
+    "is_on_backorder": false,
+    "is_purchasable": true,
+    "low_stock_remaining": null,
+    "name": "Sodium Metal, ≥99.8%",
+    "on_sale": false,
+    "parent": 0,
+    "permalink": "https://carolinachemical.com/product/sodium-metal/",
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>136.00</span> &ndash; <span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&#036;</span>621.00</span>",
+    "prices": {
+      "currency_code": "USD",
+      "currency_decimal_separator": ".",
+      "currency_minor_unit": 2,
+      "currency_prefix": "$",
+      "currency_suffix": "",
+      "currency_symbol": "$",
+      "currency_thousand_separator": ",",
+      "price": "13600",
+      "price_range": {
+        "max_amount": "62100",
+        "min_amount": "13600"
+      },
+      "regular_price": "13600",
+      "sale_price": "13600"
+    },
+    "review_count": 0,
+    "short_description": "<table style=\"border: none;collapse;width: 70%\">\n<tbody>\n<tr>\n<td style=\"width: 50%\">CAS Number</td>\n<td style=\"width: 50%\">7440-23-5</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Formula</td>\n<td style=\"width: 50%\">Na</td>\n</tr>\n<tr>\n<td style=\"width: 50%\">Molecular Weight</td>\n<td style=\"width: 50%\">22.99</td>\n</tr>\n</tbody>\n</table>",
+    "sku": "0029",
+    "slug": "sodium-metal",
+    "sold_individually": false,
+    "stock_availability": {
+      "class": "",
+      "text": ""
+    },
+    "tags": [],
+    "type": "variable",
+    "variation": "",
+    "variations": [
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "250g"
+          }
+        ],
+        "id": 823
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "1kg"
+          }
+        ],
+        "id": 910
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "5kg"
+          }
+        ],
+        "id": 911
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "10kg"
+          }
+        ],
+        "id": 912
+      },
+      {
+        "attributes": [
+          {
+            "name": "Size",
+            "value": "drum"
+          }
+        ],
+        "id": 955
+      }
+    ]
+  }
+]

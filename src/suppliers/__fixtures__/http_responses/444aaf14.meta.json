@@ -1,0 +1,26 @@
+{
+  "url": "https://libertysci.com/wp-json/wc/store/v1/products?search=sodium&per_page=100",
+  "hash": "444aaf14",
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type, Cart-Token, Nonce",
+    "access-control-allow-methods": "OPTIONS, GET, POST, PUT, PATCH, DELETE",
+    "access-control-expose-headers": "X-WP-Total, X-WP-TotalPages, Link, Cart-Token",
+    "allow": "GET",
+    "content-type": "application/json; charset=UTF-8",
+    "date": "Sat, 31 May 2025 00:55:00 GMT",
+    "link": "<https://www.libertysci.com/wp-json/>; rel=\"https://api.w.org/\"",
+    "server": "Apache",
+    "vary": "Origin",
+    "x-content-type-options": "nosniff",
+    "x-powered-by": "PHP/8.1.32",
+    "x-robots-tag": "noindex",
+    "x-wp-total": "80",
+    "x-wp-totalpages": "1",
+    "x-ws-ratelimit-limit": "1000",
+    "x-ws-ratelimit-remaining": "999"
+  },
+  "timestamp": "2025-05-31T00:55:03.302Z"
+}

@@ -1,5 +1,6 @@
 import { useAppContext } from "@/context";
 import { setResponseStorageConfig } from "@/helpers/request/config";
+import { downloadStoredResponses } from "@/helpers/request/downloadResponses";
 import SupplierFactory from "@/suppliers/supplierFactory";
 import { type Product } from "@/types";
 import { type UseSearchProps } from "@/types/props";
@@ -119,6 +120,10 @@ export function useSearch({ setSearchResults, setStatusLabel, setIsLoading }: Us
     const searchTime = endSearchTime - startSearchTime;
     setIsLoading(false);
     console.debug(`Found ${resultCount} products in ${searchTime} milliseconds`);
+
+    if (typeof window !== "undefined" && window._autoDownloadResponses === true) {
+      await downloadStoredResponses("api_responses");
+    }
   }
 
   return {
