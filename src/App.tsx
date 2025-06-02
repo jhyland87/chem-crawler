@@ -75,6 +75,7 @@ function App() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
+    getStorage();
   }, []);
 
   // Default settings

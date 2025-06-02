@@ -1,14 +1,26 @@
-import { promisify } from "util";
-
 type StorageArea = chrome.storage.StorageArea;
+
+// Custom promisify for Chrome storage
+const chromePromisify = <T>(fn: (...args: any[]) => void): ((...args: any[]) => Promise<T>) => {
+  return (...args: any[]) =>
+    new Promise((resolve, reject) => {
+      fn(...args, (result: T) => {
+        if (chrome.runtime.lastError) {
+          reject(chrome.runtime.lastError);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+};
 
 // Create promisified versions of storage methods
 const promisifiedStorage = (storage: StorageArea) => ({
-  set: promisify(storage.set.bind(storage)),
-  get: promisify(storage.get.bind(storage)),
-  remove: promisify(storage.remove.bind(storage)),
-  clear: promisify(storage.clear.bind(storage)),
-  getBytesInUse: promisify(storage.getBytesInUse.bind(storage)),
+  set: chromePromisify<void>(storage.set.bind(storage)),
+  get: chromePromisify<Record<string, unknown>>(storage.get.bind(storage)),
+  remove: chromePromisify<void>(storage.remove.bind(storage)),
+  clear: chromePromisify<void>(storage.clear.bind(storage)),
+  getBytesInUse: chromePromisify<number>(storage.getBytesInUse.bind(storage)),
 });
 
 export class ChromeStorageODM {
