@@ -81,6 +81,151 @@
  * });
  */
 
+/**
+ * Example Usage for User Settings:
+ *
+ * // Define the settings interface with all possible user preferences
+ * interface UserPreferences {
+ *   // Display settings
+ *   theme: 'light' | 'dark' | 'system';
+ *   fontSize: number;
+ *   language: string;
+ *   timezone: string;
+ *
+ *   // Location and currency
+ *   location: {
+ *     country: string;
+ *     state?: string;
+ *     city?: string;
+ *     postalCode?: string;
+ *   };
+ *   currency: {
+ *     code: string;  // e.g., 'USD', 'EUR'
+ *     symbol: string; // e.g., '$', '€'
+ *     decimals: number;
+ *   };
+ *
+ *   // Search preferences
+ *   searchSettings: {
+ *     defaultSupplier: string;
+ *     maxResults: number;
+ *     autoSearch: boolean;
+ *     showPrices: boolean;
+ *     sortBy: 'price' | 'name' | 'relevance';
+ *   };
+ *
+ *   // Notification settings
+ *   notifications: {
+ *     enabled: boolean;
+ *     priceAlerts: boolean;
+ *     stockUpdates: boolean;
+ *     emailDigest: boolean;
+ *   };
+ *
+ *   // Last updated timestamp
+ *   lastUpdated: string;
+ * }
+ *
+ * // Create a settings manager
+ * const userSettings = createSyncStorageODM<UserPreferences>('user-preferences', {
+ *   theme: 'system',
+ *   fontSize: 14,
+ *   language: 'en-US',
+ *   timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+ *   location: {
+ *     country: 'US',
+ *   },
+ *   currency: {
+ *     code: 'USD',
+ *     symbol: '$',
+ *     decimals: 2
+ *   },
+ *   searchSettings: {
+ *     defaultSupplier: 'all',
+ *     maxResults: 20,
+ *     autoSearch: true,
+ *     showPrices: true,
+ *     sortBy: 'relevance'
+ *   },
+ *   notifications: {
+ *     enabled: true,
+ *     priceAlerts: true,
+ *     stockUpdates: false,
+ *     emailDigest: false
+ *   },
+ *   lastUpdated: new Date().toISOString()
+ * });
+ *
+ * // Usage examples:
+ *
+ * // 1. Update multiple settings at once
+ * await userSettings.update({
+ *   theme: 'dark',
+ *   fontSize: 16,
+ *   'searchSettings.maxResults': 50
+ * });
+ *
+ * // 2. Update nested settings
+ * await userSettings.update({
+ *   searchSettings: {
+ *     ...userSettings.getData().searchSettings,
+ *     sortBy: 'price',
+ *     autoSearch: false
+ *   }
+ * });
+ *
+ * // 3. Update location and currency together
+ * await userSettings.update({
+ *   location: {
+ *     country: 'CA',
+ *     state: 'ON',
+ *     city: 'Toronto'
+ *   },
+ *   currency: {
+ *     code: 'CAD',
+ *     symbol: 'C$',
+ *     decimals: 2
+ *   }
+ * });
+ *
+ * // 4. Toggle notification settings
+ * const currentSettings = userSettings.getData();
+ * await userSettings.update({
+ *   notifications: {
+ *     ...currentSettings.notifications,
+ *     priceAlerts: !currentSettings.notifications.priceAlerts
+ *   }
+ * });
+ *
+ * // 5. Subscribe to settings changes
+ * const unsubscribe = userSettings.subscribe((newSettings) => {
+ *   // Update UI when settings change
+ *   document.documentElement.setAttribute('data-theme', newSettings.theme);
+ *   document.documentElement.style.fontSize = `${newSettings.fontSize}px`;
+ *
+ *   // Update currency display
+ *   updateCurrencyDisplay(newSettings.currency);
+ *
+ *   // Update search behavior
+ *   updateSearchBehavior(newSettings.searchSettings);
+ * });
+ *
+ * // 6. Get specific settings
+ * const currentTheme = userSettings.get('theme');
+ * const searchPrefs = userSettings.get('searchSettings');
+ * const isDarkMode = currentTheme === 'dark' ||
+ *   (currentTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+ *
+ * // 7. Reset to defaults
+ * const defaultSettings: UserPreferences = {
+ *   // ... default values ...
+ * };
+ * await userSettings.set(defaultSettings);
+ *
+ * // 8. Clear all settings
+ * await userSettings.clear();
+ */
+
 type StorageArea = chrome.storage.StorageArea;
 
 // Custom promisify for Chrome storage
