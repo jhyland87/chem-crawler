@@ -1,6 +1,6 @@
 import Logger from "@/utils/Logger";
-import * as suppliers from ".";
-import SupplierBase from "./SupplierBase";
+import { createStrategy, strategyRegistry, SupplierContext, SupplierStrategy } from "./strategies";
+
 /**
  * Factory class for querying multiple chemical suppliers simultaneously.
  * This class provides a unified interface to search across multiple supplier implementations.
@@ -15,7 +15,7 @@ import SupplierBase from "./SupplierBase";
  * const factory = new SupplierFactory(
  *   "sodium chloride",
  *   new AbortController(),
- *   ["SupplierCarolina", "SupplierLaballey"]
+ *   ["Carolina", "LaboratoriumDiscounter"]
  * );
  *
  * // Iterate over results from all selected suppliers
@@ -31,7 +31,7 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
   // Abort controller for fetch control
   private controller: AbortController;
 
-  // List of supplier class names to include in query results
+  // List of supplier names to include in query results
   private suppliers: Array<string>;
 
   // Maximum number of results for each supplier
@@ -39,6 +39,9 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
 
   // Logger instance
   private logger: Logger;
+
+  // Map of supplier contexts
+  private contexts: Map<string, SupplierContext<T>>;
 
   /**
    * Factory class for querying all suppliers.
@@ -62,24 +65,59 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
     this.controller = controller;
     this.suppliers = suppliers;
     this.logger.debug("Suppliers:", this.suppliers);
+    this.contexts = new Map();
+    this.initializeContexts();
   }
 
   /**
-   * Get the list of available supplier module names.
+   * Initialize supplier contexts for each selected supplier.
+   */
+  private initializeContexts(): void {
+    const supplierNames =
+      this.suppliers.length > 0 ? this.suppliers : Array.from(strategyRegistry.keys());
+
+    for (const supplierName of supplierNames) {
+      const strategy = createStrategy(supplierName);
+      if (strategy && "baseURL" in strategy) {
+        const typedStrategy = strategy as unknown as SupplierStrategy<T>;
+        const context = new SupplierContext<T>(
+          typedStrategy,
+          (strategy as { baseURL: string }).baseURL,
+          this.getDefaultHeaders(),
+        );
+        this.contexts.set(supplierName, context);
+      } else {
+        this.logger.warn(`No strategy found for supplier: ${supplierName}`);
+      }
+    }
+  }
+
+  /**
+   * Get default headers for supplier requests.
+   */
+  private getDefaultHeaders(): HeadersInit {
+    return {
+      Accept: "application/json",
+      "User-Agent": "ChemCrawler/1.0",
+    };
+  }
+
+  /**
+   * Get the list of available supplier names.
    * Use these names when specifying which suppliers to query in the constructor.
    *
-   * @returns Array of supplier class names that can be queried
+   * @returns Array of supplier names that can be queried
    * @example
    * ```typescript
    * const suppliers = SupplierFactory.supplierList();
-   * // Returns: ["SupplierCarolina", "SupplierLaballey", "SupplierBioFuranChem", ...]
+   * // Returns: ["Carolina", "LaboratoriumDiscounter", ...]
    *
    * // Use these names to create a targeted factory
    * const factory = new SupplierFactory("acid", controller, suppliers.slice(0, 2));
    * ```
    */
   public static supplierList(): Array<string> {
-    return Object.keys(suppliers);
+    return Array.from(strategyRegistry.keys());
   }
 
   /**
@@ -104,71 +142,48 @@ export default class SupplierFactory<T extends Product> implements AsyncIterable
   async *[Symbol.asyncIterator](): AsyncGenerator<T, void, unknown> {
     try {
       this.logger.debug("Starting search");
-      const supplierIterator = this.getConsolidatedGenerator();
 
-      for await (const value of supplierIterator) {
-        yield value as T;
+      for (const [supplierName, context] of this.contexts) {
+        if (this.controller.signal.aborted) {
+          this.logger.warn("Search was aborted");
+          return;
+        }
+
+        try {
+          const results = await context.queryProducts(this.query, this.limit);
+          if (!results) continue;
+
+          for (const builder of results) {
+            if (this.controller.signal.aborted) {
+              this.logger.warn("Search was aborted");
+              return;
+            }
+
+            try {
+              const product = await context.getProductData(builder);
+              if (product) {
+                const finishedProduct = await product.build();
+                if (finishedProduct) {
+                  yield finishedProduct as T;
+                }
+              }
+            } catch (err) {
+              this.logger.error(`Error processing product from ${supplierName}:`, err);
+              continue;
+            }
+          }
+        } catch (err) {
+          this.logger.error(`Error querying ${supplierName}:`, err);
+          continue;
+        }
       }
     } catch (err) {
-      // Here to catch when the overall search fails
-      if (this.controller.signal.aborted === true) {
+      if (this.controller.signal.aborted) {
         this.logger.warn("Search was aborted");
         return;
       }
       this.logger.error("ERROR in generator fn:", err);
+      throw err;
     }
-  }
-
-  /**
-   * Creates a consolidated async generator that yields products from selected suppliers.
-   * This method:
-   * 1. Filters suppliers based on the names provided in constructor
-   * 2. Instantiates selected supplier classes
-   * 3. Combines their async iterators into a single stream
-   *
-   * @returns AsyncGenerator yielding products from all selected suppliers
-   * @example
-   * ```typescript
-   * // Internal use only
-   * const generator = this.getConsolidatedGenerator();
-   * for await (const product of generator) {
-   *   // Process each product
-   * }
-   * ```
-   */
-  private getConsolidatedGenerator(): AsyncGenerator<Product, void, unknown> {
-    async function* combineAsyncIterators(
-      asyncIterators: SupplierBase<unknown, Product>[],
-    ): AsyncGenerator<Product, void, unknown> {
-      for (const iterator of asyncIterators) {
-        for await (const value of iterator) {
-          yield value;
-        }
-      }
-    }
-
-    // Only iterate over the suppliers that are selected (or all if none are selected)
-    return combineAsyncIterators(
-      Object.entries(suppliers).reduce(
-        (result: SupplierBase<unknown, Product>[], [supplierClassName, supplierClass]) => {
-          if (this.suppliers.length == 0 || this.suppliers.includes(supplierClassName)) {
-            this.logger.debug("Initializing supplier class:", supplierClassName);
-            this.logger.debug("this.limit:", this.limit);
-            // Cast to unknown first to avoid type errors with private constructors
-            const ConcreteSupplierClass = supplierClass as unknown as new (
-              query: string,
-              limit: number,
-              controller: AbortController,
-            ) => SupplierBase<unknown, Product>;
-            const instance = new ConcreteSupplierClass(this.query, this.limit, this.controller);
-            // Initialize cache after construction
-            instance.initCache();
-            result.push(instance);
-          }
-          return result;
-        },
-        [] satisfies SupplierBase<unknown, Product>[],
-      ),
-    );
   }
 }
