@@ -3,6 +3,8 @@ import { CarolinaChemicalStrategy } from "./CarolinaChemicalStrategy";
 import { CarolinaStrategy } from "./CarolinaStrategy";
 import { ChemsaversStrategy } from "./ChemsaversStrategy";
 import { FtfScientificStrategy } from "./FtfScientificStrategy";
+import { HbarSciStrategy } from "./HbarSciStrategy";
+import { LaballeyStrategy } from "./LaballeyStrategy";
 import { LaboratoriumDiscounterStrategy } from "./LaboratoriumDiscounterStrategy";
 import { LibertySciStrategy } from "./LibertySciStrategy";
 import { LoudwolfStrategy } from "./LoudwolfStrategy";
@@ -23,6 +25,8 @@ export const strategyRegistry = new Map<string, new () => SupplierStrategy<globa
   ["Liberty Scientific", LibertySciStrategy],
   ["Onyxmet", OnyxmetStrategy],
   ["Carolina", CarolinaStrategy],
+  ["Laballey", LaballeyStrategy],
+  ["HbarSci", HbarSciStrategy],
 ]);
 
 /**
@@ -38,12 +42,15 @@ export function createStrategy(
   return new StrategyClass();
 }
 
+export { SupplierContext } from "./SupplierContext";
 export {
   BiofuranChemStrategy,
   CarolinaChemicalStrategy,
   CarolinaStrategy,
   ChemsaversStrategy,
   FtfScientificStrategy,
+  HbarSciStrategy,
+  LaballeyStrategy,
   LaboratoriumDiscounterStrategy,
   LibertySciStrategy,
   LoudwolfStrategy,

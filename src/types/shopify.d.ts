@@ -457,6 +457,98 @@ declare global {
      * @example 3
      */
     totalPages: number;
+
+    /**
+     * Starting index for categories in the result set.
+     * Zero-based index for category pagination.
+     * @example 0
+     */
+    categoryStartIndex: number;
+
+    /**
+     * Total number of categories matching the search.
+     * Used for category pagination calculations.
+     * @example 23
+     */
+    totalCategories: number;
+
+    /**
+     * Current number of items in the result set.
+     * May be less than itemsPerPage on the last page.
+     * @example 6
+     */
+    currentItemCount: number;
+
+    /**
+     * Array of suggested search terms.
+     * Used for search suggestions and autocomplete.
+     * @example ["sulfuric acid", "sulfuric acid 98%"]
+     */
+    suggestions: string[];
+
+    /**
+     * Array of category results.
+     * Contains category information including title, link, and description.
+     */
+    categories: Array<{
+      category_id: string;
+      title: string;
+      link: string;
+      image_link: string;
+      description: string;
+    }>;
+
+    /**
+     * Array of page results.
+     * Contains page information including title, link, and description.
+     */
+    pages: Array<{
+      page_id: string;
+      title: string;
+      link: string;
+      image_link: string;
+      description: string;
+    }>;
+
+    /**
+     * Array of product results.
+     * Contains product information including title, price, and variants.
+     */
+    items: Array<{
+      product_id: string;
+      original_product_id: string;
+      title: string;
+      description: string;
+      link: string;
+      price: string;
+      list_price: string;
+      quantity: string;
+      product_code: string;
+      image_link: string;
+      vendor: string;
+      discount: string;
+      add_to_cart_id: string;
+      total_reviews: string;
+      reviews_average_score: string;
+      shopify_variants: Array<{
+        variant_id: string;
+        sku: string;
+        barcode: string;
+        price: string;
+        list_price: string;
+        taxable: string;
+        options: Record<string, string>;
+        available: string;
+        search_variant_metafields_data: unknown[];
+        filter_variant_metafields_data: unknown[];
+        image_link: string;
+        image_alt: string;
+        quantity_total: string;
+        link: string;
+      }>;
+      shopify_images: string[];
+      tags: string;
+    }>;
   }
 
   /**
@@ -679,6 +771,11 @@ declare global {
     };
     /* eslint-enable */
   }
+}
+
+declare module "*.json" {
+  const value: globalThis.SearchResponse;
+  export default value;
 }
 
 // This export is needed to make the file a module

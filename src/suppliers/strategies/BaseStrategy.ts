@@ -1,4 +1,5 @@
 import { fetchDecorator } from "@/helpers/fetch";
+import { HttpClient } from "@/utils/HttpClient";
 import Logger from "@/utils/Logger";
 import ProductBuilder from "@/utils/ProductBuilder";
 import { SupplierStrategy } from "./SupplierStrategy";
@@ -10,6 +11,7 @@ import { isJsonDecoratorResponse, isTextDecoratorResponse } from "./typeGuards";
  */
 export abstract class BaseStrategy<T extends globalThis.Product> implements SupplierStrategy<T> {
   protected logger: Logger;
+  public abstract readonly baseURL: string;
 
   constructor(supplierName: string) {
     this.logger = new Logger(supplierName);
@@ -98,7 +100,7 @@ export abstract class BaseStrategy<T extends globalThis.Product> implements Supp
     query: string,
     limit: number,
     baseURL: string,
-    headers: HeadersInit,
+    httpClient: HttpClient,
   ): Promise<ProductBuilder<T>[] | void>;
 
   /**
@@ -107,6 +109,6 @@ export abstract class BaseStrategy<T extends globalThis.Product> implements Supp
   public abstract getProductData(
     builder: ProductBuilder<T>,
     baseURL: string,
-    headers: HeadersInit,
+    httpClient: HttpClient,
   ): Promise<ProductBuilder<T> | void>;
 }

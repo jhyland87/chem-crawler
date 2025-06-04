@@ -14,7 +14,7 @@ export default defineConfig({
       "**/node_modules/**",
       "**/dist/**",
       "**/.{idea,git,cache,output,temp}/**",
-      "src/suppliers/**",
+      //"src/suppliers/**",
     ],
     deps: {
       web: {
