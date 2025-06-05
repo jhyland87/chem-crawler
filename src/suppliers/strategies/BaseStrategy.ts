@@ -2,6 +2,7 @@ import { fetchDecorator } from "@/helpers/fetch";
 import { HttpClient } from "@/utils/HttpClient";
 import Logger from "@/utils/Logger";
 import ProductBuilder from "@/utils/ProductBuilder";
+import { extract, WRatio } from "fuzzball";
 import { SupplierStrategy } from "./SupplierStrategy";
 import { isJsonDecoratorResponse, isTextDecoratorResponse } from "./typeGuards";
 
@@ -9,9 +10,10 @@ import { isJsonDecoratorResponse, isTextDecoratorResponse } from "./typeGuards";
  * Base class for supplier strategies that implements common functionality.
  * Provides default implementations for caching and HTTP requests.
  */
-export abstract class BaseStrategy<T extends globalThis.Product> implements SupplierStrategy<T> {
+export abstract class BaseStrategy<X, T extends globalThis.Product> implements SupplierStrategy<T> {
   protected logger: Logger;
   public abstract readonly baseURL: string;
+  protected abstract titleSelector(choice: X): string;
 
   constructor(supplierName: string) {
     this.logger = new Logger(supplierName);
@@ -111,4 +113,34 @@ export abstract class BaseStrategy<T extends globalThis.Product> implements Supp
     baseURL: string,
     httpClient: HttpClient,
   ): Promise<ProductBuilder<T> | void>;
+
+  /**
+   * Fuzzy filter search results to improve relevance.
+   * Uses string similarity to rank and filter results.
+   *
+   * @param query - Search term to filter against
+   * @param results - Array of search results to filter
+   * @returns Filtered and sorted array of search results
+   */
+  protected fuzzyFilter(query: string, data: X[], cutoff: number = 40): X[] {
+    const res = extract(query, data, {
+      scorer: WRatio,
+      processor: this.titleSelector as (choice: X) => string,
+      cutoff: cutoff,
+      sortBySimilarity: true,
+    }).reduce(
+      (acc, [obj, score, idx]) => {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        acc[idx] = Object.assign(obj, { ___fuzz: { score, idx } });
+        return acc;
+      },
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      [] as Array<X & { ___fuzz: { score: number; idx: number } }>,
+    ) as X[];
+
+    this.logger.debug("fuzzed search results:", res);
+
+    // Get rid of any empty items that didn't match closely enough
+    return res.filter((item) => !!item);
+  }
 }

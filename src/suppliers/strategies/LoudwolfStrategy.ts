@@ -5,7 +5,6 @@ import { mapDefined } from "@/helpers/utils";
 import { HttpClient } from "@/utils/HttpClient";
 import Logger from "@/utils/Logger";
 import ProductBuilder from "@/utils/ProductBuilder";
-import { extract, WRatio } from "fuzzball";
 import { SupplierStrategy } from "./SupplierStrategy";
 
 /**
@@ -25,28 +24,8 @@ export class LoudwolfStrategy implements SupplierStrategy<globalThis.Product> {
     this.logger = new Logger("LoudwolfStrategy");
   }
 
-  /**
-   * Filters an array of DOM elements using fuzzy string matching to find items that closely match a query string.
-   * Uses the WRatio algorithm from fuzzball for string similarity comparison.
-   */
-  private fuzzyFilter(query: string, elements: Element[], cutoff: number = 40): Element[] {
-    const res = extract(query, elements, {
-      scorer: WRatio,
-      processor: (element: Element) => {
-        const title = element.querySelector("div.caption h4 a")?.textContent?.trim() || "";
-        return title;
-      },
-      cutoff: cutoff,
-      sortBySimilarity: true,
-    }).reduce((acc, [element, score, idx]) => {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      (element as any).___fuzz = { score, idx };
-      acc[idx] = element;
-      return acc;
-    }, [] as Element[]);
-
-    this.logger.debug("fuzzed search results:", res);
-    return res.filter((item) => !!item);
+  protected titleSelector(element: Element): string {
+    return element.querySelector("div.caption h4 a")?.textContent?.trim() || "";
   }
 
   /**
@@ -62,7 +41,7 @@ export class LoudwolfStrategy implements SupplierStrategy<globalThis.Product> {
       const response = await httpClient.getHtml(`${baseURL}/storefront/index.php`, {
         search: encodeURIComponent(query),
         route: "product/search",
-        limit: 100,
+        limit: limit.toString(),
       });
 
       if (!response) {
