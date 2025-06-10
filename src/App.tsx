@@ -1,4 +1,3 @@
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
@@ -7,16 +6,23 @@ import "./App.scss";
 import { AppContext } from "@/context";
 import SupplierFactory from "@/suppliers/SupplierFactory";
 import { useEffect, useState } from "react";
+//import AnimatedSearchBarDemo from "./components/AnimatedSearchBarDemo";
 //import "./__mocks__/chromeStorageMock";
+import {
+  FavoritesPanel,
+  HistoryPanel,
+  SettingsPanel,
+  SuppliersPanel,
+  TabHeader,
+} from "./components";
+import AppbarHeader from "./components/AppbarHeader";
+//import BasicAppBar from "./components/BasicAppBar";
 import ErrorBoundary from "./components/ErrorBoundary";
-import FavoritesPanel from "./components/FavoritesPanel";
-import HistoryPanel from "./components/HistoryPanel";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
-import SettingsPanel from "./components/SettingsPanel";
 import SpeedDialMenu from "./components/SpeedDialMenu";
-import SuppliersPanel from "./components/SuppliersPanel";
-import TabHeader from "./components/TabHeader";
 import TabPanel from "./components/TabPanel";
+//import AppBarMenu from "./context/AppBarMenu";
+import AnimatedSearchBar from "./components/AnimatedSearchBar";
 import { darkTheme, lightTheme } from "./themes";
 import { BadgeAnimator } from "./utils";
 
@@ -52,6 +58,8 @@ function App() {
   // own annoyance of having to reposition the cursor once it's open, but I think it's
   // better this way.
   const cornerThreshold = 30;
+  const [searchDocked, setSearchDocked] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Clear any existing badge animation when the component mounts
   useEffect(() => {
@@ -130,25 +138,43 @@ function App() {
       <AppContext.Provider value={{ userSettings, setUserSettings }}>
         <ThemeProvider theme={currentTheme}>
           <CssBaseline />
+          <AppbarHeader>
+            {searchDocked && (
+              <AnimatedSearchBar
+                docked
+                value={searchQuery}
+                onSearch={(query) => setSearchQuery(query)}
+                onSubmit={() => {}}
+                placeholder="Search…"
+              />
+            )}
+          </AppbarHeader>
+          {!searchDocked && (
+            <AnimatedSearchBar
+              docked={false}
+              value={searchQuery}
+              onSearch={(query) => setSearchQuery(query)}
+              onSubmit={() => setSearchDocked(true)}
+              placeholder="Search…"
+            />
+          )}
           <Box sx={{ bgcolor: "background.default", width: "100%" }}>
-            <AppBar position="static" sx={{ borderRadius: 1 }}>
-              <TabHeader page={panel} setPage={setPanel} />
-              <TabPanel value={panel} name="search-panel" index={0} dir={theme.direction}>
-                <SearchPanel />
-              </TabPanel>
-              <TabPanel value={panel} name="suppliers-panel" index={1} dir={theme.direction}>
-                <SuppliersPanel />
-              </TabPanel>
-              <TabPanel value={panel} name="favorites-panel" index={2} dir={theme.direction}>
-                <FavoritesPanel />
-              </TabPanel>
-              <TabPanel value={panel} name="history-panel" index={3} dir={theme.direction}>
-                <HistoryPanel />
-              </TabPanel>
-              <TabPanel value={panel} name="settings-panel" index={4} dir={theme.direction}>
-                <SettingsPanel />
-              </TabPanel>
-            </AppBar>
+            <TabHeader page={panel} setPage={setPanel} />
+            <TabPanel value={panel} name="search-panel" index={0} dir={theme.direction}>
+              <SearchPanel />
+            </TabPanel>
+            <TabPanel value={panel} name="suppliers-panel" index={1} dir={theme.direction}>
+              <SuppliersPanel />
+            </TabPanel>
+            <TabPanel value={panel} name="favorites-panel" index={2} dir={theme.direction}>
+              <FavoritesPanel />
+            </TabPanel>
+            <TabPanel value={panel} name="history-panel" index={3} dir={theme.direction}>
+              <HistoryPanel />
+            </TabPanel>
+            <TabPanel value={panel} name="settings-panel" index={4} dir={theme.direction}>
+              <SettingsPanel />
+            </TabPanel>
             <SpeedDialMenu speedDialVisibility={speedDialVisibility} />
           </Box>
         </ThemeProvider>

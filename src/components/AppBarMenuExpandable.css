@@ -1,0 +1,14 @@
+.app-bar {
+  height: 50px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.app-bar.expanded {
+  height: 200px;
+}
+.app-bar-header {
+    padding: 10px;
+}
+.app-bar-content {
+  padding: 10px;
+}

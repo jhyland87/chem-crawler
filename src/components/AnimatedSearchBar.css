@@ -1,0 +1,29 @@
+.animated-search-container {
+  position: absolute;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.search-input-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-results-container {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Override MUI styles */
+:global(.MuiInputBase-root) {
+  height: 100% !important;
+}
+
+.search-field :global(.MuiInputBase-root) {
+  height: 100% !important;
+} 

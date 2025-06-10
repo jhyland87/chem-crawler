@@ -1,0 +1,15 @@
+.slide-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: lightblue;
+}
+
+
+.slide-div-button {
+  z-index: 1000;
+  position: absolute;
+
+}

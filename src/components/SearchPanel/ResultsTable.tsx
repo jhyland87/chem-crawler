@@ -4,6 +4,7 @@ import Paper from "@mui/material/Paper";
 import { Column, flexRender } from "@tanstack/react-table";
 import { isEmpty } from "lodash";
 import { Fragment, ReactElement, useEffect, useState, type CSSProperties } from "react";
+//import AnimatedDiv from "../AnimatedDiv";
 import LoadingBackdrop from "../LoadingBackdrop";
 import { useAutoColumnSizing } from "./hooks/useAutoColumnSizing";
 import { useResultsTable } from "./hooks/useResultsTable";
@@ -107,7 +108,7 @@ export default function ResultsTable({
         resultCount={searchResults.length}
         onClick={handleStopSearch}
       />
-
+      {/*<AnimatedDiv />*/}
       <Paper id="search-results-table-container">
         <Box
           className="search-input-container fullwidth"
