@@ -139,6 +139,13 @@ export default abstract class SupplierBaseAmazon
         throw new Error("Document body not found");
       }
 
+      // Regardless of the brand, they all seem to have their name either in the title or a neighboring
+      // element. This should help rule out any that don't (usually sponsored listings or similar
+      // prodcuts by a different brand).
+      if (!documentBody.innerText.match(new RegExp(this.supplierName, "i"))) {
+        return;
+      }
+
       // Extracting the title
       const titleElement = documentBody.querySelector("a h2 span");
       const title = titleElement ? titleElement.textContent?.trim() : null;

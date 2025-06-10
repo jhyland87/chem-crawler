@@ -1,18 +1,14 @@
 import { useAppContext } from "@/context";
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { Column, flexRender } from "@tanstack/react-table";
+import { Column } from "@tanstack/react-table";
 import { isEmpty } from "lodash";
-import { Fragment, ReactElement, useEffect, useState, type CSSProperties } from "react";
+import { ReactElement, useEffect, useState } from "react";
+import AnimatedSearchDemo from "../AnimatedSearchDemo";
 import LoadingBackdrop from "../LoadingBackdrop";
 import { useAutoColumnSizing } from "./hooks/useAutoColumnSizing";
 import { useResultsTable } from "./hooks/useResultsTable";
 import { useSearch } from "./hooks/useSearch";
-import Pagination from "./Pagination";
 import "./ResultsTable.scss";
-import TableHeader from "./TableHeader";
-import TableOptions from "./TableOptions";
-
 /**
  * ResultsTable component that displays search results in a table format with filtering,
  * sorting, and pagination capabilities. It also handles the search execution and
@@ -44,9 +40,13 @@ export default function ResultsTable({
     setIsLoading,
   });
 
-  /**
-   * Initializes the table by loading saved search results and column visibility settings.
-   */
+  // If the storage is cleared, then update the table (if the change hasn't been picked up already)
+  chrome.storage.session.onChanged.addListener((changes) => {
+    if (searchResults.length === changes.searchResults.newValue.length) return;
+    setSearchResults(changes.searchResults.newValue as Product[]);
+  });
+
+  // Initializes the table by loading saved search results and column visibility settings.
   useEffect(() => {
     if (!isEmpty(appContext.userSettings.hideColumns)) {
       table.getAllLeafColumns().map((column: Column<Product>) => {
@@ -109,63 +109,7 @@ export default function ResultsTable({
       />
 
       <Paper id="search-results-table-container">
-        <Box
-          className="search-input-container fullwidth"
-          component="form"
-          noValidate
-          autoComplete="off"
-        />
-
-        <div className="p-2" style={{ minHeight: "369px" }}>
-          <TableOptions table={table} onSearch={executeSearch} />
-          <div className="h-4" />
-          {/* Render the hidden auto-sizing table */}
-          {autoSizer}
-          {Array.isArray(searchResults) && searchResults.length > 0 && (
-            <>
-              <table
-                className="search-results"
-                style={{
-                  ...columnSizeVars(),
-                }}
-              >
-                <TableHeader table={table} />
-                <tbody>
-                  {table.getRowModel().rows.map((row) => {
-                    return (
-                      <Fragment key={row.id}>
-                        <tr>
-                          {row.getVisibleCells().map((cell) => {
-                            return (
-                              <td
-                                key={cell.id}
-                                style={{
-                                  width: `${cell.column.getSize()}px`,
-                                  textAlign: "left", // default align everything left
-                                  ...(cell.column.columnDef.meta as { style?: CSSProperties })
-                                    ?.style,
-                                }}
-                              >
-                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                              </td>
-                            );
-                          })}
-                        </tr>
-                      </Fragment>
-                    );
-                  })}
-                </tbody>
-              </table>
-              <div className="h-2" />
-              <Pagination table={table} />
-            </>
-          )}
-          {((!isLoading && !Array.isArray(searchResults)) || searchResults.length === 0) && (
-            <div className="text-center p-4">
-              <p>{statusLabel || "No results found. Try a different search term."}</p>
-            </div>
-          )}
-        </div>
+        <AnimatedSearchDemo />
       </Paper>
     </>
   );
