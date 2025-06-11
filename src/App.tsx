@@ -8,19 +8,11 @@ import SupplierFactory from "@/suppliers/SupplierFactory";
 import { useEffect, useState } from "react";
 //import AnimatedSearchBarDemo from "./components/AnimatedSearchBarDemo";
 //import "./__mocks__/chromeStorageMock";
-import {
-  FavoritesPanel,
-  HistoryPanel,
-  SettingsPanel,
-  SuppliersPanel,
-  TabHeader,
-} from "./components";
+import { SuppliersPanel } from "./components";
 import AppbarHeader from "./components/AppbarHeader";
 //import BasicAppBar from "./components/BasicAppBar";
 import ErrorBoundary from "./components/ErrorBoundary";
-import SearchPanel from "./components/SearchPanel/SearchPanel";
 import SpeedDialMenu from "./components/SpeedDialMenu";
-import TabPanel from "./components/TabPanel";
 //import AppBarMenu from "./context/AppBarMenu";
 import AnimatedSearchBar from "./components/AnimatedSearchBar";
 import { darkTheme, lightTheme } from "./themes";
@@ -159,22 +151,7 @@ function App() {
             />
           )}
           <Box sx={{ bgcolor: "background.default", width: "100%" }}>
-            <TabHeader page={panel} setPage={setPanel} />
-            <TabPanel value={panel} name="search-panel" index={0} dir={theme.direction}>
-              <SearchPanel />
-            </TabPanel>
-            <TabPanel value={panel} name="suppliers-panel" index={1} dir={theme.direction}>
-              <SuppliersPanel />
-            </TabPanel>
-            <TabPanel value={panel} name="favorites-panel" index={2} dir={theme.direction}>
-              <FavoritesPanel />
-            </TabPanel>
-            <TabPanel value={panel} name="history-panel" index={3} dir={theme.direction}>
-              <HistoryPanel />
-            </TabPanel>
-            <TabPanel value={panel} name="settings-panel" index={4} dir={theme.direction}>
-              <SettingsPanel />
-            </TabPanel>
+            <SuppliersPanel />
             <SpeedDialMenu speedDialVisibility={speedDialVisibility} />
           </Box>
         </ThemeProvider>

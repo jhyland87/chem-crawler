@@ -27,29 +27,34 @@ const AnimatedSearchBar: React.FC<AnimatedSearchBarProps> = ({
 
   // Animation for the search bar container
   const containerSpring = useSpring({
-    top: docked ? 0 : "50%",
+    top: "50%", //docked ? 0 : "50%",
+    /*
     transform: docked ? "translate(-50%, 0)" : "translate(-50%, -50%)",
     width: docked ? "60%" : "80%",
     maxWidth: docked ? "600px" : "600px",
     height: docked ? "48px" : "60px",
     borderRadius: docked ? "8px" : "8px",
     boxShadow: docked ? "0 2px 4px rgba(0,0,0,0.1)" : "0 4px 12px rgba(0,0,0,0.1)",
-    zIndex: docked ? 100 : 10,
-    config: { tension: 300, friction: 30 },
+    zIndex: 99999,
+    config: { tension: 30, friction: 30 },
+    */
+    zIndex: 99999,
+    from: docked ? { y: 100 } : { y: 0 },
+    to: docked ? { y: 0 } : { y: 100 },
   });
 
   // Animation for the search icon
   const iconSpring = useSpring({
     fontSize: docked ? "20px" : "24px",
-    marginRight: docked ? "4px" : "8px",
-    config: { tension: 300, friction: 30 },
+    //marginRight: docked ? "4px" : "8px",
+    config: { tension: 30, friction: 30 },
   });
 
   // Animation for the input field
   const inputSpring = useSpring({
     fontSize: docked ? "14px" : "16px",
     width: docked ? "calc(100% - 80px)" : "100%",
-    config: { tension: 300, friction: 30 },
+    config: { tension: 30, friction: 30 },
   });
 
   // Focus the input when component mounts or when undocked
