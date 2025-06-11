@@ -222,3 +222,14 @@ export async function toUSD(amount: number, from: CurrencyCode): Promise<number>
   const rate = await getCurrencyRate(from, "USD");
   return parseFloat(Number(amount * rate).toFixed(2));
 }
+
+export function getCountryByLocale(locale?: string): Maybe<string> {
+  if (!locale) {
+    if (typeof chrome?.i18n !== "object") return;
+    locale = chrome?.i18n?.getUILanguage();
+  }
+
+  if (!locale) return;
+
+  return locale.split("-")[1] as string;
+}

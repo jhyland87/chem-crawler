@@ -16,8 +16,9 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
+import clm from "country-locale-map";
+import { currencySymbolMap } from "currency-symbol-map";
 import { ChangeEvent, MouseEvent } from "react";
-import { currencies, locations } from "../../config.json";
 const inputStyle = {
   width: 120,
   size: "small",
@@ -140,29 +141,7 @@ export default function SettingsPanel() {
           />
         </ListItem>
         <ListItem sx={displayHelperOnHover}>
-          <ListItemText primary="Currency" />
-          <FormHelperText>Convert all currency to this</FormHelperText>
-          <FormControl>
-            <InputLabel id="currency-select-label">Currency</InputLabel>
-            <Select
-              labelId="currency-select-label"
-              value={appContext.userSettings.currency}
-              onChange={handleInputChange}
-              name="currency"
-              label="currency"
-              size="small"
-              sx={{ ...inputStyle }}
-            >
-              {Object.entries(currencies).map(([currencyId, { symbol }]) => (
-                <MenuItem key={currencyId} value={currencyId}>
-                  {currencyId.toUpperCase()} ({symbol})
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </ListItem>
-        <ListItem sx={displayHelperOnHover}>
-          <ListItemText primary="location" />
+          <ListItemText primary="Location" />
           <FormHelperText>Your country</FormHelperText>
           <FormControl>
             <InputLabel id="location-select-label">Location</InputLabel>
@@ -178,15 +157,36 @@ export default function SettingsPanel() {
               <MenuItem value="">
                 <i>None</i>
               </MenuItem>
-              {Object.entries(locations).map(([locationId, { name }]) => (
-                <MenuItem key={locationId} value={locationId}>
-                  {name}
+              {clm.getAllCountries().map((country) => (
+                <MenuItem key={country.alpha3} value={country.alpha3}>
+                  {country.name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
         </ListItem>
-
+        <ListItem sx={displayHelperOnHover}>
+          <ListItemText primary="Currency" />
+          <FormHelperText>Convert all currency to this</FormHelperText>
+          <FormControl>
+            <InputLabel id="currency-select-label">Currency</InputLabel>
+            <Select
+              labelId="currency-select-label"
+              value={appContext.userSettings.currency}
+              onChange={handleInputChange}
+              name="currency"
+              label="currency"
+              size="small"
+              sx={{ ...inputStyle }}
+            >
+              {clm.getAllCountries().map((country) => (
+                <MenuItem key={country.currency} value={country.currency}>
+                  {country.currency} ({currencySymbolMap[country.currency]})
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </ListItem>
         <ListItem sx={displayHelperOnHover}>
           <ListItemText primary="Ships to Location" />
           <FormHelperText>Only show products that ship to your location</FormHelperText>

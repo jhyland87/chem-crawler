@@ -3,50 +3,62 @@
   "locations": {
     "US": {
       "name": "United States",
+      "locale": "en-US",
       "currency": "USD"
     },
     "CA": {
       "name": "Canada",
+      "locale": "en-CA",
       "currency": "CAD"
     },
     "UK": {
       "name": "United Kingdom",
+      "locale": "en-GB",
       "currency": "GBP"
     },
     "AU": {
       "name": "Australia",
+      "locale": "en-AU",
       "currency": "AUD"
     },
     "NZ": {
       "name": "New Zealand",
+      "locale": "en-NZ",
       "currency": "NZD"
     },
     "JP": {
       "name": "Japan",
+      "locale": "ja-JP",
       "currency": "JPY"
     },
     "CN": {
       "name": "China",
+      "locale": "zh-CN",
       "currency": "CNY"
     },
     "IN": {
       "name": "India",
+      "locale": "en-IN",
       "currency": "INR"
     },
     "RU": {
       "name": "Russia",
+      "locale": "ru-RU",
       "currency": "RUB"
     },
     "FIN": {
       "name": "Finland",
+      "locale": "fi-FI",
       "currency": "EUR"
     },
     "DE": {
       "name": "Germany",
+      "locale": "de-DE",
       "currency": "EUR"
     },
     "OTHER": {
       "name": "Other",
+      "locale": "en-US",
       "currency": "USD"
     }
   },

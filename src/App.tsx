@@ -8,6 +8,8 @@ import { AppContext } from "@/context";
 import SupplierFactory from "@/suppliers/SupplierFactory";
 import { useEffect, useState } from "react";
 //import "./__mocks__/chromeStorageMock";
+import { getCountryByLocale } from "@/helpers/currency";
+import clm from "country-locale-map";
 import ErrorBoundary from "./components/ErrorBoundary";
 import FavoritesPanel from "./components/FavoritesPanel";
 import HistoryPanel from "./components/HistoryPanel";
@@ -83,13 +85,19 @@ function App() {
     };
   }, []);
 
+  const locale = chrome?.i18n?.getUILanguage() || "";
+  const country = getCountryByLocale() || "";
+  const location = clm.getAlpha3ByAlpha2(country) || "";
+  const currency = clm.getCurrencyByAlpha2(country) || "USD";
+
+  console.log({ locale, country, currency, location });
   // Default settings
   const [userSettings, setUserSettings] = useState<UserSettings>({
     showHelp: false,
     caching: true,
     autocomplete: true,
-    currency: "usd",
-    location: "",
+    location: location,
+    currency: currency,
     shipsToMyLocation: false,
     foo: "bar",
     jason: false,

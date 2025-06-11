@@ -5,6 +5,7 @@ import { firstMap } from "@/helpers/utils";
 import ProductBuilder from "@/utils/ProductBuilder";
 import { isProductItem, isProductSelection, isValidSearchResponse } from "@/utils/typeGuards/wix";
 import merge from "lodash/merge";
+import mergeWith from "lodash/mergeWith";
 import SupplierBase from "./SupplierBase";
 /**
  * SupplierBaseWix class that extends SupplierBase and implements AsyncIterable<Product>.
@@ -275,7 +276,14 @@ export default abstract class SupplierBaseWix
             .filter((entry) => entry.length > 0),
         );
 
-        const productVariants = merge(productItems, productSelections);
+        const productVariants = mergeWith(productItems, productSelections, (a, b) => {
+          if (!b) return;
+          // If there is no useful item data, then assume its the default and just use the
+          // root product. This seems to work, but it's not ideal.
+          // @todo: find a better way to handle this
+          if (!a) a = product;
+          return merge(a, b);
+        });
         const productPrice = parsePrice(product.formattedPrice);
 
         if (!productPrice) {
