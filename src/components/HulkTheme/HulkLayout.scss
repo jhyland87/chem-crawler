@@ -1,0 +1,91 @@
+@use "../../styles/themes/hulk-theme.scss" as hulk;
+
+.hulk-layout {
+  display: flex;
+  min-height: 100vh;
+  background: hulk.$hulk-light-bg;
+  font-family: hulk.$hulk-font-family;
+  position: relative;
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: hulk.$hulk-sidebar-width;
+    transition: margin-left hulk.$hulk-transition-normal;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      margin-left: 0;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: hulk.$hulk-spacing-lg;
+    overflow-y: auto;
+    background: hulk.$hulk-light-bg;
+    min-height: calc(100vh - 64px);
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      padding: hulk.$hulk-spacing-md;
+    }
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+
+    @media (min-width: hulk.$hulk-breakpoint-md) {
+      display: none;
+    }
+  }
+
+  // Layout states
+  &--sidebar-collapsed {
+    .hulk-layout__main {
+      margin-left: hulk.$hulk-sidebar-collapsed-width;
+
+      @media (max-width: hulk.$hulk-breakpoint-md) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--mobile-sidebar-open {
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      .hulk-layout__content {
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (min-width: hulk.$hulk-breakpoint-md) {
+    &.hulk-layout--sidebar-collapsed {
+      .hulk-layout__main {
+        margin-left: hulk.$hulk-sidebar-collapsed-width;
+      }
+    }
+
+    .hulk-layout__main {
+      margin-left: hulk.$hulk-sidebar-width;
+    }
+  }
+
+  @media (max-width: hulk.$hulk-breakpoint-md) {
+    .hulk-layout__main {
+      margin-left: 0;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import "./App.scss";
 import ErrorBoundary from "./components/ErrorBoundary";
 import FavoritesPanel from "./components/FavoritesPanel";
 import HistoryPanel from "./components/HistoryPanel";
+import { HulkSamplePage } from "./components/HulkTheme";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
 import SettingsPanel from "./components/SettingsPanel";
 import SpeedDialMenu from "./components/SpeedDialMenu";
@@ -292,6 +293,16 @@ function App() {
                 dir={theme.direction}
               >
                 <SettingsPanel />
+              </TabPanel>
+              <TabPanel
+                value={appState.panel}
+                name="hulk-theme-panel"
+                index={5}
+                dir={theme.direction}
+              >
+                <div style={{ background: "#1a1a1a", minHeight: "100vh", overflow: "hidden" }}>
+                  <HulkSamplePage onClose={() => handleSetPanel(0)} />
+                </div>
               </TabPanel>
             </AppBar>
             <SpeedDialMenu speedDialVisibility={appState.speedDialVisibility} />

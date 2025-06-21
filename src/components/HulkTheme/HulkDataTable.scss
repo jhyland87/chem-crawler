@@ -1,0 +1,406 @@
+@use "sass:color";
+@use "../../styles/themes/hulk-theme.scss" as hulk;
+
+.hulk-data-table {
+  background: hulk.$hulk-light-card;
+  border-radius: hulk.$hulk-border-radius-lg;
+  box-shadow: hulk.$hulk-shadow-md;
+  overflow: hidden;
+
+  // Header section
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: hulk.$hulk-spacing-xl;
+    border-bottom: 1px solid #e9ecef;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-lg;
+    }
+  }
+
+  &__title-section {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xxl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin: 0 0 hulk.$hulk-spacing-xs 0;
+  }
+
+  &__subtitle {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-secondary;
+    margin: 0;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-lg;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      flex-direction: column;
+      width: 100%;
+      gap: hulk.$hulk-spacing-md;
+    }
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      width: 100%;
+    }
+  }
+
+  &__search-input {
+    padding-right: hulk.$hulk-spacing-xxl;
+    min-width: 300px;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    right: hulk.$hulk-spacing-md;
+    color: hulk.$hulk-text-hint;
+    pointer-events: none;
+  }
+
+  &__add-btn {
+    white-space: nowrap;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      width: 100%;
+    }
+  }
+
+  // Table container
+  &__container {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+  }
+
+  // Table styles
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: hulk.$hulk-font-size-sm;
+  }
+
+  &__thead {
+    background: #f8f9fa;
+  }
+
+  &__header-row {
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  &__header-cell {
+    padding: hulk.$hulk-spacing-lg hulk.$hulk-spacing-md;
+    text-align: left;
+    font-weight: hulk.$hulk-font-weight-medium;
+    color: hulk.$hulk-text-primary;
+    white-space: nowrap;
+
+    &:first-child {
+      padding-left: hulk.$hulk-spacing-xl;
+    }
+
+    &:last-child {
+      padding-right: hulk.$hulk-spacing-xl;
+    }
+  }
+
+  &__header-content {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-xs;
+    cursor: pointer;
+    transition: color hulk.$hulk-transition-fast;
+
+    &.sortable:hover {
+      color: hulk.$hulk-primary;
+    }
+
+    &:not(.sortable) {
+      cursor: default;
+    }
+  }
+
+  &__sort-icon {
+    font-size: 0.875rem;
+    opacity: 0.7;
+  }
+
+  &__tbody {
+    // Empty styles for scoping
+  }
+
+  &__row {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__cell {
+    padding: hulk.$hulk-spacing-lg hulk.$hulk-spacing-md;
+    color: hulk.$hulk-text-secondary;
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: hulk.$hulk-spacing-xl;
+      color: hulk.$hulk-text-primary;
+      font-weight: hulk.$hulk-font-weight-medium;
+    }
+
+    &:last-child {
+      padding-right: hulk.$hulk-spacing-xl;
+    }
+  }
+
+  // Custom cell styles
+  &__name-cell {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+    color: hulk.$hulk-text-primary;
+    font-weight: hulk.$hulk-font-weight-medium;
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: hulk.$hulk-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  &__email-link {
+    color: hulk.$hulk-primary;
+    text-decoration: none;
+    transition: color hulk.$hulk-transition-fast;
+
+    &:hover {
+      color: hulk.$hulk-primary-light;
+      text-decoration: underline;
+    }
+  }
+
+  &__salary {
+    font-weight: hulk.$hulk-font-weight-medium;
+    color: hulk.$hulk-success;
+  }
+
+  &__actions {
+    display: flex;
+    gap: hulk.$hulk-spacing-xs;
+  }
+
+  // Footer section
+  &__footer {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: hulk.$hulk-spacing-lg hulk.$hulk-spacing-xl;
+    border-top: 1px solid #e9ecef;
+    background: #f8f9fa;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-md;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-secondary;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      order: 2;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-xs;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      order: 1;
+    }
+  }
+
+  &__page-btn {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: hulk.$hulk-font-size-sm;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        transform: none;
+        background: hulk.$hulk-primary;
+      }
+    }
+  }
+
+  &__page-info {
+    padding: 0 hulk.$hulk-spacing-md;
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-secondary;
+    white-space: nowrap;
+  }
+
+  .action-button {
+    &.delete {
+      background: color.adjust(hulk.$hulk-error, $lightness: -10%);
+    }
+  }
+}
+
+// Badge component styles
+.hulk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: hulk.$hulk-spacing-xs hulk.$hulk-spacing-sm;
+  border-radius: hulk.$hulk-border-radius-lg;
+  font-size: hulk.$hulk-font-size-xs;
+  font-weight: hulk.$hulk-font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &--success {
+    background: rgba(hulk.$hulk-success, 0.2);
+    color: hulk.$hulk-success;
+    border: 1px solid rgba(hulk.$hulk-success, 0.3);
+  }
+
+  &--warning {
+    background: rgba(hulk.$hulk-warning, 0.2);
+    color: hulk.$hulk-warning;
+    border: 1px solid rgba(hulk.$hulk-warning, 0.3);
+  }
+
+  &--error {
+    background: rgba(hulk.$hulk-error, 0.2);
+    color: hulk.$hulk-error;
+    border: 1px solid rgba(hulk.$hulk-error, 0.3);
+  }
+
+  &--info {
+    background: rgba(hulk.$hulk-info, 0.2);
+    color: hulk.$hulk-info;
+    border: 1px solid rgba(hulk.$hulk-info, 0.3);
+  }
+}
+
+// Small button styles for table actions
+.hulk-btn-sm {
+  padding: hulk.$hulk-spacing-xs;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: hulk.$hulk-border-radius-sm;
+  font-size: hulk.$hulk-font-size-sm;
+  border: none;
+  cursor: pointer;
+  transition: all hulk.$hulk-transition-fast;
+
+  &.hulk-btn-primary {
+    background: hulk.$hulk-primary;
+    color: hulk.$hulk-text-primary;
+
+    &:hover {
+      background: hulk.$hulk-primary-dark;
+      transform: translateY(-1px);
+    }
+  }
+
+  &.hulk-btn-error {
+    background: hulk.$hulk-error;
+    color: hulk.$hulk-text-primary;
+
+    &:hover {
+      background: color.adjust(hulk.$hulk-error, $lightness: -10%);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: hulk.$hulk-breakpoint-sm) {
+  .hulk-data-table {
+    &__header {
+      padding: hulk.$hulk-spacing-lg;
+    }
+
+    &__cell,
+    &__header-cell {
+      padding: hulk.$hulk-spacing-md hulk.$hulk-spacing-sm;
+
+      &:first-child {
+        padding-left: hulk.$hulk-spacing-lg;
+      }
+
+      &:last-child {
+        padding-right: hulk.$hulk-spacing-lg;
+      }
+    }
+
+    &__footer {
+      padding: hulk.$hulk-spacing-lg;
+    }
+
+    &__name-cell {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-xs;
+      text-align: center;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+  }
+}

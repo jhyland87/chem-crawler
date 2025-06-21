@@ -1,0 +1,484 @@
+@use "../../styles/themes/hulk-theme.scss" as hulk;
+
+.hulk-header {
+  position: fixed;
+  top: 0;
+  left: hulk.$hulk-sidebar-width;
+  right: 0;
+  height: hulk.$hulk-header-height;
+  background: hulk.$hulk-header-bg;
+  color: hulk.$hulk-header-text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 hulk.$hulk-spacing-lg;
+  z-index: 999;
+  box-shadow: hulk.$hulk-shadow-sm;
+  transition: left hulk.$hulk-transition-normal;
+
+  @media (max-width: hulk.$hulk-breakpoint-md) {
+    left: 0;
+  }
+
+  // When sidebar is collapsed
+  &.sidebar-collapsed {
+    left: hulk.$hulk-sidebar-collapsed-width;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      left: 0;
+    }
+  }
+
+  // Left section
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-md;
+  }
+
+  &__toggle {
+    background: none;
+    border: none;
+    color: hulk.$hulk-text-secondary;
+    cursor: pointer;
+    padding: hulk.$hulk-spacing-sm;
+    border-radius: hulk.$hulk-border-radius-sm;
+    transition: all hulk.$hulk-transition-fast;
+    font-size: 1.25rem;
+
+    &:hover {
+      color: hulk.$hulk-text-primary;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (min-width: hulk.$hulk-breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-xs;
+    font-size: hulk.$hulk-font-size-sm;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      display: none;
+    }
+  }
+
+  &__breadcrumb-item {
+    color: hulk.$hulk-text-secondary;
+    transition: color hulk.$hulk-transition-fast;
+
+    &:hover {
+      color: hulk.$hulk-text-primary;
+    }
+
+    &.active {
+      color: hulk.$hulk-primary;
+      font-weight: hulk.$hulk-font-weight-medium;
+    }
+
+    &:not(:last-child)::after {
+      content: "/";
+      color: hulk.$hulk-text-disabled;
+      font-size: hulk.$hulk-font-size-xs;
+      margin-left: hulk.$hulk-spacing-xs;
+    }
+  }
+
+  // Right section
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-md;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      gap: hulk.$hulk-spacing-sm;
+    }
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-medium;
+    color: hulk.$hulk-text-primary;
+    margin: 0;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      font-size: hulk.$hulk-font-size-lg;
+    }
+  }
+
+  // Search section
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__search-input {
+    width: 300px;
+    padding: hulk.$hulk-spacing-sm hulk.$hulk-spacing-md;
+    padding-right: hulk.$hulk-spacing-xxl;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: hulk.$hulk-border-radius-lg;
+    background: rgba(255, 255, 255, 0.05);
+    color: hulk.$hulk-text-primary;
+    font-size: hulk.$hulk-font-size-sm;
+    transition: all hulk.$hulk-transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: hulk.$hulk-primary;
+      box-shadow: 0 0 0 2px rgba(hulk.$hulk-primary, 0.2);
+    }
+
+    &::placeholder {
+      color: hulk.$hulk-text-hint;
+    }
+
+    @media (max-width: hulk.$hulk-breakpoint-lg) {
+      width: 250px;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    right: hulk.$hulk-spacing-md;
+    color: hulk.$hulk-text-hint;
+    pointer-events: none;
+  }
+
+  // Action buttons
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+  }
+
+  &__action-btn {
+    background: none;
+    border: none;
+    color: hulk.$hulk-text-secondary;
+    cursor: pointer;
+    padding: hulk.$hulk-spacing-sm;
+    border-radius: hulk.$hulk-border-radius-sm;
+    transition: all hulk.$hulk-transition-fast;
+    position: relative;
+    font-size: 1.1rem;
+
+    &:hover {
+      color: hulk.$hulk-text-primary;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.has-notification::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 8px;
+      height: 8px;
+      background: hulk.$hulk-error;
+      border-radius: 50%;
+    }
+  }
+
+  // User dropdown
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+    cursor: pointer;
+    padding: hulk.$hulk-spacing-xs hulk.$hulk-spacing-sm;
+    border-radius: hulk.$hulk-border-radius-md;
+    transition: all hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: hulk.$hulk-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hulk.$hulk-text-primary;
+    font-weight: 600;
+    font-size: hulk.$hulk-font-size-sm;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      display: none;
+    }
+  }
+
+  &__user-name {
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+    color: hulk.$hulk-text-primary;
+    line-height: 1;
+  }
+
+  &__user-role {
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-secondary;
+    line-height: 1;
+  }
+
+  &__user-arrow {
+    font-size: 0.75rem;
+    color: hulk.$hulk-text-secondary;
+    transition: transform hulk.$hulk-transition-fast;
+
+    .hulk-header__user:hover & {
+      transform: rotate(180deg);
+    }
+  }
+
+  // Dropdowns
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: hulk.$hulk-light-card;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: hulk.$hulk-border-radius-lg;
+    box-shadow: hulk.$hulk-shadow-xl;
+    min-width: 300px;
+    z-index: 1000;
+    margin-top: hulk.$hulk-spacing-sm;
+    animation: hulk-dropdown-fade-in 0.2s ease-out;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      right: calc(-1 * hulk.$hulk-spacing-md);
+      left: calc(-1 * hulk.$hulk-spacing-md);
+      min-width: auto;
+    }
+  }
+
+  &__dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: hulk.$hulk-spacing-lg;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    h3 {
+      margin: 0;
+      font-size: hulk.$hulk-font-size-lg;
+      font-weight: hulk.$hulk-font-weight-medium;
+      color: hulk.$hulk-text-primary;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: hulk.$hulk-text-secondary;
+      cursor: pointer;
+      padding: hulk.$hulk-spacing-xs;
+      border-radius: hulk.$hulk-border-radius-sm;
+      transition: all hulk.$hulk-transition-fast;
+
+      &:hover {
+        color: hulk.$hulk-text-primary;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &__dropdown-body {
+    padding: hulk.$hulk-spacing-sm;
+    max-height: 300px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+    }
+  }
+
+  &__dropdown-footer {
+    padding: hulk.$hulk-spacing-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  // Notifications
+  &__notifications {
+    .hulk-header__dropdown-body {
+      padding: 0;
+    }
+  }
+
+  &__notification {
+    padding: hulk.$hulk-spacing-md;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--info {
+      border-left: 3px solid hulk.$hulk-info;
+    }
+
+    &--success {
+      border-left: 3px solid hulk.$hulk-success;
+    }
+
+    &--warning {
+      border-left: 3px solid hulk.$hulk-warning;
+    }
+
+    &--error {
+      border-left: 3px solid hulk.$hulk-error;
+    }
+  }
+
+  &__notification-message {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-primary;
+    margin-bottom: hulk.$hulk-spacing-xs;
+  }
+
+  &__notification-time {
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-secondary;
+  }
+
+  // User menu
+  &__user-menu {
+    min-width: 250px;
+  }
+
+  &__user-profile {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-md;
+  }
+
+  &__menu-item {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+    width: 100%;
+    background: none;
+    border: none;
+    color: hulk.$hulk-text-secondary;
+    cursor: pointer;
+    padding: hulk.$hulk-spacing-sm hulk.$hulk-spacing-md;
+    border-radius: hulk.$hulk-border-radius-sm;
+    transition: all hulk.$hulk-transition-fast;
+    font-size: hulk.$hulk-font-size-sm;
+    text-align: left;
+
+    &:hover {
+      color: hulk.$hulk-text-primary;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &--danger {
+      color: hulk.$hulk-error;
+
+      &:hover {
+        color: hulk.$hulk-text-primary;
+        background: rgba(hulk.$hulk-error, 0.1);
+      }
+    }
+  }
+
+  &__menu-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: hulk.$hulk-spacing-sm 0;
+  }
+
+  &__view-all-btn {
+    background: hulk.$hulk-primary;
+    border: none;
+    color: hulk.$hulk-text-primary;
+    cursor: pointer;
+    padding: hulk.$hulk-spacing-sm hulk.$hulk-spacing-lg;
+    border-radius: hulk.$hulk-border-radius-md;
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+    transition: all hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: hulk.$hulk-primary-dark;
+      transform: translateY(-1px);
+    }
+  }
+
+  // Mobile overlay
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    @media (min-width: hulk.$hulk-breakpoint-md) {
+      display: none;
+    }
+  }
+}
+
+// Animations
+@keyframes hulk-dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Mobile responsive adjustments
+@media (max-width: hulk.$hulk-breakpoint-sm) {
+  .hulk-header {
+    &__left {
+      flex: 0 0 auto;
+    }
+
+    &__right {
+      flex: 0 0 auto;
+    }
+
+    &__center {
+      flex: 1;
+    }
+  }
+}

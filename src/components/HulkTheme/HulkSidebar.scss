@@ -1,0 +1,294 @@
+@use "../../styles/themes/hulk-theme.scss" as hulk;
+
+.hulk-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: hulk.$hulk-sidebar-width;
+  background: hulk.$hulk-dark-sidebar;
+  color: hulk.$hulk-sidebar-text-primary;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all hulk.$hulk-transition-normal;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: hulk.$hulk-shadow-lg;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: hulk.$hulk-breakpoint-md) {
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  // Collapsed state
+  &.collapsed {
+    width: hulk.$hulk-sidebar-collapsed-width;
+
+    .hulk-sidebar__logo-text {
+      display: none;
+    }
+
+    .hulk-sidebar__menu-content {
+      display: none;
+    }
+
+    .hulk-sidebar__menu-arrow {
+      display: none;
+    }
+
+    .hulk-sidebar__submenu {
+      display: none;
+    }
+
+    .hulk-sidebar__upgrade-card {
+      display: none;
+    }
+  }
+
+  // Header section
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: hulk.$hulk-spacing-xl hulk.$hulk-spacing-lg;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: hulk.$hulk-header-height;
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo-icon {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-sidebar-text-primary;
+  }
+
+  &__logo-text {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-sidebar-text-primary;
+    letter-spacing: 2px;
+  }
+
+  // Navigation section
+  &__nav {
+    flex: 1;
+    padding: hulk.$hulk-spacing-md 0;
+    overflow-y: auto;
+  }
+
+  &__menu-item-wrapper {
+    margin-bottom: 2px;
+  }
+
+  &__menu-item {
+    display: flex;
+    align-items: center;
+    padding: hulk.$hulk-spacing-md hulk.$hulk-spacing-lg;
+    transition: all hulk.$hulk-transition-fast;
+    cursor: pointer;
+    color: hulk.$hulk-sidebar-text-secondary;
+    border-left: 3px solid transparent;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: hulk.$hulk-sidebar-text-primary;
+    }
+
+    &.active {
+      background: hulk.$hulk-sidebar-active-bg;
+      color: hulk.$hulk-sidebar-text-primary;
+      border-left-color: hulk.$hulk-primary;
+    }
+
+    &.sub-item {
+      font-size: hulk.$hulk-font-size-sm;
+      padding-top: hulk.$hulk-spacing-sm;
+      padding-bottom: hulk.$hulk-spacing-sm;
+
+      &:before {
+        content: "–";
+        margin-right: hulk.$hulk-spacing-xs;
+        color: hulk.$hulk-text-disabled;
+      }
+    }
+  }
+
+  &__menu-icon {
+    font-size: hulk.$hulk-font-size-lg;
+    width: 24px;
+    text-align: center;
+    margin-right: hulk.$hulk-spacing-md;
+    flex-shrink: 0;
+  }
+
+  &__menu-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__menu-label {
+    font-weight: hulk.$hulk-font-weight-medium;
+    font-size: hulk.$hulk-font-size-base;
+    line-height: 1.2;
+  }
+
+  &__menu-description {
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-disabled;
+    line-height: 1.3;
+    font-weight: hulk.$hulk-font-weight-regular;
+  }
+
+  &__menu-arrow {
+    font-size: hulk.$hulk-font-size-xs;
+    margin-left: hulk.$hulk-spacing-sm;
+    transition: transform hulk.$hulk-transition-fast;
+    color: hulk.$hulk-text-disabled;
+
+    &.expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__submenu {
+    background: hulk.$hulk-sidebar-submenu-bg;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    margin-left: hulk.$hulk-spacing-lg;
+  }
+
+  // Footer section
+  &__footer {
+    flex-shrink: 0;
+    padding: hulk.$hulk-spacing-lg;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__upgrade-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: hulk.$hulk-border-radius-md;
+    padding: hulk.$hulk-spacing-lg;
+    text-align: center;
+  }
+
+  &__upgrade-content {
+    display: flex;
+    flex-direction: column;
+    gap: hulk.$hulk-spacing-sm;
+  }
+
+  &__upgrade-label {
+    font-size: hulk.$hulk-font-size-lg;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-sidebar-text-primary;
+  }
+
+  &__upgrade-price {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-disabled;
+  }
+
+  &__upgrade-btn {
+    background: hulk.$hulk-primary;
+    border: none;
+    border-radius: hulk.$hulk-border-radius-sm;
+    color: white;
+    padding: hulk.$hulk-spacing-sm hulk.$hulk-spacing-lg;
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+    cursor: pointer;
+    transition: all hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: hulk.$hulk-primary-dark;
+      transform: translateY(-1px);
+    }
+  }
+
+  // Scrollbar styles
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+  }
+
+  // Mobile overlay
+  @media (max-width: hulk.$hulk-breakpoint-md) {
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity hulk.$hulk-transition-normal;
+    }
+
+    &.open::before {
+      opacity: 1;
+    }
+
+    &.open {
+      width: hulk.$hulk-sidebar-width;
+    }
+  }
+}
+
+// Animation for menu items
+@keyframes hulk-menu-item-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hulk-sidebar__menu-item {
+  animation: hulk-menu-item-slide 0.3s ease-out;
+}
+
+// Mobile responsive
+@media (max-width: hulk.$hulk-breakpoint-md) {
+  .hulk-sidebar {
+    z-index: 1001;
+
+    &.collapsed {
+      width: hulk.$hulk-sidebar-width;
+
+      .hulk-sidebar__logo-text,
+      .hulk-sidebar__menu-label,
+      .hulk-sidebar__menu-arrow,
+      .hulk-sidebar__user-info {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

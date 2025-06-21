@@ -1,0 +1,585 @@
+@use "../../styles/themes/hulk-theme.scss" as hulk;
+
+.hulk-sample-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+
+  // Header Section
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: hulk.$hulk-spacing-xl;
+
+    @media (max-width: hulk.$hulk-breakpoint-md) {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-lg;
+    }
+  }
+
+  &__title-section {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xxxl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin: 0 0 hulk.$hulk-spacing-sm 0;
+    background: hulk.$hulk-gradient-primary;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__subtitle {
+    font-size: hulk.$hulk-font-size-lg;
+    color: hulk.$hulk-text-secondary;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    gap: hulk.$hulk-spacing-md;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      width: 100%;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+
+  // Stats Cards Grid
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: hulk.$hulk-spacing-lg;
+    margin-bottom: hulk.$hulk-spacing-xl;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Dashboard Grid
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: hulk.$hulk-spacing-lg;
+    margin-bottom: hulk.$hulk-spacing-xl;
+
+    @media (max-width: hulk.$hulk-breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left-column {
+    display: flex;
+    flex-direction: column;
+    gap: hulk.$hulk-spacing-lg;
+  }
+
+  &__right-column {
+    display: flex;
+    flex-direction: column;
+    gap: hulk.$hulk-spacing-lg;
+  }
+
+  // Table Section
+  &__table-section {
+    margin-bottom: hulk.$hulk-spacing-xl;
+  }
+
+  // Features Section
+  &__features {
+    margin-bottom: hulk.$hulk-spacing-xl;
+  }
+
+  &__feature-header {
+    text-align: center;
+    margin-bottom: hulk.$hulk-spacing-xl;
+
+    h2 {
+      font-size: hulk.$hulk-font-size-xxl;
+      font-weight: hulk.$hulk-font-weight-bold;
+      color: hulk.$hulk-text-primary;
+      margin: 0 0 hulk.$hulk-spacing-sm 0;
+    }
+
+    p {
+      font-size: hulk.$hulk-font-size-lg;
+      color: hulk.$hulk-text-secondary;
+      margin: 0;
+    }
+  }
+
+  &__feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: hulk.$hulk-spacing-lg;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    padding: hulk.$hulk-spacing-lg;
+    border-radius: hulk.$hulk-border-radius-lg;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all hulk.$hulk-transition-normal;
+
+    &:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    h4 {
+      font-size: hulk.$hulk-font-size-lg;
+      font-weight: hulk.$hulk-font-weight-medium;
+      color: hulk.$hulk-text-primary;
+      margin: hulk.$hulk-spacing-md 0 hulk.$hulk-spacing-sm 0;
+    }
+
+    p {
+      font-size: hulk.$hulk-font-size-sm;
+      color: hulk.$hulk-text-secondary;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  &__feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: hulk.$hulk-spacing-sm;
+  }
+}
+
+// Stats Card Component
+.hulk-stats-card {
+  @include hulk.hulk-card;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: hulk.$hulk-primary;
+    transition: all hulk.$hulk-transition-normal;
+  }
+
+  &--primary::before {
+    background: hulk.$hulk-gradient-primary;
+  }
+
+  &--success::before {
+    background: hulk.$hulk-gradient-success;
+  }
+
+  &--warning::before {
+    background: hulk.$hulk-gradient-warning;
+  }
+
+  &--info::before {
+    background: hulk.$hulk-gradient-info;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: hulk.$hulk-spacing-lg;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+    color: hulk.$hulk-text-secondary;
+    margin: 0 0 hulk.$hulk-spacing-xs 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__value {
+    font-size: hulk.$hulk-font-size-xxxl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin-bottom: hulk.$hulk-spacing-sm;
+    line-height: 1;
+  }
+
+  &__change {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-xs;
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+
+    &--positive {
+      color: hulk.$hulk-success;
+    }
+
+    &--negative {
+      color: hulk.$hulk-error;
+    }
+
+    &--neutral {
+      color: hulk.$hulk-text-secondary;
+    }
+  }
+
+  &__change-icon {
+    font-size: 1rem;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    opacity: 0.3;
+    flex-shrink: 0;
+  }
+}
+
+// Quick Actions Component
+.hulk-quick-actions {
+  &__header {
+    margin-bottom: hulk.$hulk-spacing-lg;
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin: 0 0 hulk.$hulk-spacing-xs 0;
+  }
+
+  &__subtitle {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-secondary;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: hulk.$hulk-spacing-md;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: hulk.$hulk-spacing-sm;
+    padding: hulk.$hulk-spacing-lg;
+    border: none;
+    border-radius: hulk.$hulk-border-radius-lg;
+    background: rgba(255, 255, 255, 0.05);
+    color: hulk.$hulk-text-primary;
+    cursor: pointer;
+    transition: all hulk.$hulk-transition-normal;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+  }
+
+  &__label {
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+  }
+}
+
+// Activity Feed Component
+.hulk-activity-feed {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: hulk.$hulk-spacing-lg;
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin: 0;
+  }
+
+  &__view-all {
+    background: none;
+    border: none;
+    color: hulk.$hulk-primary;
+    cursor: pointer;
+    font-size: hulk.$hulk-font-size-sm;
+    font-weight: hulk.$hulk-font-weight-medium;
+    transition: color hulk.$hulk-transition-fast;
+
+    &:hover {
+      color: hulk.$hulk-primary-light;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: hulk.$hulk-spacing-md;
+  }
+
+  &__item {
+    display: flex;
+    gap: hulk.$hulk-spacing-md;
+    padding: hulk.$hulk-spacing-md;
+    border-radius: hulk.$hulk-border-radius-md;
+    transition: background-color hulk.$hulk-transition-fast;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__text {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-primary;
+    margin-bottom: hulk.$hulk-spacing-xs;
+    line-height: 1.4;
+
+    strong {
+      font-weight: hulk.$hulk-font-weight-medium;
+    }
+  }
+
+  &__time {
+    font-size: hulk.$hulk-font-size-xs;
+    color: hulk.$hulk-text-secondary;
+  }
+}
+
+// Chart Card Component
+.hulk-chart-card {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: hulk.$hulk-spacing-lg;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-md;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: hulk.$hulk-font-size-xl;
+    font-weight: hulk.$hulk-font-weight-bold;
+    color: hulk.$hulk-text-primary;
+    margin: 0;
+  }
+
+  &__select {
+    min-width: 140px;
+  }
+
+  &__content {
+    margin-bottom: hulk.$hulk-spacing-lg;
+  }
+
+  &__footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: hulk.$hulk-spacing-lg;
+  }
+
+  &__legend {
+    display: flex;
+    gap: hulk.$hulk-spacing-lg;
+    justify-content: center;
+
+    @media (max-width: hulk.$hulk-breakpoint-sm) {
+      flex-direction: column;
+      gap: hulk.$hulk-spacing-sm;
+    }
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: hulk.$hulk-spacing-xs;
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-secondary;
+  }
+
+  &__legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    &--primary {
+      background: hulk.$hulk-primary;
+    }
+
+    &--success {
+      background: hulk.$hulk-success;
+    }
+  }
+}
+
+// Chart Placeholder Component
+.hulk-chart-placeholder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: hulk.$hulk-border-radius-md;
+  position: relative;
+
+  &__bars {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    height: 100px;
+    margin-bottom: hulk.$hulk-spacing-md;
+  }
+
+  &__bar {
+    width: 20px;
+    background: hulk.$hulk-gradient-primary;
+    border-radius: 2px;
+    animation: hulk-chart-bar-grow 1s ease-out;
+  }
+
+  &__label {
+    font-size: hulk.$hulk-font-size-sm;
+    color: hulk.$hulk-text-secondary;
+    text-align: center;
+  }
+}
+
+@keyframes hulk-chart-bar-grow {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--height, 50%);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: hulk.$hulk-breakpoint-lg) {
+  .hulk-sample-page {
+    &__grid {
+      gap: hulk.$hulk-spacing-lg;
+    }
+  }
+}
+
+@media (max-width: hulk.$hulk-breakpoint-md) {
+  .hulk-sample-page {
+    &__stats {
+      gap: hulk.$hulk-spacing-md;
+    }
+
+    &__grid {
+      gap: hulk.$hulk-spacing-md;
+    }
+
+    &__feature-grid {
+      gap: hulk.$hulk-spacing-md;
+    }
+  }
+
+  .hulk-stats-card {
+    &__content {
+      gap: hulk.$hulk-spacing-md;
+    }
+
+    &__icon {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: hulk.$hulk-breakpoint-sm) {
+  .hulk-sample-page {
+    &__title {
+      font-size: hulk.$hulk-font-size-xxl;
+    }
+
+    &__subtitle {
+      font-size: hulk.$hulk-font-size-base;
+    }
+  }
+
+  .hulk-stats-card {
+    &__content {
+      flex-direction: column;
+      text-align: center;
+      gap: hulk.$hulk-spacing-sm;
+    }
+
+    &__value {
+      font-size: hulk.$hulk-font-size-xxl;
+    }
+  }
+
+  .hulk-quick-actions {
+    &__grid {
+      gap: hulk.$hulk-spacing-sm;
+    }
+
+    &__item {
+      padding: hulk.$hulk-spacing-md;
+    }
+  }
+
+  .hulk-activity-feed {
+    &__item {
+      padding: hulk.$hulk-spacing-sm;
+    }
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+  }
+}

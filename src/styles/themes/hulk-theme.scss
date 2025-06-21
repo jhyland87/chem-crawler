@@ -1,0 +1,560 @@
+// Hulk Theme - Dark Material Design Admin Theme
+// Based on https://hulk.theironnetwork.org/app/tables/ag-grid
+
+@use "sass:color";
+
+// HIGH SPECIFICITY OVERRIDES FOR MATERIAL-UI CONFLICTS
+// ==============================================
+
+// Override Material-UI CssBaseline and app constraints for Hulk theme
+.hulk-theme,
+.hulk-theme * {
+  box-sizing: border-box !important;
+}
+
+.hulk-theme {
+  // Override root container constraints
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 100vw !important;
+  max-height: 100vh !important;
+  min-height: 100vh !important;
+
+  // Override Material-UI's text alignment
+  text-align: left !important;
+  vertical-align: top !important;
+
+  // Override any Material-UI theme colors
+  background: #f8f9fa !important;
+  color: #2c3e50 !important;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif !important;
+
+  // Make sure it takes full viewport
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  overflow: hidden !important;
+}
+
+// Override Material-UI AppBar if it exists in Hulk theme
+.hulk-theme .MuiAppBar-root {
+  display: none !important;
+}
+
+// Close button for returning to main app
+.hulk-close-btn {
+  position: fixed !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #666 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  z-index: 10000 !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  &:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    color: #333 !important;
+    transform: scale(1.1) !important;
+  }
+
+  &:active {
+    transform: scale(0.95) !important;
+  }
+}
+
+// ==============================================
+// Color Palette
+// ==============================================
+
+// Primary Colors (Blue theme like real Hulk)
+$hulk-primary: #4f7ee8;
+$hulk-primary-dark: #3d63c4;
+$hulk-primary-light: #6b9aff;
+$hulk-accent: #00d4aa;
+$hulk-accent-dark: #00b894;
+
+// Light Theme Colors (Main content area)
+$hulk-light-bg: #f8f9fa;
+$hulk-light-surface: #ffffff;
+$hulk-light-card: #ffffff;
+$hulk-dark-sidebar: #272e3d !default; // Main menu background
+$hulk-sidebar-submenu-bg: #19222b !default; // Expanded accordion menus
+$hulk-sidebar-active-bg: #515864 !default; // Active item background
+$hulk-dark-header: linear-gradient(135deg, #4f7ee8 0%, #6b9aff 100%);
+
+// Text Colors (Light theme)
+$hulk-text-primary: #2c3e50;
+$hulk-text-secondary: #6c757d;
+$hulk-text-disabled: #adb5bd;
+$hulk-text-hint: #868e96;
+
+// Sidebar Text Colors (Dark)
+$hulk-sidebar-text-primary: #ffffff !default;
+$hulk-sidebar-text-secondary: rgba(255, 255, 255, 0.7) !default;
+
+// Status Colors
+$hulk-success: #4caf50;
+$hulk-warning: #ff9800;
+$hulk-error: #f44336;
+$hulk-info: #2196f3;
+
+// Gradient Colors
+$hulk-gradient-primary: linear-gradient(135deg, $hulk-primary 0%, $hulk-primary-dark 100%);
+$hulk-gradient-accent: linear-gradient(135deg, $hulk-accent 0%, $hulk-accent-dark 100%);
+$hulk-gradient-success: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+$hulk-gradient-warning: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+$hulk-gradient-error: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+$hulk-gradient-info: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+
+// ==============================================
+// Typography
+// ==============================================
+
+$hulk-font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+$hulk-font-weight-light: 300;
+$hulk-font-weight-regular: 400;
+$hulk-font-weight-medium: 500;
+$hulk-font-weight-bold: 700;
+
+// Font Sizes
+$hulk-font-size-xs: 0.75rem;
+$hulk-font-size-sm: 0.875rem;
+$hulk-font-size-base: 1rem;
+$hulk-font-size-lg: 1.125rem;
+$hulk-font-size-xl: 1.25rem;
+$hulk-font-size-xxl: 1.5rem;
+$hulk-font-size-xxxl: 2rem;
+
+// ==============================================
+// Spacing & Layout
+// ==============================================
+
+$hulk-spacing-xs: 0.25rem;
+$hulk-spacing-sm: 0.5rem;
+$hulk-spacing-md: 1rem;
+$hulk-spacing-lg: 1.5rem;
+$hulk-spacing-xl: 2rem;
+$hulk-spacing-xxl: 3rem;
+
+// Border Radius
+$hulk-border-radius-sm: 4px;
+$hulk-border-radius-md: 8px;
+$hulk-border-radius-lg: 12px;
+$hulk-border-radius-xl: 16px;
+
+// Shadows
+$hulk-shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.12);
+$hulk-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+$hulk-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.18);
+$hulk-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$hulk-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+
+// ==============================================
+// Component Styles
+// ==============================================
+
+// Sidebar
+$hulk-sidebar-width: 260px;
+$hulk-sidebar-collapsed-width: 64px;
+$hulk-sidebar-bg: $hulk-dark-sidebar;
+$hulk-sidebar-text: $hulk-sidebar-text-secondary;
+$hulk-sidebar-active: $hulk-primary;
+
+// Header
+$hulk-header-height: 64px;
+$hulk-header-bg: $hulk-dark-header;
+$hulk-header-text: white;
+
+// Cards
+$hulk-card-bg: $hulk-light-card;
+$hulk-card-border: 1px solid #e9ecef;
+$hulk-card-shadow: $hulk-shadow-md;
+
+// Buttons
+$hulk-btn-border-radius: $hulk-border-radius-md;
+$hulk-btn-padding: $hulk-spacing-sm $hulk-spacing-lg;
+$hulk-btn-font-weight: $hulk-font-weight-medium;
+
+// Forms
+$hulk-input-bg: $hulk-light-surface;
+$hulk-input-border: 1px solid #ced4da;
+$hulk-input-focus-border: $hulk-primary;
+$hulk-input-border-radius: $hulk-border-radius-sm;
+
+// Tables
+$hulk-table-bg: $hulk-light-surface;
+$hulk-table-header-bg: #f8f9fa;
+$hulk-table-border: 1px solid #dee2e6;
+$hulk-table-hover: #f8f9fa;
+
+// ==============================================
+// Animation & Transitions
+// ==============================================
+
+$hulk-transition-fast: 0.15s ease-in-out;
+$hulk-transition-normal: 0.3s ease-in-out;
+$hulk-transition-slow: 0.5s ease-in-out;
+
+// ==============================================
+// Breakpoints
+// ==============================================
+
+$hulk-breakpoint-xs: 0;
+$hulk-breakpoint-sm: 576px;
+$hulk-breakpoint-md: 768px;
+$hulk-breakpoint-lg: 992px;
+$hulk-breakpoint-xl: 1200px;
+$hulk-breakpoint-xxl: 1400px;
+
+// ==============================================
+// Mixins
+// ==============================================
+
+@mixin hulk-card {
+  background: $hulk-card-bg !important;
+  border: $hulk-card-border !important;
+  border-radius: $hulk-border-radius-lg !important;
+  box-shadow: $hulk-card-shadow !important;
+  padding: $hulk-spacing-lg !important;
+  transition: all $hulk-transition-normal !important;
+
+  &:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: $hulk-shadow-lg !important;
+  }
+}
+
+@mixin hulk-button($color: $hulk-primary) {
+  background: $color !important;
+  border: none !important;
+  border-radius: $hulk-btn-border-radius !important;
+  color: white !important;
+  font-weight: $hulk-btn-font-weight !important;
+  padding: $hulk-btn-padding !important;
+  transition: all $hulk-transition-fast !important;
+  cursor: pointer !important;
+
+  &:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: $hulk-shadow-md !important;
+    opacity: 0.9 !important;
+  }
+
+  &:active {
+    transform: translateY(0) !important;
+  }
+}
+
+@mixin hulk-gradient-button($gradient: $hulk-gradient-primary) {
+  background: $gradient !important;
+  border: none !important;
+  border-radius: $hulk-btn-border-radius !important;
+  color: white !important;
+  font-weight: $hulk-btn-font-weight !important;
+  padding: $hulk-btn-padding !important;
+  transition: all $hulk-transition-fast !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+
+  &::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0 !important;
+    transition: opacity $hulk-transition-fast !important;
+  }
+
+  &:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: $hulk-shadow-md !important;
+
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+
+  &:active {
+    transform: translateY(0) !important;
+  }
+}
+
+@mixin hulk-input {
+  background: $hulk-input-bg !important;
+  border: $hulk-input-border !important;
+  border-radius: $hulk-input-border-radius !important;
+  color: $hulk-text-primary !important;
+  font-family: $hulk-font-family !important;
+  padding: $hulk-spacing-sm $hulk-spacing-md !important;
+  transition: all $hulk-transition-fast !important;
+
+  &:focus {
+    border-color: $hulk-input-focus-border !important;
+    box-shadow: 0 0 0 2px rgba($hulk-primary, 0.2) !important;
+    outline: none !important;
+  }
+
+  &::placeholder {
+    color: $hulk-text-hint !important;
+  }
+}
+
+@mixin hulk-table {
+  background: $hulk-table-bg !important;
+  border: $hulk-table-border !important;
+  border-radius: $hulk-border-radius-lg !important;
+  overflow: hidden !important;
+
+  thead {
+    background: $hulk-table-header-bg !important;
+
+    th {
+      color: $hulk-text-primary !important;
+      font-weight: $hulk-font-weight-medium !important;
+      padding: $hulk-spacing-md !important;
+      border-bottom: $hulk-table-border !important;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color $hulk-transition-fast !important;
+
+      &:hover {
+        background: $hulk-table-hover !important;
+      }
+
+      td {
+        color: $hulk-text-secondary !important;
+        padding: $hulk-spacing-md !important;
+        border-bottom: $hulk-table-border !important;
+      }
+    }
+  }
+}
+
+// ==============================================
+// Utility Classes with High Specificity
+// ==============================================
+
+.hulk-card {
+  @include hulk-card;
+}
+
+.hulk-btn {
+  @include hulk-button;
+}
+
+.hulk-btn-primary {
+  @include hulk-button($hulk-primary);
+}
+
+.hulk-btn-accent {
+  @include hulk-button($hulk-accent);
+}
+
+.hulk-btn-success {
+  @include hulk-button($hulk-success);
+}
+
+.hulk-btn-warning {
+  @include hulk-button($hulk-warning);
+}
+
+.hulk-btn-error {
+  @include hulk-button($hulk-error);
+}
+
+.hulk-btn-info {
+  @include hulk-button($hulk-info);
+}
+
+.hulk-btn-gradient {
+  @include hulk-gradient-button;
+}
+
+.hulk-btn-gradient-accent {
+  @include hulk-gradient-button($hulk-gradient-accent);
+}
+
+.hulk-btn-gradient-success {
+  @include hulk-gradient-button($hulk-gradient-success);
+}
+
+.hulk-btn-gradient-warning {
+  @include hulk-gradient-button($hulk-gradient-warning);
+}
+
+.hulk-btn-gradient-error {
+  @include hulk-gradient-button($hulk-gradient-error);
+}
+
+.hulk-btn-gradient-info {
+  @include hulk-gradient-button($hulk-gradient-info);
+}
+
+.hulk-input {
+  @include hulk-input;
+}
+
+.hulk-table {
+  @include hulk-table;
+}
+
+// Text utilities with high specificity
+.hulk-theme .hulk-text-primary {
+  color: $hulk-text-primary !important;
+}
+
+.hulk-theme .hulk-text-secondary {
+  color: $hulk-text-secondary !important;
+}
+
+.hulk-theme .hulk-text-disabled {
+  color: $hulk-text-disabled !important;
+}
+
+.hulk-theme .hulk-text-hint {
+  color: $hulk-text-hint !important;
+}
+
+// Background utilities
+.hulk-theme .hulk-bg-primary {
+  background: $hulk-primary !important;
+}
+
+.hulk-theme .hulk-bg-accent {
+  background: $hulk-accent !important;
+}
+
+.hulk-theme .hulk-bg-success {
+  background: $hulk-success !important;
+}
+
+.hulk-theme .hulk-bg-warning {
+  background: $hulk-warning !important;
+}
+
+.hulk-theme .hulk-bg-error {
+  background: $hulk-error !important;
+}
+
+.hulk-theme .hulk-bg-info {
+  background: $hulk-info !important;
+}
+
+.hulk-theme .hulk-bg-dark {
+  background: $hulk-dark-sidebar !important;
+}
+
+.hulk-theme .hulk-bg-surface {
+  background: $hulk-light-surface !important;
+}
+
+.hulk-theme .hulk-bg-card {
+  background: $hulk-light-card !important;
+}
+
+// Gradient backgrounds
+.hulk-theme .hulk-bg-gradient-primary {
+  background: $hulk-gradient-primary !important;
+}
+
+.hulk-theme .hulk-bg-gradient-accent {
+  background: $hulk-gradient-accent !important;
+}
+
+.hulk-theme .hulk-bg-gradient-success {
+  background: $hulk-gradient-success !important;
+}
+
+.hulk-theme .hulk-bg-gradient-warning {
+  background: $hulk-gradient-warning !important;
+}
+
+.hulk-theme .hulk-bg-gradient-error {
+  background: $hulk-gradient-error !important;
+}
+
+.hulk-theme .hulk-bg-gradient-info {
+  background: $hulk-gradient-info !important;
+}
+
+// Shadow utilities
+.hulk-theme .hulk-shadow-xs {
+  box-shadow: $hulk-shadow-xs !important;
+}
+
+.hulk-theme .hulk-shadow-sm {
+  box-shadow: $hulk-shadow-sm !important;
+}
+
+.hulk-theme .hulk-shadow-md {
+  box-shadow: $hulk-shadow-md !important;
+}
+
+.hulk-theme .hulk-shadow-lg {
+  box-shadow: $hulk-shadow-lg !important;
+}
+
+.hulk-theme .hulk-shadow-xl {
+  box-shadow: $hulk-shadow-xl !important;
+}
+
+// Spacing utilities
+.hulk-theme .hulk-p-xs {
+  padding: $hulk-spacing-xs !important;
+}
+.hulk-theme .hulk-p-sm {
+  padding: $hulk-spacing-sm !important;
+}
+.hulk-theme .hulk-p-md {
+  padding: $hulk-spacing-md !important;
+}
+.hulk-theme .hulk-p-lg {
+  padding: $hulk-spacing-lg !important;
+}
+.hulk-theme .hulk-p-xl {
+  padding: $hulk-spacing-xl !important;
+}
+.hulk-theme .hulk-p-xxl {
+  padding: $hulk-spacing-xxl !important;
+}
+
+.hulk-theme .hulk-m-xs {
+  margin: $hulk-spacing-xs !important;
+}
+.hulk-theme .hulk-m-sm {
+  margin: $hulk-spacing-sm !important;
+}
+.hulk-theme .hulk-m-md {
+  margin: $hulk-spacing-md !important;
+}
+.hulk-theme .hulk-m-lg {
+  margin: $hulk-spacing-lg !important;
+}
+.hulk-theme .hulk-m-xl {
+  margin: $hulk-spacing-xl !important;
+}
+.hulk-theme .hulk-m-xxl {
+  margin: $hulk-spacing-xxl !important;
+}
